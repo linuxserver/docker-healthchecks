@@ -1,19 +1,18 @@
 #!/usr/bin/with-contenv bash
 
-cd /app/healthchecks || exit
+# set default values for variables
+SITE_ROOT=${SITE_ROOT:-https://my-monitoring-project.com}
+SITE_NAME=${SITE_NAME:-My Monitoring Project}
+DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL:-noreply@my-monitoring-project.com}
+EMAIL_HOST=${EMAIL_HOST:-your-smtp-server-here.com}
+EMAIL_PORT=${EMAIL_PORT:-587}
+EMAIL_HOST_USER=${EMAIL_HOST_USER:-username}
+EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-password}
+EMAIL_USE_TLS=${EMAIL_USE_TLS:-True}
 
 if [ ! -f "/config/local_settings.py" ]; then
-    # set default values for variables
-    SITE_ROOT=${SITE_ROOT:-https://my-monitoring-project.com}
-    SITE_NAME=${SITE_NAME:-My Monitoring Project}
-    DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL:-noreply@my-monitoring-project.com}
-    EMAIL_HOST=${EMAIL_HOST:-your-smtp-server-here.com}
-    EMAIL_PORT=${EMAIL_PORT:-587}
-    EMAIL_HOST_USER=${EMAIL_HOST_USER:-username}
-    EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-password}
-    EMAIL_USE_TLS=${EMAIL_USE_TLS:-True}
 
-    cat <<EOF > /config/hc/local_settings.py
+cat <<EOF > /config/local_settings.py
 SITE_ROOT = "$SITE_ROOT"
 SITE_NAME = "$SITE_NAME"
 DEFAULT_FROM_EMAIL = "$DEFAULT_FROM_EMAIL"
@@ -26,23 +25,22 @@ EMAIL_USE_TLS = $EMAIL_USE_TLS
 
 ALLOWED_HOSTS = ["$SITE_ROOT"]
 EOF
-
 fi
 
 if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
-    ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
+	ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
 fi
 
 if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
-    ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
+	ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
 # permissions
 chown -R abc:abc \
+	/app/healthchecks \
 	/config
 
-chown -R abc:abc \
-	/app/healthchecks
+cd /app/healthchecks || exit
 
 exec \
 	s6-setuidgid abc ./manage.py migrate
