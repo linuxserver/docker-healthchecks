@@ -7,15 +7,13 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="alex-phillips"
 
 RUN \
- echo "**** install runtime packages ****" && \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	gcc \
 	musl-dev \
+	mysql \
 	postgresql-dev \
 	python2-dev && \
- echo "**** install runtime packages ****" && \
- apk add --no-cache \
-	mysql && \
  echo "**** install healthchecks ****" && \
  git clone https://github.com/healthchecks/healthchecks.git /app/healthchecks && \
  echo "**** install pip packages ****" && \
