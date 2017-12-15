@@ -6,16 +6,28 @@ ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="alex-phillips"
 
-# install packages
 RUN \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache --virtual=build-dependencies \
+	gcc \
+	musl-dev \
+	postgresql-dev \
+	python2-dev && \
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
-    gcc \
-    musl-dev \
-    mysql \
-    postgresql-dev \
-    python2-dev && \
-
- git clone https://github.com/healthchecks/healthchecks.git /app
+	mysql && \
+ echo "**** install healthchecks ****" && \
+ git clone https://github.com/healthchecks/healthchecks.git /app/healthchecks && \
+ echo "**** install pip packages ****" && \
+ cd /app/healthchecks && \
+ pip install --no-cache-dir -r requirements.txt && \
+ pip install --no-cache-dir reportlab && \
+ echo "**** cleanup ****" && \
+ apk del --purge \
+	build-dependencies && \
+ rm -rf \
+	/root/.cache \
+	/tmp/*
 
 # copy local files
 COPY root/ /

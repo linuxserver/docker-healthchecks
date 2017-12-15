@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-cd /app
+cd /app/healthchecks || exit
 
 if [ ! -f "/config/local_settings.py" ]; then
     # set default values for variables
@@ -29,23 +29,20 @@ EOF
 
 fi
 
-if [ ! -f "/app/hc/local_settings.py" ]; then
-    ln -s /config/local_settings.py /app/hc/local_settings.py
+if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
+    ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
 fi
 
-if [ ! -f "/app/hc.sqlite" ]; then
-    ln -s /config/hc.sqlite /app/hc.sqlite
+if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
+    ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
-
-pip install -r requirements.txt
-pip install reportlab
 
 # permissions
 chown -R abc:abc \
 	/config
 
 chown -R abc:abc \
-	/app
+	/app/healthchecks
 
 exec \
 	s6-setuidgid abc ./manage.py migrate
