@@ -23,7 +23,7 @@ HEATLHC_ARRAY[EMAIL_USE_TLS]=$EMAIL_USE_TLS
 for KEY in "${!HEATLHC_ARRAY[@]}"; do \
 if [[ ${HEATLHC_ARRAY[$KEY]} == "" ]]; then \
 :
-else echo "$KEY" "${HEATLHC_ARRAY[$KEY"]}
+else echo "$KEY" "${HEATLHC_ARRAY[$KEY]}"
 fi
 done
 
