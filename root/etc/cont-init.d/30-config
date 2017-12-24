@@ -1,39 +1,31 @@
 #!/usr/bin/with-contenv bash
 
-# set default values for variables
-SITE_ROOT=${SITE_ROOT:-https://my-monitoring-project.com}
-SITE_NAME=${SITE_NAME:-My Monitoring Project}
-DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL:-noreply@my-monitoring-project.com}
-EMAIL_HOST=${EMAIL_HOST:-your-smtp-server-here.com}
-EMAIL_PORT=${EMAIL_PORT:-587}
-EMAIL_HOST_USER=${EMAIL_HOST_USER:-username}
-EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD:-password}
-EMAIL_USE_TLS=${EMAIL_USE_TLS:-True}
+# define array for input values
+declare -A HEATLHC_ARRAY
+HEATLHC_ARRAY[SITE_ROOT]=$SITE_ROOT
+HEATLHC_ARRAY[SITE_NAME]=$SITE_NAME
+HEATLHC_ARRAY[DEFAULT_FROM_EMAIL]=$DEFAULT_FROM_EMAIL
+HEATLHC_ARRAY[EMAIL_HOST]=$EMAIL_HOST
+HEATLHC_ARRAY[EMAIL_PORT]=$EMAIL_PORT
+HEATLHC_ARRAY[EMAIL_HOST_USER]=$EMAIL_HOST_USER
+HEATLHC_ARRAY[EMAIL_HOST_PASSWORD]=$EMAIL_HOST_PASSWORD
+HEATLHC_ARRAY[EMAIL_USE_TLS]=$EMAIL_USE_TLS
 
-if [ ! -f "/config/local_settings.py" ]; then
+# create symlinks for settings and database files
+[[ ! -f "/config/local_settings.py" ]] && \
+	cp /defaults/local_settings.py /config/local_settings.py
+[[ ! -L "/app/healthchecks/hc/local_settings.py" ]] && \
+	ln -sf /config/local_settings.py /app/healthchecks/hc/local_settings.py
+[[ ! -L "/app/healthchecks/hc.sqlite" ]] && \
+	ln -sf /config/hc.sqlite /app/healthchecks/hc.sqlite
 
-cat <<EOF > /config/local_settings.py
-SITE_ROOT = "$SITE_ROOT"
-SITE_NAME = "$SITE_NAME"
-DEFAULT_FROM_EMAIL = "$DEFAULT_FROM_EMAIL"
-
-EMAIL_HOST = "$EMAIL_HOST"
-EMAIL_PORT = "$EMAIL_PORT"
-EMAIL_HOST_USER = "$EMAIL_HOST_USER"
-EMAIL_HOST_PASSWORD = "$EMAIL_HOST_PASSWORD"
-EMAIL_USE_TLS = $EMAIL_USE_TLS
-
-ALLOWED_HOSTS = ["$SITE_ROOT"]
-EOF
+# sed in values or skip if value not set
+for KEY in "${!HEATLHC_ARRAY[@]}"; do \
+if [[ ${HEATLHC_ARRAY[$KEY]} == "" ]]; then \
+:
+else echo "$KEY" "${HEATLHC_ARRAY[$KEY]}"
 fi
-
-if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
-	ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
-fi
-
-if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
-	ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
-fi
+done
 
 # permissions
 chown -R abc:abc \
