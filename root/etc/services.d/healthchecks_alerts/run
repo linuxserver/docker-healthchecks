@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+cd /app/healthchecks || exit
+
+exec \
+	s6-setuidgid abc ./manage.py sendalerts
