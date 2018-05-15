@@ -3,4 +3,4 @@
 cd /app/healthchecks || exit
 
 exec \
-	s6-setuidgid abc ./manage.py sendalerts
+	s6-setuidgid abc /usr/bin/python3 ./manage.py sendalerts

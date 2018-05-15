@@ -38,9 +38,10 @@ fi
 # permissions
 chown -R abc:abc \
 	/app/healthchecks \
-	/config
+	/config \
+	/root/.reportlab_mods
 
 cd /app/healthchecks || exit
 
 exec \
-	s6-setuidgid abc ./manage.py migrate
+	s6-setuidgid abc /usr/bin/python3 ./manage.py migrate

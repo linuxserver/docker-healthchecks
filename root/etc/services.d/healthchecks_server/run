@@ -3,4 +3,4 @@
 cd /app/healthchecks || exit
 
 exec \
-	s6-setuidgid abc ./manage.py runserver 0.0.0.0:8000
+	s6-setuidgid abc /usr/bin/python3 ./manage.py runserver 0.0.0.0:8000
