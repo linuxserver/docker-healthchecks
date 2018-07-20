@@ -35,6 +35,13 @@ if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
 	ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
+if [ ! -d "/config/img" ]; then
+	mv /app/healthchecks/static/img /config/
+fi
+
+rm -rf /app/healthchecks/static/img
+ln -s /config/img /app/healthchecks/static/img
+
 # permissions
 chown -R abc:abc \
 	/app/healthchecks \
