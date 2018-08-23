@@ -8,8 +8,6 @@ LABEL maintainer="alex-phillips"
 
 RUN \
  echo "**** install build packages ****" && \
- apk add --no-cache \
-	python3 && \
  apk add --no-cache --virtual=build-dependencies \
 	gcc \
 	git \
@@ -17,9 +15,12 @@ RUN \
 	musl-dev \
 	mysql \
 	postgresql-dev \
-	python3-dev \
 	py3-pip \
+	python3-dev \
 	zlib-dev && \
+ echo "**** install runtime packages ****" && \
+ apk add --no-cache \
+	python3 && \
  echo "**** install healthchecks ****" && \
  git clone https://github.com/healthchecks/healthchecks.git /app/healthchecks && \
  echo "**** install pip packages ****" && \
