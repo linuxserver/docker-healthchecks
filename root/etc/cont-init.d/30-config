@@ -44,11 +44,11 @@ logo-full.png"
 for f in $FILES
 do
 	if [ ! -f "/config/img/$f" ]; then
-		cp /app/healthchecks/static/img/$f /config/img/$f
+		cp "/app/healthchecks/static/img/$f" "/config/img/$f"
 	fi
 
-	rm /app/healthchecks/static/img/$f > /dev/null 2>&1
-	ln -s /config/img/$f /app/healthchecks/static/img/$f
+	rm "/app/healthchecks/static/img/$f" > /dev/null 2>&1
+	ln -s "/config/img/$f" "/app/healthchecks/static/img/$f"
 done
 
 # permissions
