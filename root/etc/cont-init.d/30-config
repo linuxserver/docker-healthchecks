@@ -54,8 +54,7 @@ done
 # permissions
 chown -R abc:abc \
 	/app/healthchecks \
-	/config \
-	/root/.reportlab_mods
+	/config
 
 cd /app/healthchecks || exit
 
