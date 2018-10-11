@@ -117,7 +117,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<EMAIL_USE_TLS>` | Use TLS for SMTP |
-| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of hosts allowed to ping in IE ["test.com","test2.com"] |
+| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server ["test.com","test2.com"] |
 | `-v /config` | database and healthchecks config |
 
 ## User / Group Identifiers
