@@ -10,7 +10,7 @@ LABEL maintainer="alex-phillips"
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
-  curl \
+	curl \
 	gcc \
 	git \
 	jpeg-dev \
