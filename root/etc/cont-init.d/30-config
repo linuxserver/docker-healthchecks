@@ -30,17 +30,31 @@ if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
 fi
 
 if [ ! -d "/config/img" ]; then
-	mv /app/healthchecks/static/img /config/
+	mkdir /config/img
 fi
 
-rm -rf /app/healthchecks/static/img
-ln -s /config/img /app/healthchecks/static/img
+# copy over configurable logo files
+FILES="favicon.ico
+apple-touch-180.png
+logo@2x.png
+logo.png
+logo-512-green.png
+logo-full@2x.png
+logo-full.png"
+for f in $FILES
+do
+	if [ ! -f "/config/img/$f" ]; then
+		cp "/app/healthchecks/static/img/$f" "/config/img/$f"
+	fi
+
+	rm "/app/healthchecks/static/img/$f" > /dev/null 2>&1
+	ln -s "/config/img/$f" "/app/healthchecks/static/img/$f"
+done
 
 # permissions
 chown -R abc:abc \
 	/app/healthchecks \
-	/config \
-	/root/.reportlab_mods
+	/config
 
 cd /app/healthchecks || exit
 
