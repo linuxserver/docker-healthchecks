@@ -1,0 +1,43 @@
+---
+
+# project information
+project_name: healthchecks
+project_url: "https://healthchecks.io/"
+project_logo: "https://healthchecks.io/static/img/logo-full.png"
+project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "tbc"}
+  - { arch: "{{ arch_arm64 }}", tag: "tbc"}
+  - { arch: "{{ arch_armhf }}", tag: "tbc"}
+
+# container parameters
+common_param_env_vars_enabled: true #PGID, PUID, etc
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "</path/to/{{ project_name }}/config>", desc: "Persistent config files" }
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "80", internal_port: "8000", port_desc: "Web UI" }
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "SITE_ROOT", env_value: "healthchecks.example.com", desc: "Site root for URL generation"}
+  - { env_var: "SITE_NAME", env_value: "healthchecks", desc: "Site name"}
+  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "noreply@example.com", desc: "From email for registration and login"}
+  - { env_var: "EMAIL_HOST", env_value: "smtp.gmail.com", desc: "Email SMTP Server (required for registration)"}
+  - { env_var: "EMAIL_PORT", env_value: "587", desc: "SMTP port"}
+  - { env_var: "EMAIL_HOST_USER", env_value: "changeme", desc: "SMTP username"}
+  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "diskover-", desc: "SMTP password"}
+  - { env_var: "EMAIL_USE_TLS", env_value: "True", desc: "SMTP use TLS"}
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  - Once running the URL will be `http://<host-ip>/`.
+  - After registering / logging in, follow the `docs` page on the site to start setting up monitored items.
+
+# changelog
+changelogs:
