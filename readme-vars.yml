@@ -1,0 +1,49 @@
+---
+
+# project information
+project_name: healthchecks
+project_url: "https://github.com/healthchecks/healthchecks"
+project_logo: "https://raw.githubusercontent.com/healthchecks/healthchecks/master/static/img/welcome.png"
+project_blurb: |
+  [{{ project_name|capitalize }}]({{ project_url }}) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v6-latest"}
+
+# container parameters
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "<path to data>", desc: "database and healthchecks config" }
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "SITE_ROOT", env_value: "<SITE_ROOT>", desc: "The site's domain (i.e., example.com)" }
+  - { env_var: "SITE_NAME", env_value: "<SITE_NAME>", desc: "The site's name" }
+  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "<DEFAULT_FROM_EMAIL>", desc: "From email for alerts" }
+  - { env_var: "EMAIL_HOST", env_value: "<EMAIL_HOST>", desc: "SMTP host" }
+  - { env_var: "EMAIL_PORT", env_value: "<EMAIL_PORT>", desc: "SMTP port"}
+  - { env_var: "EMAIL_HOST_USER", env_value: "<EMAIL_HOST_USER>", desc: "SMTP user"}
+  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "<EMAIL_HOST_PASSWORD>", desc: "SMTP password"}
+  - { env_var: "EMAIL_USE_TLS", env_value: "<EMAIL_USE_TLS>", desc: "Use TLS for SMTP"}
+  - { env_var: "ALLOWED_HOSTS", env_value: "<ALLOWED_HOSTS>", desc: "array of valid hostnames for the server [\"test.com\",\"test2.com\"]"}
+
+
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "8000", internal_port: "8000", port_desc: "will map the container's port 8000 to port 8000 on the host" }
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  Access the WebUI at <your-ip>:8000. For more information, check out [Healthchecks](https://github.com/healthchecks/healthchecks).
+
+# changelog
+changelogs:
+  - { date: "11.10.18:", desc: "adding pipeline logic and multi arching release"}
+  - { date: "15.11.17:", desc: "`git pull` is now in Dockerfile so each tagged container contains the same code version"}
+  - { date: "17.10.17:", desc: "Fixed `local_settings.py` output"}
+  - { date: "27.09.17:", desc: "Initial Release." }
