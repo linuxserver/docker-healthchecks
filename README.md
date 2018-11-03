@@ -21,6 +21,7 @@ From August 2018 onwards, Linuxserver are in the midst of switching to a new CI 
 TLDR: Multi-arch support is changing from multiple repos to one repo per container image.
 
 # [linuxserver/healthchecks](https://github.com/linuxserver/docker-healthchecks)
+[![](https://img.shields.io/discord/354974912613449730.svg?logo=discord&label=LSIO%20Discord&style=flat-square)](https://discord.gg/YWrKVTn)
 [![](https://images.microbadger.com/badges/version/linuxserver/healthchecks.svg)](https://microbadger.com/images/linuxserver/healthchecks "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/image/linuxserver/healthchecks.svg)](https://microbadger.com/images/linuxserver/healthchecks "Get your own version badge on microbadger.com")
 ![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/healthchecks.svg)
@@ -65,6 +66,7 @@ docker create \
   -e ALLOWED_HOSTS=<ALLOWED_HOSTS> \
   -p 8000:8000 \
   -v <path to data>:/config \
+  --restart unless-stopped
   linuxserver/healthchecks
 ```
 
