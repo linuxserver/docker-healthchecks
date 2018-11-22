@@ -1,6 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-cd /app/healthchecks || exit
-
-exec \
-	s6-setuidgid abc /usr/bin/python3 ./manage.py runserver 0.0.0.0:8000

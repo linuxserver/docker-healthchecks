@@ -2,6 +2,7 @@
 
 # set default values for variables
 declare -A HC_CONF
+HC_CONF[DEBUG]=${DEBUG:-False}
 HC_CONF[SITE_ROOT]=${SITE_ROOT:-https://healthchecks.example.com}
 HC_CONF[SITE_NAME]=${SITE_NAME:-healthchecks}
 HC_CONF[DEFAULT_FROM_EMAIL]=${DEFAULT_FROM_EMAIL:-noreply@example.com}
@@ -32,6 +33,8 @@ fi
 if [ ! -d "/config/img" ]; then
 	mkdir /config/img
 fi
+
+mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
 
 # copy over configurable logo files
 FILES="favicon.ico
