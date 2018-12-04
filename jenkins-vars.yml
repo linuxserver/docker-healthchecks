@@ -1,0 +1,29 @@
+---
+
+# jenkins variables
+project_name: docker-healthchecks
+external_type: github_stable
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - EXT_USER = 'healthchecks'
+  - EXT_REPO = 'healthchecks'
+  - BUILD_VERSION_ARG = 'HEALTHCHECKS_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-healthchecks'
+  - CONTAINER_NAME = 'healthchecks'
+  - DOCKERHUB_IMAGE = 'linuxserver/healthchecks'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/healthchecks'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/healthchecks'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='true'
+  - CI_PORT='8000'
+  - CI_SSL='false'
+  - CI_DELAY='120'
+  - CI_DOCKERENV='TZ=US/Pacific'
+  - CI_AUTH='user:password'
+  - CI_WEBPATH=''
