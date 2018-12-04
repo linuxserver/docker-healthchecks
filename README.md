@@ -34,13 +34,13 @@ TLDR: Multi-arch support is changing from multiple repos to one repo per contain
 
 ## Supported Architectures
 
-Our images support multiple architectures such as `X86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list). 
+Our images support multiple architectures such as `x86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list). 
 
 The architectures supported by this image are:
 
 | Architecture | Tag |
 | :----: | --- |
-| X86-64 | amd64-latest |
+| x86-64 | amd64-latest |
 | arm64 | arm64v8-latest |
 | armhf | arm32v6-latest |
 
@@ -66,7 +66,7 @@ docker create \
   -e ALLOWED_HOSTS=<ALLOWED_HOSTS> \
   -p 8000:8000 \
   -v <path to data>:/config \
-  --restart unless-stopped
+  --restart unless-stopped \
   linuxserver/healthchecks
 ```
 
