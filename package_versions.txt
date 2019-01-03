@@ -31,7 +31,7 @@ libxml2 libxml2-2.9.8-r1
 libbz2 libbz2-1.0.6-r6
 libffi libffi-3.2.1-r4
 gdbm gdbm-1.13-r1
-sqlite-libs sqlite-libs-3.24.0-r0
+sqlite-libs sqlite-libs-3.25.3-r0
 python3 python3-3.6.6-r0
 mailcap mailcap-2.1.48-r0
 libcap libcap-2.25-r1
