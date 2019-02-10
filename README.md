@@ -26,6 +26,8 @@ TLDR: Multi-arch support is changing from multiple repos to one repo per contain
 [![](https://images.microbadger.com/badges/image/linuxserver/healthchecks.svg)](https://microbadger.com/images/linuxserver/healthchecks "Get your own version badge on microbadger.com")
 ![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/healthchecks.svg)
 ![Docker Stars](https://img.shields.io/docker/stars/linuxserver/healthchecks.svg)
+[![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Pipeline-Builders/docker-healthchecks/master)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-healthchecks/job/master/)
+[![](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/healthchecks/latest/badge.svg)](https://lsio-ci.ams3.digitaloceanspaces.com/linuxserver/healthchecks/latest/index.html)
 
 [Healthchecks](https://github.com/healthchecks/healthchecks) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
 
@@ -36,6 +38,8 @@ TLDR: Multi-arch support is changing from multiple repos to one repo per contain
 
 Our images support multiple architectures such as `x86-64`, `arm64` and `armhf`. We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://github.com/docker/distribution/blob/master/docs/spec/manifest-v2-2.md#manifest-list). 
 
+Simply pulling `linuxserver/healthchecks` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+
 The architectures supported by this image are:
 
 | Architecture | Tag |
@@ -43,6 +47,7 @@ The architectures supported by this image are:
 | x86-64 | amd64-latest |
 | arm64 | arm64v8-latest |
 | armhf | arm32v6-latest |
+
 
 ## Usage
 
@@ -135,6 +140,7 @@ In this instance `PUID=1001` and `PGID=1001`, to find yours use `id user` as bel
     uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
 ```
 
+
 &nbsp;
 ## Application Setup
 
@@ -150,6 +156,25 @@ Access the WebUI at <your-ip>:8000. For more information, check out [Healthcheck
   * `docker inspect -f '{{ index .Config.Labels "build_version" }}' healthchecks`
 * image version number
   * `docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/healthchecks`
+
+## Updating Info
+
+Most of our images are static, versioned, and require an image update and container recreation to update the app inside. With some exceptions (ie. nextcloud, plex), we do not recommend or support updating apps inside the container. Please consult the [Application Setup](#application-setup) section above to see if it is recommended for the image.  
+  
+Below are the instructions for updating containers:  
+  
+### Via Docker Run/Create
+* Update the image: `docker pull linuxserver/healthchecks`
+* Stop the running container: `docker stop healthchecks`
+* Delete the container: `docker rm healthchecks`
+* Recreate a new container with the same docker create parameters as instructed above (if mapped correctly to a host folder, your `/config` folder and settings will be preserved)
+* Start the new container: `docker start healthchecks`
+* You can also remove the old dangling images: `docker image prune`
+
+### Via Docker Compose
+* Update the image: `docker-compose pull linuxserver/healthchecks`
+* Let compose update containers as necessary: `docker-compose up -d`
+* You can also remove the old dangling images: `docker image prune`
 
 ## Versions
 
