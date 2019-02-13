@@ -17,6 +17,7 @@ RUN \
 	gcc \
 	git \
 	jpeg-dev \
+	mariadb-dev \
 	musl-dev \
 	mysql \
 	postgresql-dev \
@@ -43,6 +44,8 @@ RUN \
  echo "**** install pip packages ****" && \
  cd /app/healthchecks && \
  pip3 install --no-cache-dir -r requirements.txt && \
+ pip3 install \
+ 	mysqlclient && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
