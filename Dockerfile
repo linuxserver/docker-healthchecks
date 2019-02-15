@@ -23,6 +23,7 @@ RUN \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
+	mariadb-connector-c \
 	python3 \
 	uwsgi \
 	uwsgi-python3 && \
