@@ -43,6 +43,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "14.02.19:", desc: "Adding mysql libs needed for using a database."}
   - { date: "11.10.18:", desc: "adding pipeline logic and multi arching release"}
   - { date: "15.11.17:", desc: "`git pull` is now in Dockerfile so each tagged container contains the same code version"}
   - { date: "17.10.17:", desc: "Fixed `local_settings.py` output"}

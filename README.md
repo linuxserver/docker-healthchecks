@@ -178,6 +178,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **14.02.19:** - Adding mysql libs needed for using a database.
 * **11.10.18:** - adding pipeline logic and multi arching release
 * **15.11.17:** - `git pull` is now in Dockerfile so each tagged container contains the same code version
 * **17.10.17:** - Fixed `local_settings.py` output
