@@ -9,7 +9,7 @@ LABEL maintainer="alex-phillips"
 
 RUN \
  echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
+ apk add --no-cache --upgrade --virtual=build-dependencies \
 	curl \
 	gcc \
 	git \
