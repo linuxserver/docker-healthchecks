@@ -12,7 +12,6 @@ Find us at:
 * [Discord](https://discord.gg/YWrKVTn) - realtime support / chat with the community and the team.
 * [IRC](https://irc.linuxserver.io) - on freenode at `#linuxserver.io`. Our primary support channel is Discord.
 * [Blog](https://blog.linuxserver.io) - all the things you can do with our containers including How-To guides, opinions and much more!
-* [Podcast](https://anchor.fm/linuxserverio) - on hiatus. Coming back soon (late 2018).
 
 # [linuxserver/healthchecks](https://github.com/linuxserver/docker-healthchecks)
 [![](https://img.shields.io/discord/354974912613449730.svg?logo=discord&label=LSIO%20Discord&style=flat-square)](https://discord.gg/YWrKVTn)
@@ -40,7 +39,7 @@ The architectures supported by this image are:
 | :----: | --- |
 | x86-64 | amd64-latest |
 | arm64 | arm64v8-latest |
-| armhf | arm32v6-latest |
+| armhf | arm32v7-latest |
 
 
 ## Usage
@@ -182,6 +181,7 @@ Below are the instructions for updating containers:
 
 ## Versions
 
+* **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **14.02.19:** - Adding mysql libs needed for using a database.
 * **11.10.18:** - adding pipeline logic and multi arching release
 * **15.11.17:** - `git pull` is now in Dockerfile so each tagged container contains the same code version
