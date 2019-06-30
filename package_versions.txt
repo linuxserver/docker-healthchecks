@@ -6,7 +6,7 @@ busybox-1.29.3-r10
 ca-certificates-20190108-r0
 ca-certificates-cacert-20190108-r0
 coreutils-8.30-r0
-expat-2.2.6-r0
+expat-2.2.7-r0
 gdbm-1.13-r1
 jansson-2.11-r0
 libacl-2.2.52-r5
