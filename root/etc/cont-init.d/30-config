@@ -14,11 +14,14 @@ HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
 
 if [ ! -f "/config/local_settings.py" ]; then
 	# sed in values or skip if value not set
-	for KEY in "${!HC_CONF[@]}"; do \
-	if [[ ${HC_CONF[$KEY]} == "" ]]; then \
-	:
-	else echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
-	fi
+	for KEY in "${!HC_CONF[@]}"; do
+		if [[ ! ${HC_CONF[$KEY]} == "" ]]; then
+			if [[ ${HC_CONF[$KEY]} == False ]] || [[ ${HC_CONF[$KEY]} == True ]]; then
+				echo "$KEY = ${HC_CONF[$KEY]}" >> /config/local_settings.py
+			else
+				echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
+			fi
+		fi
 	done
 fi
 
