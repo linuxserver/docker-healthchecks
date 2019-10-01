@@ -42,7 +42,8 @@ RUN \
  cd /app/healthchecks && \
  pip3 install --no-cache-dir -r requirements.txt && \
  pip3 install \
- 	mysqlclient && \
+ 	mysqlclient \
+	postgres && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
