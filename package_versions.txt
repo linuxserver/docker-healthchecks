@@ -28,13 +28,13 @@ ncurses-libs-6.1_p20190105-r0
 ncurses-terminfo-6.1_p20190105-r0
 ncurses-terminfo-base-6.1_p20190105-r0
 pcre-8.42-r1
-python3-3.6.8-r2
+python3-3.6.9-r2
 readline-7.0.003-r1
 scanelf-1.2.3-r0
 shadow-4.5-r2
 sqlite-libs-3.28.0-r1
 ssl_client-1.29.3-r10
-tzdata-2019b-r0
+tzdata-2019c-r0
 uwsgi-2.0.17.1-r0
 uwsgi-python3-2.0.17.1-r0
 xz-5.2.4-r0
