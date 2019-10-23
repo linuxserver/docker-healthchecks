@@ -126,8 +126,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<EMAIL_USE_TLS>` | Use TLS for SMTP |
-| `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser email |
-| `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
 | `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server ["test.com","test2.com"] |
 | `-v /config` | database and healthchecks config |
 
