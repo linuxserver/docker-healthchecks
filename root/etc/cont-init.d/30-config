@@ -64,5 +64,22 @@ chown -R abc:abc \
 
 cd /app/healthchecks || exit
 
-exec \
-	s6-setuidgid abc /usr/bin/python3 ./manage.py migrate
+s6-setuidgid abc /usr/bin/python3 ./manage.py migrate
+
+if [ -n "$SUPERUSER_EMAIL" ] && [ -n "$SUPERUSER_PASSWORD" ];
+then
+cat << EOF | s6-setuidgid abc python3 /app/healthchecks/manage.py shell
+from django.contrib.auth.models import User;
+
+username = 'admin';
+password = '$SUPERUSER_PASSWORD';
+email = '$SUPERUSER_EMAIL';
+
+if User.objects.filter(username=username).count()==0:
+    User.objects.create_superuser(username, email, password);
+    print('Superuser created.');
+else:
+    print('Superuser creation skipped. Already exists.');
+EOF
+fi
+
