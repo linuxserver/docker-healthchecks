@@ -72,6 +72,8 @@ docker create \
   -e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD> \
   -e EMAIL_USE_TLS=<EMAIL_USE_TLS> \
   -e ALLOWED_HOSTS=<ALLOWED_HOSTS> \
+  -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> \
+  -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
   -p 8000:8000 \
   -v <path to data>:/config \
   --restart unless-stopped \
@@ -102,6 +104,8 @@ services:
       - EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>
       - EMAIL_USE_TLS=<EMAIL_USE_TLS>
       - ALLOWED_HOSTS=<ALLOWED_HOSTS>
+      - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
+      - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
     volumes:
       - <path to data>:/config
     ports:
@@ -127,6 +131,8 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<EMAIL_USE_TLS>` | Use TLS for SMTP |
 | `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server ["test.com","test2.com"] |
+| `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser emai |
+| `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
 | `-v /config` | database and healthchecks config |
 
 ## User / Group Identifiers
@@ -214,6 +220,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.10.19:** - Allow to create superuser
 * **12.04.19:** - Rebase to Alpine 3.9.
 * **23.03.19:** - Switching to new Base images, shift to arm32v7 tag.
 * **14.02.19:** - Adding mysql libs needed for using a database.
