@@ -45,6 +45,7 @@ app_setup_block: |
 # changelog
 changelogs:
   - { date: "23.10.19:", desc: "Allow to create superuser" }
+  - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
   - { date: "12.04.19:", desc: "Rebase to Alpine 3.9." }
   - { date: "23.03.19:", desc: "Switching to new Base images, shift to arm32v7 tag." }
   - { date: "14.02.19:", desc: "Adding mysql libs needed for using a database."}
