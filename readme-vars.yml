@@ -44,6 +44,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "31.10.19:", desc: "Add postgres client and fix config for CSRF." }
   - { date: "23.10.19:", desc: "Allow to create superuser" }
   - { date: "28.06.19:", desc: "Rebasing to alpine 3.10." }
   - { date: "12.04.19:", desc: "Rebase to Alpine 3.9." }
