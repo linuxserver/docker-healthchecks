@@ -24,6 +24,7 @@ RUN \
  echo "**** install runtime packages ****" && \
  apk add --no-cache --upgrade \
         mariadb-connector-c \
+	postgresql-client \
 	python3 \
 	uwsgi \
 	uwsgi-python3 && \
@@ -43,8 +44,7 @@ RUN \
  cd /app/healthchecks && \
  pip3 install --no-cache-dir -r requirements.txt && \
  pip3 install \
- 	mysqlclient \
-	postgres && \
+ 	mysqlclient && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
