@@ -23,7 +23,7 @@ RUN \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache --upgrade \
-	mariadb-connector-c \
+	mariadb-client \
 	postgresql-client \
 	python3 \
 	uwsgi \
@@ -43,8 +43,6 @@ RUN \
  echo "**** install pip packages ****" && \
  cd /app/healthchecks && \
  pip3 install --no-cache-dir -r requirements.txt && \
- pip3 install \
- 	mysqlclient && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
