@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.10
+FROM lsiobase/alpine:3.11
 
 # set version label
 ARG BUILD_DATE
@@ -26,7 +26,7 @@ RUN \
 	mariadb-connector-c \
 	python3 \
 	uwsgi \
-	uwsgi-python3 && \
+	uwsgi-python && \
  echo "**** install healthchecks ****" && \
  mkdir -p /app/healthchecks && \
  if [ -z ${HEALTHCHECKS_RELEASE+x} ]; then \
