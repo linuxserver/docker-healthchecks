@@ -32,9 +32,8 @@ mariadb-client-10.3.20-r0
 mariadb-common-10.3.20-r0
 musl-1.1.22-r3
 musl-utils-1.1.22-r3
-ncurses-libs-6.1_p20190518-r0
-ncurses-terminfo-6.1_p20190518-r0
-ncurses-terminfo-base-6.1_p20190518-r0
+ncurses-libs-6.1_p20190518-r2
+ncurses-terminfo-base-6.1_p20190518-r2
 pcre-8.43-r0
 postgresql-client-11.7-r0
 python3-3.7.5-r1
