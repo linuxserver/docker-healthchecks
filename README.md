@@ -79,7 +79,7 @@ docker create \
   -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
   -p 8000:8000 \
-  -v <path to data>:/config \
+  -v <path to data on host>:/config \
   --restart unless-stopped \
   linuxserver/healthchecks
 ```
@@ -111,7 +111,7 @@ services:
       - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
       - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
     volumes:
-      - <path to data>:/config
+      - <path to data on host>:/config
     ports:
       - 8000:8000
     restart: unless-stopped
@@ -126,18 +126,18 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 8000` | will map the container's port 8000 to port 8000 on the host |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e SITE_ROOT=<SITE_ROOT>` | The site's domain (i.e., example.com) |
-| `-e SITE_NAME=<SITE_NAME>` | The site's name |
+| `-e SITE_ROOT=<SITE_ROOT>` | The site's top-level URL (e.g., https://healthchecks.example.com) |
+| `-e SITE_NAME=<SITE_NAME>` | The site's name (e.g., "Example Corp HealthChecks") |
 | `-e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL>` | From email for alerts |
 | `-e EMAIL_HOST=<EMAIL_HOST>` | SMTP host |
 | `-e EMAIL_PORT=<EMAIL_PORT>` | SMTP port |
 | `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
-| `-e EMAIL_USE_TLS=<EMAIL_USE_TLS>` | Use TLS for SMTP |
-| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server ["test.com","test2.com"] |
+| `-e EMAIL_USE_TLS=<EMAIL_USE_TLS>` | Use TLS for SMTP (`True` or `False`) |
+| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` or `"*"` |
 | `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser emai |
 | `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
-| `-v /config` | database and healthchecks config |
+| `-v /config` | database and healthchecks config directory volume mapping |
 
 ## Environment variables from files (Docker secrets)
 
