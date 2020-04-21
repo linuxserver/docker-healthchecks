@@ -28,9 +28,9 @@ param_env_vars:
   - { env_var: "EMAIL_PORT", env_value: "<EMAIL_PORT>", desc: "SMTP port"}
   - { env_var: "EMAIL_HOST_USER", env_value: "<EMAIL_HOST_USER>", desc: "SMTP user"}
   - { env_var: "EMAIL_HOST_PASSWORD", env_value: "<EMAIL_HOST_PASSWORD>", desc: "SMTP password"}
-  - { env_var: "EMAIL_USE_TLS", env_value: "<EMAIL_USE_TLS>", desc: "Use TLS for SMTP"}
+  - { env_var: "EMAIL_USE_TLS", env_value: "<EMAIL_USE_TLS>", desc: "Use TLS for SMTP True or False"}
   - { env_var: "ALLOWED_HOSTS", env_value: "<ALLOWED_HOSTS>", desc: "array of valid hostnames for the server [\"test.com\",\"test2.com\"]"}
-  - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser emai"}
+  - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser email"}
   - { env_var: "SUPERUSER_PASSWORD", env_value: "<SUPERUSER_PASSWORD>", desc: "Superuser password"}
 
 param_usage_include_ports: true
