@@ -15,6 +15,7 @@ HC_CONF[EMAIL_PORT]=${EMAIL_PORT:-587}
 HC_CONF[EMAIL_HOST_USER]=${EMAIL_HOST_USER:-username}
 HC_CONF[EMAIL_HOST_PASSWORD]=${EMAIL_HOST_PASSWORD:-password}
 HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
+HC_CONF[REGISTRATION_OPEN]=${REGISTRATION_OPEN:-True}
 
 if [ ! -f "/config/local_settings.py" ]; then
 	# sed in values or skip if value not set
