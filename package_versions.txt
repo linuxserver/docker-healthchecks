@@ -32,8 +32,8 @@ mariadb-client-10.4.12-r0
 mariadb-common-10.4.12-r0
 musl-1.1.24-r2
 musl-utils-1.1.24-r2
-ncurses-libs-6.1_p20200118-r3
-ncurses-terminfo-base-6.1_p20200118-r3
+ncurses-libs-6.1_p20200118-r4
+ncurses-terminfo-base-6.1_p20200118-r4
 pcre-8.43-r0
 postgresql-client-12.2-r0
 python3-3.8.2-r0
@@ -42,7 +42,7 @@ scanelf-1.2.4-r0
 shadow-4.7-r1
 sqlite-libs-3.30.1-r1
 ssl_client-1.31.1-r9
-tzdata-2019c-r0
+tzdata-2020a-r0
 uwsgi-2.0.18-r7
 uwsgi-python3-2.0.18-r7
 xz-5.2.4-r0
