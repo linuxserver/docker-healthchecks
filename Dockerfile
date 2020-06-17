@@ -27,7 +27,8 @@ RUN \
 	postgresql-client \
 	python3 \
 	uwsgi \
-	uwsgi-python && \
+	uwsgi-python \
+	mariadb-connector-c-dev && \
  echo "**** install healthchecks ****" && \
  mkdir -p /app/healthchecks && \
  if [ -z ${HEALTHCHECKS_RELEASE+x} ]; then \
@@ -42,6 +43,7 @@ RUN \
 	/app/healthchecks/ --strip-components=1 && \
  echo "**** install pip packages ****" && \
  cd /app/healthchecks && \
+ pip3 install mysqlclient && \ 
  pip3 install --no-cache-dir -r requirements.txt && \
  echo "**** cleanup ****" && \
  apk del --purge \
