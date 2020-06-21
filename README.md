@@ -133,7 +133,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL>` | From email for alerts |
 | `-e EMAIL_HOST=<EMAIL_HOST>` | SMTP host |
 | `-e EMAIL_PORT=<EMAIL_PORT>` | SMTP port |
-| `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
+| `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user. Pass `-e "EMAIL_HOST_USER="` to disable authentication. |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<True or False>` | Use TLS for SMTP (`True` or `False`) |
 | `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` or `"*"` |
