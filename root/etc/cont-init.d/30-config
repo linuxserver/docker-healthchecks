@@ -27,7 +27,6 @@ if [ ! -f "/config/local_settings.py" ]; then
 			fi
 		fi
 	done
-	$CSRF_HOST = $(${HC_CONF[SITE_ROOT]}/)
 	echo "ALLOWED_HOSTS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
 	echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
 	echo "PING_ENDPOINT = SITE_ROOT + \"/ping/\"" >> /config/local_settings.py
