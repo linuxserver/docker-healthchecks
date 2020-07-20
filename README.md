@@ -245,6 +245,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **19.07.20:** - Rebasing to alpine 3.12, fixed 'ALLOWED_HOSTS' bug, now defaults to wildcard
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **31.10.19:** - Add postgres client and fix config for CSRF.
 * **23.10.19:** - Allow to create superuser

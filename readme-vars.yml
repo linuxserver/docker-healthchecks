@@ -44,6 +44,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "19.07.20:", desc: "Rebasing to alpine 3.12, fixed 'ALLOWED_HOSTS' bug, now defaults to wildcard" }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "31.10.19:", desc: "Add postgres client and fix config for CSRF." }
   - { date: "23.10.19:", desc: "Allow to create superuser" }
