@@ -8,6 +8,7 @@ declare -A HC_CONF
 HC_CONF[DEBUG]=${DEBUG:-False}
 HC_CONF[SITE_ROOT]=${SITE_ROOT:-https://healthchecks.example.com}
 HC_CONF[BASE_URL]=${BASE_URL:-healthchecks.example.com}
+HC_CONF[ALLOWED_HOSTS]=${ALLOWED_HOSTS:-\*}
 HC_CONF[SITE_NAME]=${SITE_NAME:-healthchecks}
 HC_CONF[DEFAULT_FROM_EMAIL]=${DEFAULT_FROM_EMAIL:-noreply@example.com}
 HC_CONF[EMAIL_HOST]=${EMAIL_HOST:-smtp.gmail.com}
@@ -27,8 +28,7 @@ if [ ! -f "/config/local_settings.py" ]; then
 			fi
 		fi
 	done
-	$CSRF_HOST = $(${HC_CONF[SITE_ROOT]}/)
-	echo "ALLOWED_HOSTS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
+	echo "ALLOWED_HOSTS = [\"${HC_CONF[ALLOWED_HOSTS]}\"]" >> /config/local_settings.py
 	echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
 fi
 
@@ -89,4 +89,3 @@ else:
     print('Superuser creation skipped. Already exists.');
 EOF
 fi
-

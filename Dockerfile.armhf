@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:arm32v7-3.11
+FROM lsiobase/alpine:arm32v7-3.12
 
 # set version label
 ARG BUILD_DATE
@@ -18,12 +18,11 @@ RUN \
 	musl-dev \
 	mysql \
 	postgresql-dev \
-	py3-pip \
 	python3-dev \
 	zlib-dev && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache --upgrade \
-        mariadb-client \
+	mariadb-client \
 	postgresql-client \
 	python3 \
 	uwsgi \
@@ -41,6 +40,8 @@ RUN \
  /tmp/healthchecks.tar.gz -C \
 	/app/healthchecks/ --strip-components=1 && \
  echo "**** install pip packages ****" && \
+ python3 -m ensurepip && \
+ rm -rf /usr/lib/python*/ensurepip && \
  cd /app/healthchecks && \
  pip3 install --no-cache-dir -r requirements.txt && \
  echo "**** cleanup ****" && \
