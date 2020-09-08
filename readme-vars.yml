@@ -32,6 +32,7 @@ param_env_vars:
   - { env_var: "ALLOWED_HOSTS", env_value: "<ALLOWED_HOSTS>", desc: "array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` or `\"*\"`"}
   - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser email"}
   - { env_var: "SUPERUSER_PASSWORD", env_value: "<SUPERUSER_PASSWORD>", desc: "Superuser password"}
+  - { env_var: "REGENERATE_SETTINGS", env_value: "True/False", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
 
 param_usage_include_ports: true
 param_ports:
