@@ -34,7 +34,7 @@ mariadb-client-10.4.15-r0
 mariadb-common-10.4.15-r0
 mariadb-connector-c-3.1.8-r1
 mariadb-connector-c-dev-3.1.8-r1
-musl-1.1.24-r9
+musl-1.1.24-r10
 musl-utils-1.1.24-r9
 ncurses-libs-6.2_p20200523-r0
 ncurses-terminfo-base-6.2_p20200523-r0
