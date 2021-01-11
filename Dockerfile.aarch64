@@ -14,6 +14,7 @@ RUN \
 	gcc \
 	git \
 	jpeg-dev \
+	libffi-dev \
 	mariadb-dev \
 	musl-dev \
 	mysql \
