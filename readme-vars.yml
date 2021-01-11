@@ -44,6 +44,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "11.01.21:", desc: "Add libffi-dev to allow building of python cryptography lib." }
   - { date: "19.07.20:", desc: "Rebasing to alpine 3.12, fixed 'ALLOWED_HOSTS' bug, now defaults to wildcard" }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }
   - { date: "31.10.19:", desc: "Add postgres client and fix config for CSRF." }
