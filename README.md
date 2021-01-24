@@ -130,7 +130,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 8000` | will map the container's port 8000 to port 8000 on the host |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e SITE_ROOT=<SITE_ROOT>` | The site's top-level URL (e.g., https://healthchecks.example.com) |
+| `-e SITE_ROOT=<SITE_ROOT>` | The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000) |
 | `-e SITE_NAME=<SITE_NAME>` | The site's name (e.g., "Example Corp HealthChecks") |
 | `-e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL>` | From email for alerts |
 | `-e EMAIL_HOST=<EMAIL_HOST>` | SMTP host |
