@@ -7,6 +7,8 @@ ARG HEALTHCHECKS_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="alex-phillips"
 
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=true
+
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --upgrade --virtual=build-dependencies \
