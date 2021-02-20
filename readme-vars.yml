@@ -33,6 +33,7 @@ param_env_vars:
   - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser email"}
   - { env_var: "SUPERUSER_PASSWORD", env_value: "<SUPERUSER_PASSWORD>", desc: "Superuser password"}
   - { env_var: "REGENERATE_SETTINGS", env_value: "True/False", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
+  - { env_var: "SECRET_KEY", env_value: "<SECRET_KEY>", desc: "Secures HTTP sessions, set to a random value"}
 
 param_usage_include_ports: true
 param_ports:
