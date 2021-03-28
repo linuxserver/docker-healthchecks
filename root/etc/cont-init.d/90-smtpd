@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/usr/bin/python3 /app/healthchecks/manage.py smtpd --port 2525 &

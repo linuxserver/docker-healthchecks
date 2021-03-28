@@ -17,6 +17,7 @@ HC_CONF[EMAIL_HOST_USER]=${EMAIL_HOST_USER-username}
 HC_CONF[EMAIL_HOST_PASSWORD]=${EMAIL_HOST_PASSWORD-password}
 HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
 HC_CONF[REGENERATE_SETTINGS]=${REGENERATE_SETTINGS:-False}
+HC_CONF[PING_EMAIL_DOMAIN]=${PING_EMAIL_DOMAIN:-False}
 
 if [ ! -f "/config/local_settings.py" ] || [[ ${HC_CONF[REGENERATE_SETTINGS]} == True ]]; then
 	# sed in values or skip if value not set
