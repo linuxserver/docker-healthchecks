@@ -2,7 +2,7 @@ alpine-baselayout-3.2.0-r7
 alpine-keys-2.2-r0
 apk-tools-2.10.5-r1
 bash-5.0.17-r0
-busybox-1.31.1-r19
+busybox-1.31.1-r20
 ca-certificates-20191127-r4
 ca-certificates-bundle-20191127-r4
 coreutils-8.32-r0
@@ -48,7 +48,7 @@ readline-8.0.4-r0
 scanelf-1.2.6-r0
 shadow-4.8.1-r0
 sqlite-libs-3.32.1-r0
-ssl_client-1.31.1-r19
+ssl_client-1.31.1-r20
 tzdata-2021a-r0
 uwsgi-2.0.18-r8
 uwsgi-python3-2.0.18-r8
