@@ -3,4 +3,4 @@
 cd /app/healthchecks || exit
 
 exec \
-	s6-setuidgid abc /usr/sbin/uwsgi uwsgi.ini
+    s6-setuidgid abc /usr/sbin/uwsgi uwsgi.ini

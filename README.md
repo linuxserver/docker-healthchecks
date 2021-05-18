@@ -255,6 +255,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **18.05.21:** - Add linuxserver wheel index.
 * **11.01.21:** - Add libffi-dev to allow building of python cryptography lib.
 * **19.07.20:** - Rebasing to alpine 3.12, fixed 'ALLOWED_HOSTS' bug, now defaults to wildcard
 * **19.12.19:** - Rebasing to alpine 3.11.
