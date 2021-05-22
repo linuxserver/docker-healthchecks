@@ -2,7 +2,7 @@
 
 # set default values for variables
 if [ -n "${SITE_ROOT}" ]; then
-	BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
+    BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
 fi
 declare -A HC_CONF
 HC_CONF[DEBUG]=${DEBUG:-False}
@@ -19,31 +19,31 @@ HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
 HC_CONF[REGENERATE_SETTINGS]=${REGENERATE_SETTINGS:-False}
 
 if [ ! -f "/config/local_settings.py" ] || [[ ${HC_CONF[REGENERATE_SETTINGS]} == True ]]; then
-	# sed in values or skip if value not set
-	for KEY in "${!HC_CONF[@]}"; do
-		if [[ ! ${HC_CONF[$KEY]} == "" ]]; then
-			if [[ ${HC_CONF[$KEY]} == False ]] || [[ ${HC_CONF[$KEY]} == True ]]; then
-				echo "$KEY = ${HC_CONF[$KEY]}" >> /config/local_settings.py
-			else
-				echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
-			fi
-		fi
-	done
-	echo "ALLOWED_HOSTS = [\"${HC_CONF[ALLOWED_HOSTS]}\"]" >> /config/local_settings.py
-	echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
-	echo "PING_ENDPOINT = SITE_ROOT + \"/ping/\"" >> /config/local_settings.py
+    # sed in values or skip if value not set
+    for KEY in "${!HC_CONF[@]}"; do
+        if [[ ! ${HC_CONF[$KEY]} == "" ]]; then
+            if [[ ${HC_CONF[$KEY]} == False ]] || [[ ${HC_CONF[$KEY]} == True ]]; then
+                echo "$KEY = ${HC_CONF[$KEY]}" >> /config/local_settings.py
+            else
+                echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
+            fi
+        fi
+    done
+    echo "ALLOWED_HOSTS = [\"${HC_CONF[ALLOWED_HOSTS]}\"]" >> /config/local_settings.py
+    echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
+    echo "PING_ENDPOINT = SITE_ROOT + \"/ping/\"" >> /config/local_settings.py
 fi
 
 if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
-	ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
+    ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
 fi
 
 if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
-	ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
+    ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
 if [ ! -d "/config/img" ]; then
-	mkdir /config/img
+    mkdir /config/img
 fi
 
 mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
@@ -58,18 +58,18 @@ logo-full@2x.png
 logo-full.png"
 for f in $FILES
 do
-	if [ ! -f "/config/img/$f" ]; then
-		cp "/app/healthchecks/static/img/$f" "/config/img/$f"
-	fi
+    if [ ! -f "/config/img/$f" ]; then
+        cp "/app/healthchecks/static/img/$f" "/config/img/$f"
+    fi
 
-	rm "/app/healthchecks/static/img/$f" > /dev/null 2>&1
-	ln -s "/config/img/$f" "/app/healthchecks/static/img/$f"
+    rm "/app/healthchecks/static/img/$f" > /dev/null 2>&1
+    ln -s "/config/img/$f" "/app/healthchecks/static/img/$f"
 done
 
 # permissions
 chown -R abc:abc \
-	/app/healthchecks \
-	/config
+    /app/healthchecks \
+    /config
 
 cd /app/healthchecks || exit
 
