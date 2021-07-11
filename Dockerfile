@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.12
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 
 # set version label
 ARG BUILD_DATE
@@ -13,12 +13,10 @@ RUN \
     cargo \
     curl \
     gcc \
-    git \
     jpeg-dev \
     libffi-dev \
     mariadb-dev \
     musl-dev \
-    mysql \
     postgresql-dev \
     python3-dev \
     zlib-dev && \
@@ -46,7 +44,9 @@ RUN \
   python3 -m ensurepip && \
   rm -rf /usr/lib/python*/ensurepip && \
   cd /app/healthchecks && \
-  pip3 install mysqlclient && \ 
+  pip3 install \
+    mysqlclient \
+    wheel && \ 
   pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ -r requirements.txt && \
   echo "**** cleanup ****" && \
   apk del --purge \
