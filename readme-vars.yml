@@ -45,6 +45,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "11.07.21:", desc: "Rebase to Alpine 3.14." }
   - { date: "18.05.21:", desc: "Add linuxserver wheel index." }
   - { date: "11.01.21:", desc: "Add libffi-dev to allow building of python cryptography lib." }
   - { date: "19.07.20:", desc: "Rebasing to alpine 3.12, fixed 'ALLOWED_HOSTS' bug, now defaults to wildcard" }
