@@ -87,7 +87,8 @@ services:
       - ALLOWED_HOSTS=<ALLOWED_HOSTS>
       - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
       - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
-      - REGENERATE_SETTINGS=True/False
+      - REGENERATE_SETTINGS=True/False #optional
+      - SITE_LOGO_URL=<SITE_LOGO_URL> #optional
     volumes:
       - <path to data on host>:/config
     ports:
@@ -113,7 +114,8 @@ docker run -d \
   -e ALLOWED_HOSTS=<ALLOWED_HOSTS> \
   -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
-  -e REGENERATE_SETTINGS=True/False \
+  -e REGENERATE_SETTINGS=True/False `#optional` \
+  -e SITE_LOGO_URL=<SITE_LOGO_URL> `#optional` \
   -p 8000:8000 \
   -v <path to data on host>:/config \
   --restart unless-stopped \
@@ -141,6 +143,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser email |
 | `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
 | `-e REGENERATE_SETTINGS=True/False` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
+| `-e SITE_LOGO_URL=<SITE_LOGO_URL>` | Custom site logo URL |
 | `-v /config` | database and healthchecks config directory volume mapping |
 
 ## Environment variables from files (Docker secrets)
@@ -252,6 +255,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **07.08.21:** - Update custom logo handling to support changes in v1.22.0
 * **11.07.21:** - Rebase to Alpine 3.14.
 * **18.05.21:** - Add linuxserver wheel index.
 * **11.01.21:** - Add libffi-dev to allow building of python cryptography lib.
