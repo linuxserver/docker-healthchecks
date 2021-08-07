@@ -32,7 +32,10 @@ param_env_vars:
   - { env_var: "ALLOWED_HOSTS", env_value: "<ALLOWED_HOSTS>", desc: "array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` or `\"*\"`"}
   - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser email"}
   - { env_var: "SUPERUSER_PASSWORD", env_value: "<SUPERUSER_PASSWORD>", desc: "Superuser password"}
+opt_param_usage_include_env: true
+opt_param_env_vars:
   - { env_var: "REGENERATE_SETTINGS", env_value: "True/False", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
+  - { env_var: "SITE_LOGO_URL", env_value: "<SITE_LOGO_URL>", desc: "Custom site logo URL"}
 
 param_usage_include_ports: true
 param_ports:
@@ -45,6 +48,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "07.08.21:", desc: "Update custom logo handling to support changes in v1.22.0" }
   - { date: "11.07.21:", desc: "Rebase to Alpine 3.14." }
   - { date: "18.05.21:", desc: "Add linuxserver wheel index." }
   - { date: "11.01.21:", desc: "Add libffi-dev to allow building of python cryptography lib." }
