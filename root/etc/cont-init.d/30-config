@@ -4,36 +4,34 @@
 if [ -n "${SITE_ROOT}" ]; then
     BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
 fi
-declare -A HC_CONF
-HC_CONF[DEBUG]=${DEBUG:-False}
-HC_CONF[SITE_ROOT]=${SITE_ROOT:-https://healthchecks.example.com}
-HC_CONF[BASE_URL]=${BASE_URL:-healthchecks.example.com}
-HC_CONF[ALLOWED_HOSTS]=${ALLOWED_HOSTS:-\*}
-HC_CONF[SITE_NAME]=${SITE_NAME:-healthchecks}
-HC_CONF[DEFAULT_FROM_EMAIL]=${DEFAULT_FROM_EMAIL:-noreply@example.com}
-HC_CONF[EMAIL_HOST]=${EMAIL_HOST:-smtp.gmail.com}
-HC_CONF[EMAIL_PORT]=${EMAIL_PORT:-587}
-HC_CONF[EMAIL_HOST_USER]=${EMAIL_HOST_USER-username}
-HC_CONF[EMAIL_HOST_PASSWORD]=${EMAIL_HOST_PASSWORD-password}
-HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
-HC_CONF[REGENERATE_SETTINGS]=${REGENERATE_SETTINGS:-False}
-HC_CONF[SITE_LOGO_URL]=${SITE_LOGO_URL:-}
 
-if [ ! -f "/config/local_settings.py" ] || [[ ${HC_CONF[REGENERATE_SETTINGS]} == True ]]; then
-    # sed in values or skip if value not set
-    for KEY in "${!HC_CONF[@]}"; do
-        if [[ ! ${HC_CONF[$KEY]} == "" ]]; then
-            if [[ ${HC_CONF[$KEY]} == False ]] || [[ ${HC_CONF[$KEY]} == True ]]; then
-                echo "$KEY = ${HC_CONF[$KEY]}" >> /config/local_settings.py
-            else
-                echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
-            fi
+HC_CONF=(DEBUG EMAIL_USE_TLS SITE_ROOT SITE_NAME DEFAULT_FROM_EMAIL EMAIL_HOST EMAIL_PORT EMAIL_HOST_USER EMAIL_HOST_PASSWORD SITE_LOGO_URL ALLOWED_HOSTS)
+
+function insert_config() {
+    if grep -E "^$1 = " /config/local_settings.py; then
+        sed -i "s/^$1 = .*\n\$/$1 = $2/" /config/local_settings.py
+    else
+        echo "$1 = $2" >> /config/local_settings.py
+    fi
+}
+
+if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True" ]]; then
+    for CONF in "${HC_CONF[@]}"; do
+        if [[ -n "${!CONF}" ]]; then
+		if [[ "${!CONF}" == "True" ]] || [[ "${!CONF}" == "False" ]] || [[ "${!CONF:0:1}" == "[" ]]; then #booleans or arrays
+			insert_config "$CONF" "${!CONF}"
+                else
+                        insert_config "$CONF" "\"${!CONF}\""
+                fi
         fi
     done
-    echo "ALLOWED_HOSTS = [\"${HC_CONF[ALLOWED_HOSTS]}\"]" >> /config/local_settings.py
-    echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
-    echo "PING_ENDPOINT = SITE_ROOT + \"/ping/\"" >> /config/local_settings.py
+    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${BASE_URL}\"]"
 fi
+
+if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py; then
+    insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 16 ; echo '')\""
+fi
+    
 
 if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
     ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
