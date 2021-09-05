@@ -2,20 +2,79 @@
 
 # set default values for variables
 if [ -n "${SITE_ROOT}" ]; then
-    BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
+    BASE_URL=$(echo "${SITE_ROOT}" | sed -E 's/https?:\/\///' | awk -F/ '{ print $1 }' )
 fi
 
-HC_CONF=(DEBUG EMAIL_USE_TLS SITE_ROOT SITE_NAME DEFAULT_FROM_EMAIL EMAIL_HOST EMAIL_PORT EMAIL_HOST_USER EMAIL_HOST_PASSWORD SITE_LOGO_URL ALLOWED_HOSTS)
+#From https://healthchecks.io/docs/self_hosted_configuration/
+HC_CONF=(
+ALLOWED_HOSTS
+APPRISE_ENABLED
+DEBUG
+DEFAULT_FROM_EMAIL
+DISCORD_CLIENT_ID
+DISCORD_CLIENT_SECRET
+EMAIL_HOST
+EMAIL_HOST_PASSWORD
+EMAIL_HOST_USER
+EMAIL_PORT
+EMAIL_USE_TLS
+EMAIL_USE_VERIFICATION
+LINENOTIFY_CLIENT_ID
+LINENOTIFY_CLIENT_SECRET
+MASTER_BADGE_LABEL
+MATRIX_ACCESS_TOKEN
+MATRIX_HOMESERVER
+MATRIX_USER_ID
+MATTERMOST_ENABLED
+MSTEAMS_ENABLED
+OPSGENIE_ENABLED
+PAGERTREE_ENABLED
+PD_APP_ID
+PD_ENABLED
+PING_BODY_LIMIT
+PING_EMAIL_DOMAIN
+PING_ENDPOINT
+PROMETHEUS_ENABLED
+PUSHBULLET_CLIENT_ID
+PUSHBULLET_CLIENT_SECRET
+PUSHOVER_API_TOKEN
+PUSHOVER_EMERGENCY_EXPIRATION
+PUSHOVER_EMERGENCY_RETRY_DELAY
+PUSHOVER_SUBSCRIPTION_URL
+REGISTRATION_OPEN
+REMOTE_USER_HEADER
+RP_ID
+SHELL_ENABLED
+SIGNAL_CLI_ENABLED
+SITE_LOGO_URL
+SITE_NAME
+SITE_ROOT
+SLACK_CLIENT_ID
+SLACK_CLIENT_SECRET
+SLACK_ENABLED
+SPIKE_ENABLED
+TELEGRAM_BOT_NAME
+TELEGRAM_TOKEN
+TRELLO_APP_KEY
+TWILIO_ACCOUNT
+TWILIO_AUTH
+TWILIO_FROM
+TWILIO_USE_WHATSAPP
+VICTOROPS_ENABLED
+WEBHOOKS_ENABLED
+ZULIP_ENABLED
+)
 
 function insert_config() {
-    if grep -E "^$1 = " /config/local_settings.py; then
-        sed -i "s/^$1 = .*\n\$/$1 = $2/" /config/local_settings.py
+    if grep -E "^$1 = " /config/local_settings.py &> /dev/null; then
+        sed -i -E "s|^$1 = .*\$|$1 = $2|" /config/local_settings.py
     else
         echo "$1 = $2" >> /config/local_settings.py
     fi
 }
 
 if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True" ]]; then
+    touch /config/local_settings.py
     for CONF in "${HC_CONF[@]}"; do
         if [[ -n "${!CONF}" ]]; then
 		if [[ "${!CONF}" == "True" ]] || [[ "${!CONF}" == "False" ]] || [[ "${!CONF:0:1}" == "[" ]]; then #booleans or arrays
@@ -28,8 +87,8 @@ if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True"
     insert_config "CSRF_TRUSTED_ORIGINS" "[\"${BASE_URL}\"]"
 fi
 
-if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py; then
-    insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 16 ; echo '')\""
+if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
+    insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo '')\""
 fi
     
 
