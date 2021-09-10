@@ -48,6 +48,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "10.09.21:", desc: "Fix creation of superuser"}
   - { date: "07.08.21:", desc: "Update custom logo handling to support changes in v1.22.0" }
   - { date: "11.07.21:", desc: "Rebase to Alpine 3.14." }
   - { date: "18.05.21:", desc: "Add linuxserver wheel index." }
