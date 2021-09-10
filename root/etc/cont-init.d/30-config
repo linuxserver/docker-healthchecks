@@ -58,13 +58,17 @@ if [ -n "$SUPERUSER_EMAIL" ] && [ -n "$SUPERUSER_PASSWORD" ];
 then
 cat << EOF | s6-setuidgid abc python3 /app/healthchecks/manage.py shell
 from django.contrib.auth.models import User;
+from hc.accounts.views import _make_user; 
 
-username = 'admin';
 password = '$SUPERUSER_PASSWORD';
 email = '$SUPERUSER_EMAIL';
 
-if User.objects.filter(username=username).count()==0:
-    User.objects.create_superuser(username, email, password);
+if User.objects.filter(email=email).count()==0:
+    user = _make_user(email);
+    user.set_password(password); 
+    user.is_staff = True;
+    user.is_superuser = True;
+    user.save();
     print('Superuser created.');
 else:
     print('Superuser creation skipped. Already exists.');
