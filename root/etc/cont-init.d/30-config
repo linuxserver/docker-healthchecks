@@ -1,5 +1,11 @@
 #!/usr/bin/with-contenv bash
 
+if [ -d /app/healthchecks-tmp ]; then
+    echo "New container detected. Setting up app folder and fixing permissions."
+    mv /app/healthchecks-tmp /app/healthchecks
+    chown -R abc:abc /app
+fi
+
 # set default values for variables
 if [ -n "${SITE_ROOT}" ]; then
     BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
@@ -47,7 +53,6 @@ mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
 
 # permissions
 chown -R abc:abc \
-    /app/healthchecks \
     /config
 
 cd /app/healthchecks || exit

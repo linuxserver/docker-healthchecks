@@ -46,8 +46,10 @@ RUN \
   cd /app/healthchecks && \
   pip3 install \
     mysqlclient \
-    wheel && \ 
+    wheel && \
   pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ -r requirements.txt && \
+  echo "**** overlay-fs bug workaround ****" && \
+  mv /app/healthchecks /app/healthchecks-tmp && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
