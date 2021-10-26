@@ -90,6 +90,7 @@ services:
       - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
       - REGENERATE_SETTINGS=True/False #optional
       - SITE_LOGO_URL=<SITE_LOGO_URL> #optional
+      - SECRET_KEY=<SECRET_KEY> #optional
     volumes:
       - <path to data on host>:/config
     ports:
@@ -117,6 +118,7 @@ docker run -d \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
   -e REGENERATE_SETTINGS=True/False `#optional` \
   -e SITE_LOGO_URL=<SITE_LOGO_URL> `#optional` \
+  -e SECRET_KEY=<SECRET_KEY> `#optional` \
   -p 8000:8000 \
   -v <path to data on host>:/config \
   --restart unless-stopped \
@@ -140,11 +142,12 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<True or False>` | Use TLS for SMTP (`True` or `False`) |
-| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` or `"*"` |
+| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`) |
 | `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser email |
 | `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
 | `-e REGENERATE_SETTINGS=True/False` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
 | `-e SITE_LOGO_URL=<SITE_LOGO_URL>` | Custom site logo URL |
+| `-e SECRET_KEY=<SECRET_KEY>` | A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist |
 | `-v /config` | database and healthchecks config directory volume mapping |
 
 ## Environment variables from files (Docker secrets)
