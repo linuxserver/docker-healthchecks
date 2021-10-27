@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-/usr/bin/python3 /app/healthchecks/manage.py smtpd --port 2525 &
+
+if [[ ! -z "$PING_EMAIL_DOMAIN" ]]; then
+    /usr/bin/python3 /app/healthchecks/manage.py smtpd --port 2525 &
+fi
