@@ -1,8 +1,14 @@
 #!/usr/bin/with-contenv bash
 
+if [ -d /app/healthchecks-tmp ]; then
+    echo "New container detected. Setting up app folder and fixing permissions."
+    mv /app/healthchecks-tmp /app/healthchecks
+    chown -R abc:abc /app
+fi
+
 # set default values for variables
 if [ -n "${SITE_ROOT}" ]; then
-	BASE_URL=$(echo "${SITE_ROOT}"| awk -F[/:] '{print $4}')
+    BASE_URL=$(echo "${SITE_ROOT}" | sed -E 's/https?:\/\///' | awk -F/ '{ print $1 }' )
 fi
 declare -A HC_CONF
 HC_CONF[DEBUG]=${DEBUG:-False}
@@ -19,58 +25,106 @@ HC_CONF[EMAIL_USE_TLS]=${EMAIL_USE_TLS:-True}
 HC_CONF[REGENERATE_SETTINGS]=${REGENERATE_SETTINGS:-False}
 HC_CONF[PING_EMAIL_DOMAIN]=${PING_EMAIL_DOMAIN:-False}
 
-if [ ! -f "/config/local_settings.py" ] || [[ ${HC_CONF[REGENERATE_SETTINGS]} == True ]]; then
-	# sed in values or skip if value not set
-	for KEY in "${!HC_CONF[@]}"; do
-		if [[ ! ${HC_CONF[$KEY]} == "" ]]; then
-			if [[ ${HC_CONF[$KEY]} == False ]] || [[ ${HC_CONF[$KEY]} == True ]]; then
-				echo "$KEY = ${HC_CONF[$KEY]}" >> /config/local_settings.py
-			else
-				echo "$KEY = \"${HC_CONF[$KEY]}\"" >> /config/local_settings.py
-			fi
-		fi
-	done
-	echo "ALLOWED_HOSTS = [\"${HC_CONF[ALLOWED_HOSTS]}\"]" >> /config/local_settings.py
-	echo "CSRF_TRUSTED_ORIGINS = [\"${HC_CONF[BASE_URL]}\"]" >> /config/local_settings.py
-	echo "PING_ENDPOINT = SITE_ROOT + \"/ping/\"" >> /config/local_settings.py
+#From https://healthchecks.io/docs/self_hosted_configuration/
+HC_CONF=(
+ALLOWED_HOSTS
+APPRISE_ENABLED
+DEBUG
+DEFAULT_FROM_EMAIL
+DISCORD_CLIENT_ID
+DISCORD_CLIENT_SECRET
+EMAIL_HOST
+EMAIL_HOST_PASSWORD
+EMAIL_HOST_USER
+EMAIL_PORT
+EMAIL_USE_TLS
+EMAIL_USE_VERIFICATION
+LINENOTIFY_CLIENT_ID
+LINENOTIFY_CLIENT_SECRET
+MASTER_BADGE_LABEL
+MATRIX_ACCESS_TOKEN
+MATRIX_HOMESERVER
+MATRIX_USER_ID
+MATTERMOST_ENABLED
+MSTEAMS_ENABLED
+OPSGENIE_ENABLED
+PAGERTREE_ENABLED
+PD_APP_ID
+PD_ENABLED
+PING_BODY_LIMIT
+PING_EMAIL_DOMAIN
+PING_ENDPOINT
+PROMETHEUS_ENABLED
+PUSHBULLET_CLIENT_ID
+PUSHBULLET_CLIENT_SECRET
+PUSHOVER_API_TOKEN
+PUSHOVER_EMERGENCY_EXPIRATION
+PUSHOVER_EMERGENCY_RETRY_DELAY
+PUSHOVER_SUBSCRIPTION_URL
+REGISTRATION_OPEN
+REMOTE_USER_HEADER
+RP_ID
+SHELL_ENABLED
+SIGNAL_CLI_ENABLED
+SITE_LOGO_URL
+SITE_NAME
+SITE_ROOT
+SLACK_CLIENT_ID
+SLACK_CLIENT_SECRET
+SLACK_ENABLED
+SPIKE_ENABLED
+TELEGRAM_BOT_NAME
+TELEGRAM_TOKEN
+TRELLO_APP_KEY
+TWILIO_ACCOUNT
+TWILIO_AUTH
+TWILIO_FROM
+TWILIO_USE_WHATSAPP
+VICTOROPS_ENABLED
+WEBHOOKS_ENABLED
+ZULIP_ENABLED
+)
+
+function insert_config() {
+    if grep -E "^$1 = " /config/local_settings.py &> /dev/null; then
+        sed -i -E "s|^$1 = .*\$|$1 = $2|" /config/local_settings.py
+    else
+        echo "$1 = $2" >> /config/local_settings.py
+    fi
+}
+
+if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True" ]]; then
+    touch /config/local_settings.py
+    for CONF in "${HC_CONF[@]}"; do
+        if [[ -n "${!CONF}" ]]; then
+             if [[ "${!CONF}" == "True" ]] || [[ "${!CONF}" == "False" ]] || [[ "${!CONF:0:1}" == "[" ]]; then #booleans or arrays
+                 insert_config "$CONF" "${!CONF}"
+             else
+                 insert_config "$CONF" "\"${!CONF}\""
+             fi
+        fi
+    done
+    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${BASE_URL}\"]"
 fi
 
+if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
+    insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo '')\""
+fi
+    
+
 if [ ! -f "/app/healthchecks/hc/local_settings.py" ]; then
-	ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
+    ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
 fi
 
 if [ ! -f "/app/healthchecks/hc.sqlite" ]; then
-	ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
-fi
-
-if [ ! -d "/config/img" ]; then
-	mkdir /config/img
+    ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
 mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
 
-# copy over configurable logo files
-FILES="favicon.ico
-apple-touch-180.png
-logo@2x.png
-logo.png
-logo-512-green.png
-logo-full@2x.png
-logo-full.png"
-for f in $FILES
-do
-	if [ ! -f "/config/img/$f" ]; then
-		cp "/app/healthchecks/static/img/$f" "/config/img/$f"
-	fi
-
-	rm "/app/healthchecks/static/img/$f" > /dev/null 2>&1
-	ln -s "/config/img/$f" "/app/healthchecks/static/img/$f"
-done
-
 # permissions
 chown -R abc:abc \
-	/app/healthchecks \
-	/config
+    /config
 
 cd /app/healthchecks || exit
 
@@ -80,13 +134,17 @@ if [ -n "$SUPERUSER_EMAIL" ] && [ -n "$SUPERUSER_PASSWORD" ];
 then
 cat << EOF | s6-setuidgid abc python3 /app/healthchecks/manage.py shell
 from django.contrib.auth.models import User;
+from hc.accounts.views import _make_user; 
 
-username = 'admin';
 password = '$SUPERUSER_PASSWORD';
 email = '$SUPERUSER_EMAIL';
 
-if User.objects.filter(username=username).count()==0:
-    User.objects.create_superuser(username, email, password);
+if User.objects.filter(email=email).count()==0:
+    user = _make_user(email);
+    user.set_password(password); 
+    user.is_staff = True;
+    user.is_superuser = True;
+    user.save();
     print('Superuser created.');
 else:
     print('Superuser creation skipped. Already exists.');
