@@ -45,9 +45,9 @@ RUN \
   rm -rf /usr/lib/python*/ensurepip && \
   cd /app/healthchecks && \
   pip3 install \
+    apprise \
     mysqlclient \
-    wheel \
-    apprise && \
+    wheel && \
   pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ -r requirements.txt && \
   echo "**** overlay-fs bug workaround ****" && \
   mv /app/healthchecks /app/healthchecks-tmp && \
