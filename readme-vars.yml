@@ -37,6 +37,7 @@ opt_param_env_vars:
   - { env_var: "REGENERATE_SETTINGS", env_value: "True/False", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
   - { env_var: "SITE_LOGO_URL", env_value: "<SITE_LOGO_URL>", desc: "Custom site logo URL"}
   - { env_var: "SECRET_KEY", env_value: "<SECRET_KEY>", desc: "A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist" }
+  - { env_var: "APPRISE_ENABLED", env_value: "True/False", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
 
 param_usage_include_ports: true
 param_ports:
