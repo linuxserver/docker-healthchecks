@@ -6,11 +6,6 @@ if [ -d /app/healthchecks-tmp ]; then
     chown -R abc:abc /app
 fi
 
-# set default values for variables
-if [ -n "${SITE_ROOT}" ]; then
-    BASE_URL=$(echo "${SITE_ROOT}" | sed -E 's/https?:\/\///' | awk -F/ '{ print $1 }' )
-fi
-
 #From https://healthchecks.io/docs/self_hosted_configuration/
 HC_CONF=(
 ALLOWED_HOSTS
@@ -90,7 +85,7 @@ if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True"
              fi
         fi
     done
-    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${BASE_URL}\"]"
+    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
 fi
 
 if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
