@@ -92,6 +92,7 @@ services:
       - REGENERATE_SETTINGS=True/False #optional
       - SITE_LOGO_URL=<SITE_LOGO_URL> #optional
       - SECRET_KEY=<SECRET_KEY> #optional
+      - APPRISE_ENABLED=True/False #optional
     volumes:
       - <path to data on host>:/config
     ports:
@@ -120,6 +121,7 @@ docker run -d \
   -e REGENERATE_SETTINGS=True/False `#optional` \
   -e SITE_LOGO_URL=<SITE_LOGO_URL> `#optional` \
   -e SECRET_KEY=<SECRET_KEY> `#optional` \
+  -e APPRISE_ENABLED=True/False `#optional` \
   -p 8000:8000 \
   -v <path to data on host>:/config \
   --restart unless-stopped \
@@ -149,6 +151,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e REGENERATE_SETTINGS=True/False` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
 | `-e SITE_LOGO_URL=<SITE_LOGO_URL>` | Custom site logo URL |
 | `-e SECRET_KEY=<SECRET_KEY>` | A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist |
+| `-e APPRISE_ENABLED=True/False` | Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise) |
 | `-v /config` | database and healthchecks config directory volume mapping |
 
 ## Environment variables from files (Docker secrets)
@@ -261,6 +264,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 ## Versions
 
 * **08.01.22:** - Fix CSRF setting for Django 4.0 (introduced in v1.25.0)
+* **11.11.21:** - Add Apprise to Docker as in v1.24.0
 * **10.09.21:** - Fix creation of superuser
 * **07.08.21:** - Update custom logo handling to support changes in v1.22.0
 * **11.07.21:** - Rebase to Alpine 3.14.
