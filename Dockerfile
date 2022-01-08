@@ -45,6 +45,7 @@ RUN \
   rm -rf /usr/lib/python*/ensurepip && \
   cd /app/healthchecks && \
   pip3 install \
+    apprise \
     mysqlclient \
     wheel && \
   pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ -r requirements.txt && \
