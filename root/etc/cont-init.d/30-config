@@ -90,7 +90,7 @@ if [ ! -f "/config/local_settings.py" ] || [[ "${REGENERATE_SETTINGS}" == "True"
              fi
         fi
     done
-    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${BASE_URL}\"]"
+    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
 fi
 
 if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
