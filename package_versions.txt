@@ -19,7 +19,7 @@ libffi-3.3-r2
 libgcc-10.3.1_git20210424-r2
 libintl-0.21-r0
 libldap-2.4.58-r0
-libpq-13.5-r0
+libpq-13.6-r0
 libproc-3.3.17-r0
 libretls-3.3.3p1-r2
 libsasl-2.1.27-r12
@@ -40,7 +40,7 @@ ncurses-terminfo-base-6.2_p20210612-r0
 openssl-dev-1.1.1l-r0
 pcre-8.44-r0
 pkgconf-1.7.4-r0
-postgresql-client-13.5-r0
+postgresql-client-13.6-r0
 procps-3.3.17-r0
 python3-3.9.5-r2
 readline-8.1.0-r0
