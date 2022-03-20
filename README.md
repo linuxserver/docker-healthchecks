@@ -86,11 +86,11 @@ services:
       - EMAIL_HOST_USER=<EMAIL_HOST_USER>
       - EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>
       - EMAIL_USE_TLS=<True or False>
-      - ALLOWED_HOSTS=<ALLOWED_HOSTS>
       - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
       - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
       - REGENERATE_SETTINGS=True/False #optional
       - SITE_LOGO_URL=<SITE_LOGO_URL> #optional
+      - ALLOWED_HOSTS=<ALLOWED_HOSTS> #optional
       - SECRET_KEY=<SECRET_KEY> #optional
       - APPRISE_ENABLED=True/False #optional
     volumes:
@@ -115,11 +115,11 @@ docker run -d \
   -e EMAIL_HOST_USER=<EMAIL_HOST_USER> \
   -e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD> \
   -e EMAIL_USE_TLS=<True or False> \
-  -e ALLOWED_HOSTS=<ALLOWED_HOSTS> \
   -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> \
   -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
   -e REGENERATE_SETTINGS=True/False `#optional` \
   -e SITE_LOGO_URL=<SITE_LOGO_URL> `#optional` \
+  -e ALLOWED_HOSTS=<ALLOWED_HOSTS> `#optional` \
   -e SECRET_KEY=<SECRET_KEY> `#optional` \
   -e APPRISE_ENABLED=True/False `#optional` \
   -p 8000:8000 \
@@ -145,11 +145,11 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
 | `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
 | `-e EMAIL_USE_TLS=<True or False>` | Use TLS for SMTP (`True` or `False`) |
-| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`) |
 | `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser email |
 | `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
 | `-e REGENERATE_SETTINGS=True/False` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
 | `-e SITE_LOGO_URL=<SITE_LOGO_URL>` | Custom site logo URL |
+| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`) |
 | `-e SECRET_KEY=<SECRET_KEY>` | A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist |
 | `-e APPRISE_ENABLED=True/False` | Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise) |
 | `-v /config` | database and healthchecks config directory volume mapping |
