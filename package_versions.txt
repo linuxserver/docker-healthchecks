@@ -1,7 +1,7 @@
 alpine-baselayout-3.2.0-r16
 alpine-keys-2.4-r0
 apk-tools-2.12.7-r0
-bash-5.1.4-r0
+bash-5.1.16-r0
 busybox-1.33.1-r6
 ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
@@ -21,8 +21,8 @@ libintl-0.21-r0
 libldap-2.4.58-r0
 libpq-13.6-r0
 libproc-3.3.17-r0
-libretls-3.3.3p1-r2
-libsasl-2.1.27-r12
+libretls-3.3.3p1-r3
+libsasl-2.1.28-r0
 libssl1.1-1.1.1n-r0
 libstdc++-10.3.1_git20210424-r2
 libxml2-2.9.13-r0
@@ -50,7 +50,7 @@ shadow-4.8.1-r0
 skalibs-2.10.0.3-r0
 sqlite-libs-3.35.5-r0
 ssl_client-1.33.1-r6
-tzdata-2021e-r0
+tzdata-2022a-r0
 utmps-0.1.0.2-r0
 uwsgi-2.0.19.1-r2
 uwsgi-python3-2.0.19.1-r2
