@@ -28,8 +28,8 @@ libstdc++-10.3.1_git20210424-r2
 libxml2-2.9.14-r0
 linux-pam-1.5.1-r1
 mailcap-2.1.52-r0
-mariadb-client-10.5.15-r0
-mariadb-common-10.5.15-r0
+mariadb-client-10.5.16-r0
+mariadb-common-10.5.16-r0
 mariadb-connector-c-3.1.13-r0
 mariadb-connector-c-dev-3.1.13-r0
 mpdecimal-2.5.1-r1
