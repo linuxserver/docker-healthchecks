@@ -31,8 +31,8 @@ libstdc++-10.3.1_git20210424-r2
 libxml2-2.9.14-r1
 linux-pam-1.5.1-r1
 mailcap-2.1.52-r0
-mariadb-client-10.5.16-r0
-mariadb-common-10.5.16-r0
+mariadb-client-10.5.17-r0
+mariadb-common-10.5.17-r0
 mariadb-connector-c-3.1.13-r0
 mariadb-connector-c-dev-3.1.13-r0
 mpdecimal-2.5.1-r1
@@ -54,7 +54,7 @@ shadow-4.8.1-r0
 skalibs-2.10.0.3-r0
 sqlite-libs-3.35.5-r0
 ssl_client-1.33.1-r8
-tzdata-2022a-r0
+tzdata-2022c-r0
 utmps-0.1.0.2-r0
 uwsgi-2.0.19.1-r2
 uwsgi-python3-2.0.19.1-r2
