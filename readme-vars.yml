@@ -50,6 +50,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "27.09.22:", desc: "Fix sending of Email Reports"}
   - { date: "08.01.22:", desc: "Fix CSRF setting for Django 4.0 (introduced in v1.25.0)"}
   - { date: "11.11.21:", desc: "Add Apprise to Docker as in v1.24.0"}
   - { date: "10.09.21:", desc: "Fix creation of superuser"}
