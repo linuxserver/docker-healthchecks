@@ -18,26 +18,26 @@ available_architectures:
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "<path to data on host>", desc: "database and healthchecks config directory volume mapping" }
+  - { vol_path: "/config", vol_host_path: "/path/to/data", desc: "Database and healthchecks config directory" }
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "SITE_ROOT", env_value: "<SITE_ROOT>", desc: "The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)" }
-  - { env_var: "SITE_NAME", env_value: "<SITE_NAME>", desc: "The site's name (e.g., \"Example Corp HealthChecks\")"}
-  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "<DEFAULT_FROM_EMAIL>", desc: "From email for alerts" }
-  - { env_var: "EMAIL_HOST", env_value: "<EMAIL_HOST>", desc: "SMTP host" }
-  - { env_var: "EMAIL_PORT", env_value: "<EMAIL_PORT>", desc: "SMTP port"}
-  - { env_var: "EMAIL_HOST_USER", env_value: "<EMAIL_HOST_USER>", desc: "SMTP user"}
-  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "<EMAIL_HOST_PASSWORD>", desc: "SMTP password"}
-  - { env_var: "EMAIL_USE_TLS", env_value: "<True or False>", desc: "Use TLS for SMTP (`True` or `False`)"}
-  - { env_var: "SUPERUSER_EMAIL", env_value: "<SUPERUSER_EMAIL>", desc: "Superuser email"}
-  - { env_var: "SUPERUSER_PASSWORD", env_value: "<SUPERUSER_PASSWORD>", desc: "Superuser password"}
+  - { env_var: "SITE_ROOT", env_value: "", desc: "The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)" }
+  - { env_var: "SITE_NAME", env_value: "", desc: "The site's name (e.g., \"Example Corp HealthChecks\")"}
+  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "", desc: "From email for alerts" }
+  - { env_var: "EMAIL_HOST", env_value: "", desc: "SMTP host" }
+  - { env_var: "EMAIL_PORT", env_value: "", desc: "SMTP port"}
+  - { env_var: "EMAIL_HOST_USER", env_value: "", desc: "SMTP user"}
+  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "", desc: "SMTP password"}
+  - { env_var: "EMAIL_USE_TLS", env_value: "", desc: "Use TLS for SMTP (`True` or `False`)"}
+  - { env_var: "SUPERUSER_EMAIL", env_value: "", desc: "Superuser email"}
+  - { env_var: "SUPERUSER_PASSWORD", env_value: "", desc: "Superuser password"}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "REGENERATE_SETTINGS", env_value: "True/False", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
-  - { env_var: "SITE_LOGO_URL", env_value: "<SITE_LOGO_URL>", desc: "Custom site logo URL"}
-  - { env_var: "ALLOWED_HOSTS", env_value: "<ALLOWED_HOSTS>", desc: "array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` (default: `[\"*\"]`)"}
-  - { env_var: "SECRET_KEY", env_value: "<SECRET_KEY>", desc: "A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist" }
-  - { env_var: "APPRISE_ENABLED", env_value: "True/False", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
+  - { env_var: "REGENERATE_SETTINGS", env_value: "", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
+  - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo"}
+  - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "Array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` (default: `[\"*\"]`)"}
+  - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
+  - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
 
 param_usage_include_ports: true
 param_ports:
@@ -50,6 +50,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "11.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3."}
   - { date: "27.09.22:", desc: "Fix sending of Email Reports"}
   - { date: "08.01.22:", desc: "Fix CSRF setting for Django 4.0 (introduced in v1.25.0)"}
   - { date: "11.11.21:", desc: "Add Apprise to Docker as in v1.24.0"}
