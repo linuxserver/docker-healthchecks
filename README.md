@@ -78,23 +78,23 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - SITE_ROOT=<SITE_ROOT>
-      - SITE_NAME=<SITE_NAME>
-      - DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL>
-      - EMAIL_HOST=<EMAIL_HOST>
-      - EMAIL_PORT=<EMAIL_PORT>
-      - EMAIL_HOST_USER=<EMAIL_HOST_USER>
-      - EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>
-      - EMAIL_USE_TLS=<True or False>
-      - SUPERUSER_EMAIL=<SUPERUSER_EMAIL>
-      - SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>
-      - REGENERATE_SETTINGS=True/False #optional
-      - SITE_LOGO_URL=<SITE_LOGO_URL> #optional
-      - ALLOWED_HOSTS=<ALLOWED_HOSTS> #optional
-      - SECRET_KEY=<SECRET_KEY> #optional
-      - APPRISE_ENABLED=True/False #optional
+      - SITE_ROOT=
+      - SITE_NAME=
+      - DEFAULT_FROM_EMAIL=
+      - EMAIL_HOST=
+      - EMAIL_PORT=
+      - EMAIL_HOST_USER=
+      - EMAIL_HOST_PASSWORD=
+      - EMAIL_USE_TLS=
+      - SUPERUSER_EMAIL=
+      - SUPERUSER_PASSWORD=
+      - REGENERATE_SETTINGS= #optional
+      - SITE_LOGO_URL= #optional
+      - ALLOWED_HOSTS= #optional
+      - SECRET_KEY= #optional
+      - APPRISE_ENABLED= #optional
     volumes:
-      - <path to data on host>:/config
+      - /path/to/data:/config
     ports:
       - 8000:8000
     restart: unless-stopped
@@ -107,23 +107,23 @@ docker run -d \
   --name=healthchecks \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e SITE_ROOT=<SITE_ROOT> \
-  -e SITE_NAME=<SITE_NAME> \
-  -e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL> \
-  -e EMAIL_HOST=<EMAIL_HOST> \
-  -e EMAIL_PORT=<EMAIL_PORT> \
-  -e EMAIL_HOST_USER=<EMAIL_HOST_USER> \
-  -e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD> \
-  -e EMAIL_USE_TLS=<True or False> \
-  -e SUPERUSER_EMAIL=<SUPERUSER_EMAIL> \
-  -e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD> \
-  -e REGENERATE_SETTINGS=True/False `#optional` \
-  -e SITE_LOGO_URL=<SITE_LOGO_URL> `#optional` \
-  -e ALLOWED_HOSTS=<ALLOWED_HOSTS> `#optional` \
-  -e SECRET_KEY=<SECRET_KEY> `#optional` \
-  -e APPRISE_ENABLED=True/False `#optional` \
+  -e SITE_ROOT= \
+  -e SITE_NAME= \
+  -e DEFAULT_FROM_EMAIL= \
+  -e EMAIL_HOST= \
+  -e EMAIL_PORT= \
+  -e EMAIL_HOST_USER= \
+  -e EMAIL_HOST_PASSWORD= \
+  -e EMAIL_USE_TLS= \
+  -e SUPERUSER_EMAIL= \
+  -e SUPERUSER_PASSWORD= \
+  -e REGENERATE_SETTINGS= `#optional` \
+  -e SITE_LOGO_URL= `#optional` \
+  -e ALLOWED_HOSTS= `#optional` \
+  -e SECRET_KEY= `#optional` \
+  -e APPRISE_ENABLED= `#optional` \
   -p 8000:8000 \
-  -v <path to data on host>:/config \
+  -v /path/to/data:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/healthchecks:latest
 ```
@@ -137,22 +137,22 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 8000` | will map the container's port 8000 to port 8000 on the host |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e SITE_ROOT=<SITE_ROOT>` | The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000) |
-| `-e SITE_NAME=<SITE_NAME>` | The site's name (e.g., "Example Corp HealthChecks") |
-| `-e DEFAULT_FROM_EMAIL=<DEFAULT_FROM_EMAIL>` | From email for alerts |
-| `-e EMAIL_HOST=<EMAIL_HOST>` | SMTP host |
-| `-e EMAIL_PORT=<EMAIL_PORT>` | SMTP port |
-| `-e EMAIL_HOST_USER=<EMAIL_HOST_USER>` | SMTP user |
-| `-e EMAIL_HOST_PASSWORD=<EMAIL_HOST_PASSWORD>` | SMTP password |
-| `-e EMAIL_USE_TLS=<True or False>` | Use TLS for SMTP (`True` or `False`) |
-| `-e SUPERUSER_EMAIL=<SUPERUSER_EMAIL>` | Superuser email |
-| `-e SUPERUSER_PASSWORD=<SUPERUSER_PASSWORD>` | Superuser password |
-| `-e REGENERATE_SETTINGS=True/False` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
-| `-e SITE_LOGO_URL=<SITE_LOGO_URL>` | Custom site logo URL |
-| `-e ALLOWED_HOSTS=<ALLOWED_HOSTS>` | array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`) |
-| `-e SECRET_KEY=<SECRET_KEY>` | A secret key used for cryptographic signing. docker-healthchecks will generate a secure value if one does not exist |
-| `-e APPRISE_ENABLED=True/False` | Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise) |
-| `-v /config` | database and healthchecks config directory volume mapping |
+| `-e SITE_ROOT=` | The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000) |
+| `-e SITE_NAME=` | The site's name (e.g., "Example Corp HealthChecks") |
+| `-e DEFAULT_FROM_EMAIL=` | From email for alerts |
+| `-e EMAIL_HOST=` | SMTP host |
+| `-e EMAIL_PORT=` | SMTP port |
+| `-e EMAIL_HOST_USER=` | SMTP user |
+| `-e EMAIL_HOST_PASSWORD=` | SMTP password |
+| `-e EMAIL_USE_TLS=` | Use TLS for SMTP (`True` or `False`) |
+| `-e SUPERUSER_EMAIL=` | Superuser email |
+| `-e SUPERUSER_PASSWORD=` | Superuser password |
+| `-e REGENERATE_SETTINGS=` | Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file. |
+| `-e SITE_LOGO_URL=` | Full URL to custom site logo |
+| `-e ALLOWED_HOSTS=` | Array of valid hostnames for the server `["test.com","test2.com"]` (default: `["*"]`) |
+| `-e SECRET_KEY=` | A secret key used for cryptographic signing. Will generate a secure value if one is not supplied |
+| `-e APPRISE_ENABLED=` | Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise) |
+| `-v /config` | Database and healthchecks config directory |
 
 ## Environment variables from files (Docker secrets)
 
@@ -263,6 +263,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.10.22:** - Rebase to Alpine 3.16, migrate to s6v3.
 * **27.09.22:** - Fix sending of Email Reports
 * **08.01.22:** - Fix CSRF setting for Django 4.0 (introduced in v1.25.0)
 * **11.11.21:** - Add Apprise to Docker as in v1.24.0

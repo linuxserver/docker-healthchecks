@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
 # set version label
 ARG BUILD_DATE
@@ -11,7 +11,6 @@ RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --upgrade --virtual=build-dependencies \
     cargo \
-    curl \
     gcc \
     jpeg-dev \
     libffi-dev \
@@ -48,7 +47,7 @@ RUN \
     apprise \
     mysqlclient \
     wheel && \
-  pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ -r requirements.txt && \
+  pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.16/ -r requirements.txt && \
   echo "**** overlay-fs bug workaround ****" && \
   mv /app/healthchecks /app/healthchecks-tmp && \
   echo "**** cleanup ****" && \
