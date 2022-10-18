@@ -13,6 +13,7 @@ RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --upgrade --virtual=build-dependencies \
     cargo \
+    curl-dev \
     gcc \
     jpeg-dev \
     libffi-dev \
@@ -26,6 +27,7 @@ RUN \
     mariadb-client \
     postgresql-client \
     python3 \
+    py3-pip \
     uwsgi \
     uwsgi-python \
     mariadb-connector-c-dev && \
@@ -42,14 +44,14 @@ RUN \
     /tmp/healthchecks.tar.gz -C \
     /app/healthchecks/ --strip-components=1 && \
   echo "**** install pip packages ****" && \
-  python3 -m ensurepip && \
-  rm -rf /usr/lib/python*/ensurepip && \
   cd /app/healthchecks && \
-  pip3 install \
-    apprise \
-    mysqlclient \
+  pip3 install -U --no-cache-dir \
+    pip \
     wheel && \
-  pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.16/ -r requirements.txt && \
+  pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.16/ \
+    apprise \
+    mysqlclient && \
+  pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.16/ -r requirements.txt && \
   echo "**** overlay-fs bug workaround ****" && \
   mv /app/healthchecks /app/healthchecks-tmp && \
   echo "**** cleanup ****" && \
