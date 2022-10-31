@@ -109,6 +109,7 @@ chown -R abc:abc \
 
 cd /app/healthchecks || exit
 
+s6-setuidgid abc /usr/bin/python3 ./manage.py makemigrations
 s6-setuidgid abc /usr/bin/python3 ./manage.py migrate
 
 if [[ -n "$SUPERUSER_EMAIL" ]] && [[ -n "$SUPERUSER_PASSWORD" ]]; then
