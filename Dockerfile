@@ -7,6 +7,8 @@ ARG HEALTHCHECKS_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="alex-phillips"
 
+ENV PYTHONUNBUFFERED=1
+
 RUN \
   echo "**** install build packages ****" && \
   apk add --no-cache --upgrade --virtual=build-dependencies \
@@ -50,6 +52,9 @@ RUN \
     apprise \
     mysqlclient && \
   pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.16/ -r requirements.txt && \
+  cd /app/healthchecks && \
+  DEBUG=False /usr/bin/python3 ./manage.py collectstatic --noinput && \
+  DEBUG=False /usr/bin/python3 ./manage.py compress && \
   echo "**** overlay-fs bug workaround ****" && \
   mv /app/healthchecks /app/healthchecks-tmp && \
   echo "**** cleanup ****" && \
