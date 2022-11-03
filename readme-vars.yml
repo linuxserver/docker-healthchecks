@@ -38,6 +38,7 @@ opt_param_env_vars:
   - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "Array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` (default: `[\"*\"]`)"}
   - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
   - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
+  - { env_var: "DEBUG", env_value: "", desc: "Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
 
 param_usage_include_ports: true
 param_ports:
