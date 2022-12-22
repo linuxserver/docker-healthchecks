@@ -30,7 +30,6 @@ OPSGENIE_ENABLED
 PAGERTREE_ENABLED
 PD_APP_ID
 PD_ENABLED
-PING_BODY_LIMIT
 PING_EMAIL_DOMAIN
 PING_ENDPOINT
 PROMETHEUS_ENABLED
@@ -84,6 +83,9 @@ if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS}" == "Tru
         fi
     done
     insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
+    if [[ -n ${PING_BODY_LIMIT} ]]; then
+        insert_config "PING_BODY_LIMIT" "$(printf '%d\n' "${PING_BODY_LIMIT}")"
+    fi
 fi
 
 if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
