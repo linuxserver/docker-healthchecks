@@ -59,8 +59,6 @@ RUN \
   cd /app/healthchecks && \
   DEBUG=False /usr/bin/python3 ./manage.py collectstatic --noinput && \
   DEBUG=False /usr/bin/python3 ./manage.py compress && \
-  echo "**** overlay-fs bug workaround ****" && \
-  mv /app/healthchecks /app/healthchecks-tmp && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
