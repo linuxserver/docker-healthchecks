@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 if [[ -d /app/healthchecks-tmp ]]; then
     echo "New container detected. Setting up app folder and fixing permissions."
@@ -104,7 +105,7 @@ fi
 mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
 
 # permissions
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config
 
 cd /app/healthchecks || exit

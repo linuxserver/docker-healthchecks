@@ -51,6 +51,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "22.12.22:", desc: "Rebase to Alpine 3.17. Add extra deps for pycurl."}
   - { date: "18.10.22:", desc: "Add curl-dev to fix broken pip builds."}
   - { date: "11.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3."}
   - { date: "27.09.22:", desc: "Fix sending of Email Reports"}
