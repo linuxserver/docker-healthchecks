@@ -94,10 +94,12 @@ services:
       - SECRET_KEY= #optional
       - APPRISE_ENABLED= #optional
       - DEBUG= #optional
+      - PING_EMAIL_DOMAIN= #optional
     volumes:
       - /path/to/data:/config
     ports:
       - 8000:8000
+      - 2525:2525 #optional
     restart: unless-stopped
 ```
 
@@ -124,7 +126,9 @@ docker run -d \
   -e SECRET_KEY= `#optional` \
   -e APPRISE_ENABLED= `#optional` \
   -e DEBUG= `#optional` \
+  -e PING_EMAIL_DOMAIN= `#optional` \
   -p 8000:8000 \
+  -p 2525:2525 `#optional` \
   -v /path/to/data:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/healthchecks:latest
@@ -136,7 +140,8 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 8000` | will map the container's port 8000 to port 8000 on the host |
+| `-p 8000` | Healthchecks Web UI |
+| `-p 2525` | Port for inbound SMTP pings |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e SITE_ROOT=` | The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000) |
@@ -155,6 +160,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e SECRET_KEY=` | A secret key used for cryptographic signing. Will generate a secure value if one is not supplied |
 | `-e APPRISE_ENABLED=` | Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise) |
 | `-e DEBUG=` | Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security. |
+| `-e PING_EMAIL_DOMAIN=` | The domain to use for generating ping email addresses. |
 | `-v /config` | Database and healthchecks config directory |
 
 ## Environment variables from files (Docker secrets)

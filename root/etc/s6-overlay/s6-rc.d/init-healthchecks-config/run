@@ -1,11 +1,8 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-if [[ -d /app/healthchecks-tmp ]]; then
-    echo "New container detected. Setting up app folder and fixing permissions."
-    mv /app/healthchecks-tmp /app/healthchecks
-    chown -R abc:abc /app
-fi
+lsiown -R abc:abc  \
+    /app/healthchecks/hc/api/migrations
 
 #From https://healthchecks.io/docs/self_hosted_configuration/
 HC_CONF=(

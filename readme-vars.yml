@@ -39,10 +39,14 @@ opt_param_env_vars:
   - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
   - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
   - { env_var: "DEBUG", env_value: "", desc: "Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
+  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses."}
 
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "8000", internal_port: "8000", port_desc: "will map the container's port 8000 to port 8000 on the host" }
+  - { external_port: "8000", internal_port: "8000", port_desc: "Healthchecks Web UI" }
+opt_param_usage_include_ports: true
+opt_param_ports:
+  - { external_port: "2525", internal_port: "2525", port_desc: "Port for inbound SMTP pings" }
 
 # application setup block
 app_setup_block_enabled: true
