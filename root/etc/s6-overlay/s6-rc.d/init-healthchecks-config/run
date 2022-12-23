@@ -1,10 +1,8 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
-if [[ -d /app/healthchecks-tmp ]]; then
-    echo "New container detected. Setting up app folder and fixing permissions."
-    mv /app/healthchecks-tmp /app/healthchecks
-    chown -R abc:abc /app
-fi
+lsiown -R abc:abc  \
+    /app/healthchecks/hc/api/migrations
 
 #From https://healthchecks.io/docs/self_hosted_configuration/
 HC_CONF=(
@@ -20,6 +18,7 @@ EMAIL_HOST_USER
 EMAIL_PORT
 EMAIL_USE_TLS
 EMAIL_USE_VERIFICATION
+INTEGRATIONS_ALLOW_PRIVATE_IPS
 LINENOTIFY_CLIENT_ID
 LINENOTIFY_CLIENT_SECRET
 MASTER_BADGE_LABEL
@@ -32,7 +31,6 @@ OPSGENIE_ENABLED
 PAGERTREE_ENABLED
 PD_APP_ID
 PD_ENABLED
-PING_BODY_LIMIT
 PING_EMAIL_DOMAIN
 PING_ENDPOINT
 PROMETHEUS_ENABLED
@@ -74,7 +72,7 @@ function insert_config() {
     fi
 }
 
-if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS}" == "True" ]]; then
+if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS,,}" == "true" ]]; then
     touch /config/local_settings.py
     for CONF in "${HC_CONF[@]}"; do
         if [[ -n "${!CONF}" ]]; then
@@ -86,6 +84,9 @@ if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS}" == "Tru
         fi
     done
     insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
+    if [[ -n ${PING_BODY_LIMIT} ]]; then
+        insert_config "PING_BODY_LIMIT" "$(printf '%d\n' "${PING_BODY_LIMIT}")"
+    fi
 fi
 
 if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
@@ -104,7 +105,7 @@ fi
 mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
 
 # permissions
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config
 
 cd /app/healthchecks || exit

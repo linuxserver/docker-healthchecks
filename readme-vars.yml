@@ -33,16 +33,21 @@ param_env_vars:
   - { env_var: "SUPERUSER_PASSWORD", env_value: "", desc: "Superuser password"}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "REGENERATE_SETTINGS", env_value: "", desc: "Defaults to False. Set to true to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
-  - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo"}
+  - { env_var: "REGENERATE_SETTINGS", env_value: "", desc: "Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
   - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "Array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` (default: `[\"*\"]`)"}
-  - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
   - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
   - { env_var: "DEBUG", env_value: "", desc: "Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
+  - { env_var: "INTEGRATIONS_ALLOW_PRIVATE_IPS", env_value: "", desc: "Defaults to False. Set to True to allow integrations to connect to private IP addresses."}
+  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses."}  
+  - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
+  - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo"}
 
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "8000", internal_port: "8000", port_desc: "will map the container's port 8000 to port 8000 on the host" }
+  - { external_port: "8000", internal_port: "8000", port_desc: "Healthchecks Web UI" }
+opt_param_usage_include_ports: true
+opt_param_ports:
+  - { external_port: "2525", internal_port: "2525", port_desc: "Port for inbound SMTP pings" }
 
 # application setup block
 app_setup_block_enabled: true
@@ -51,6 +56,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "22.12.22:", desc: "Rebase to Alpine 3.17. Add extra deps for pycurl. Add INTEGRATIONS_ALLOW_PRIVATE_IPS."}
   - { date: "18.10.22:", desc: "Add curl-dev to fix broken pip builds."}
   - { date: "11.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3."}
   - { date: "27.09.22:", desc: "Fix sending of Email Reports"}
