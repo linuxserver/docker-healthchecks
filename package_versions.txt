@@ -10,7 +10,7 @@ busybox-binsh-1.35.0-r29
 ca-certificates-20220614-r4
 ca-certificates-bundle-20220614-r4
 coreutils-9.1-r0
-curl-7.87.0-r0
+curl-7.87.0-r1
 gdbm-1.23-r0
 jansson-2.14-r0
 jq-1.6-r2
