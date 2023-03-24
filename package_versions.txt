@@ -1,6 +1,6 @@
 NAME                     VERSION                TYPE   
 Django                   4.1.7                  python  
-Markdown                 3.4.1                  python  
+Markdown                 3.4.3                  python  
 PyYAML                   6.0                    python  
 alpine-baselayout        3.4.0-r0               apk     
 alpine-baselayout-data   3.4.0-r0               apk     
@@ -24,7 +24,7 @@ coreutils                9.1-r0                 apk
 cron-descriptor          1.2.35                 python  
 cronsim                  2.3                    python  
 cryptography             39.0.2                 python  
-curl                     7.88.1-r0              apk     
+curl                     7.88.1-r1              apk     
 django-appconf           1.0.5                  python  
 django-compressor        4.3.1                  python  
 fido2                    1.1.0                  python  
@@ -38,8 +38,8 @@ libbsd                   0.11.7-r0              apk
 libbz2                   1.0.8-r4               apk     
 libc-utils               0.7.2-r3               apk     
 libcap2                  2.66-r0                apk     
-libcrypto3               3.0.8-r0               apk     
-libcurl                  7.88.1-r0              apk     
+libcrypto3               3.0.8-r1               apk     
+libcurl                  7.88.1-r1              apk     
 libexpat                 2.5.0-r0               apk     
 libffi                   3.4.4-r0               apk     
 libgcc                   12.2.1_git20220924-r4  apk     
@@ -47,7 +47,7 @@ libintl                  0.21.1-r1              apk
 libmd                    1.0.4-r0               apk     
 libpq                    15.2-r0                apk     
 libproc                  3.3.17-r2              apk     
-libssl3                  3.0.8-r0               apk     
+libssl3                  3.0.8-r1               apk     
 libstdc++                12.2.1_git20220924-r4  apk     
 libxml2                  2.10.3-r1              apk     
 linux-pam                1.5.2-r1               apk     
@@ -67,7 +67,7 @@ netcat-openbsd           1.130-r4               apk
 nghttp2-libs             1.51.0-r0              apk     
 oauthlib                 3.2.2                  python  
 oniguruma                6.9.8-r0               apk     
-openssl-dev              3.0.8-r0               apk     
+openssl-dev              3.0.8-r1               apk     
 pcre                     8.45-r2                apk     
 pip                      23.0.1                 python  
 pkgconf                  1.9.4-r0               apk     
