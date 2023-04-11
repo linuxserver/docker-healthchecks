@@ -1,5 +1,5 @@
 NAME                     VERSION                TYPE   
-Django                   4.1.7                  python  
+Django                   4.2                    python  
 Markdown                 3.4.3                  python  
 PyYAML                   6.0                    python  
 alpine-baselayout        3.4.0-r0               apk     
@@ -74,7 +74,7 @@ pkgconf                  1.9.4-r0               apk
 postgresql-common        1.1-r3                 apk     
 postgresql15-client      15.2-r0                apk     
 procps                   3.3.17-r2              apk     
-psycopg2                 2.9.5                  python  
+psycopg2                 2.9.6                  python  
 pycparser                2.21                   python  
 pycurl                   7.45.2                 python  
 pyotp                    2.8.0                  python  
