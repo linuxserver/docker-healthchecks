@@ -24,7 +24,7 @@ coreutils                9.1-r0                 apk
 cron-descriptor          1.2.35                 python  
 cronsim                  2.3                    python  
 cryptography             39.0.2                 python  
-curl                     7.88.1-r1              apk     
+curl                     8.0.1-r0               apk     
 django-appconf           1.0.5                  python  
 django-compressor        4.3.1                  python  
 fido2                    1.1.0                  python  
@@ -39,7 +39,7 @@ libbz2                   1.0.8-r4               apk
 libc-utils               0.7.2-r3               apk     
 libcap2                  2.66-r0                apk     
 libcrypto3               3.0.8-r3               apk     
-libcurl                  7.88.1-r1              apk     
+libcurl                  8.0.1-r0               apk     
 libexpat                 2.5.0-r0               apk     
 libffi                   3.4.4-r0               apk     
 libgcc                   12.2.1_git20220924-r4  apk     
@@ -69,7 +69,7 @@ oauthlib                 3.2.2                  python
 oniguruma                6.9.8-r0               apk     
 openssl-dev              3.0.8-r3               apk     
 pcre                     8.45-r2                apk     
-pip                      23.0.1                 python  
+pip                      23.1                   python  
 pkgconf                  1.9.4-r0               apk     
 postgresql-common        1.1-r3                 apk     
 postgresql15-client      15.2-r0                apk     
