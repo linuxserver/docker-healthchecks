@@ -45,7 +45,7 @@ libffi                   3.4.4-r0               apk
 libgcc                   12.2.1_git20220924-r4  apk     
 libintl                  0.21.1-r1              apk     
 libmd                    1.0.4-r0               apk     
-libpq                    15.2-r0                apk     
+libpq                    15.3-r0                apk     
 libproc                  3.3.17-r2              apk     
 libssl3                  3.0.8-r4               apk     
 libstdc++                12.2.1_git20220924-r4  apk     
@@ -53,8 +53,8 @@ libxml2                  2.10.4-r0              apk
 linux-pam                1.5.2-r1               apk     
 lz4-libs                 1.9.4-r1               apk     
 mailcap                  2.1.53-r0              apk     
-mariadb-client           10.6.12-r0             apk     
-mariadb-common           10.6.12-r0             apk     
+mariadb-client           10.6.13-r0             apk     
+mariadb-common           10.6.13-r0             apk     
 mariadb-connector-c      3.3.3-r0               apk     
 mariadb-connector-c-dev  3.3.3-r0               apk     
 mpdecimal                2.5.1-r1               apk     
@@ -72,7 +72,7 @@ pcre                     8.45-r2                apk
 pip                      23.1.2                 python  
 pkgconf                  1.9.4-r0               apk     
 postgresql-common        1.1-r3                 apk     
-postgresql15-client      15.2-r0                apk     
+postgresql15-client      15.3-r0                apk     
 procps                   3.3.17-r2              apk     
 psycopg2                 2.9.6                  python  
 pycparser                2.21                   python  
