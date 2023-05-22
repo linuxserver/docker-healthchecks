@@ -7,7 +7,7 @@ alpine-baselayout-data   3.4.0-r0               apk
 alpine-keys              2.4-r1                 apk     
 alpine-release           3.17.3-r0              apk     
 apk-tools                2.12.10-r1             apk     
-apprise                  1.3.0                  python  
+apprise                  1.4.0                  python  
 asgiref                  3.6.0                  python  
 bash                     5.2.15-r0              apk     
 brotli-libs              1.0.9-r9               apk     
@@ -24,7 +24,7 @@ coreutils                9.1-r0                 apk
 cron-descriptor          1.2.35                 python  
 cronsim                  2.3                    python  
 cryptography             39.0.2                 python  
-curl                     8.0.1-r0               apk     
+curl                     8.1.0-r1               apk     
 django-appconf           1.0.5                  python  
 django-compressor        4.3.1                  python  
 fido2                    1.1.0                  python  
@@ -37,9 +37,9 @@ libattr                  2.5.1-r2               apk
 libbsd                   0.11.7-r0              apk     
 libbz2                   1.0.8-r4               apk     
 libc-utils               0.7.2-r3               apk     
-libcap2                  2.66-r0                apk     
+libcap2                  2.66-r1                apk     
 libcrypto3               3.0.8-r4               apk     
-libcurl                  8.0.1-r0               apk     
+libcurl                  8.1.0-r2               apk     
 libexpat                 2.5.0-r0               apk     
 libffi                   3.4.4-r0               apk     
 libgcc                   12.2.1_git20220924-r4  apk     
@@ -58,8 +58,8 @@ mariadb-common           10.6.13-r0             apk
 mariadb-connector-c      3.3.3-r0               apk     
 mariadb-connector-c-dev  3.3.3-r0               apk     
 mpdecimal                2.5.1-r1               apk     
-musl                     1.2.3-r4               apk     
-musl-utils               1.2.3-r4               apk     
+musl                     1.2.3-r5               apk     
+musl-utils               1.2.3-r5               apk     
 mysqlclient              2.1.1                  python  
 ncurses-libs             6.3_p20221119-r0       apk     
 ncurses-terminfo-base    6.3_p20221119-r0       apk     
