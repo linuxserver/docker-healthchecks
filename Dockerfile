@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:3.18
 
 # set version label
 ARG BUILD_DATE
@@ -13,7 +13,7 @@ ENV PYTHONUNBUFFERED=1
 
 RUN \
   echo "**** install build packages ****" && \
-  apk add --no-cache --upgrade --virtual=build-dependencies \
+  apk add --no-cache --virtual=build-dependencies \
     build-base \
     cargo \
     curl-dev \
@@ -25,15 +25,13 @@ RUN \
     python3-dev \
     zlib-dev && \
   echo "**** install runtime packages ****" && \
-  apk add --no-cache --upgrade \
-    libcrypto3 \
-    libssl3 \
+  apk add --no-cache \
     mariadb-client \
     postgresql-client \
     python3 \
     uwsgi \
     uwsgi-python \
-    mariadb-connector-c-dev && \
+    mariadb-connector-c && \
   echo "**** install healthchecks ****" && \
   mkdir -p /app/healthchecks && \
   if [ -z ${HEALTHCHECKS_RELEASE+x} ]; then \
@@ -48,17 +46,17 @@ RUN \
     /app/healthchecks/ --strip-components=1 && \
   echo "**** install pip packages ****" && \
   cd /app/healthchecks && \
-  python3 -m ensurepip && \
-  pip3 install -U --no-cache-dir \
+  python3 -m venv /lsiopy && \
+  pip install -U --no-cache-dir \
     pip \
     wheel && \
-  pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.17/ \
+  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.18/ \
     apprise \
     mysqlclient && \
-  pip3 install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.17/ -r requirements.txt && \
+  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.18/ -r requirements.txt && \
   cd /app/healthchecks && \
-  DEBUG=False /usr/bin/python3 ./manage.py collectstatic --noinput && \
-  DEBUG=False /usr/bin/python3 ./manage.py compress && \
+  DEBUG=False python3 ./manage.py collectstatic --noinput && \
+  DEBUG=False python3 ./manage.py compress && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
