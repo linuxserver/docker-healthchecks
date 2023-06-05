@@ -1,5 +1,5 @@
 NAME                     VERSION                TYPE   
-Django                   4.2.1                  python  
+Django                   4.2.2                  python  
 Markdown                 3.4.3                  python  
 PyYAML                   6.0                    python  
 aiosmtpd                 1.4.4.post2            python  
@@ -10,7 +10,7 @@ alpine-release           3.17.3-r0              apk
 apk-tools                2.12.10-r1             apk     
 apprise                  1.4.0                  python  
 asgiref                  3.7.2                  python  
-atpublic                 3.1.2                  python  
+atpublic                 4.0                    python  
 attrs                    23.1.0                 python  
 bash                     5.2.15-r0              apk     
 brotli-libs              1.0.9-r9               apk     
