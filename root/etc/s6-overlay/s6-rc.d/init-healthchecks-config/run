@@ -6,6 +6,7 @@ lsiown -R abc:abc  \
 
 #From https://healthchecks.io/docs/self_hosted_configuration/
 HC_CONF=(
+ADMINS
 ALLOWED_HOSTS
 APPRISE_ENABLED
 DEBUG
@@ -43,6 +44,12 @@ PUSHOVER_SUBSCRIPTION_URL
 REGISTRATION_OPEN
 REMOTE_USER_HEADER
 RP_ID
+S3_ACCESS_KEY
+S3_BUCKET
+S3_ENDPOINT
+S3_REGION
+S3_SECRET_KEY
+S3_TIMEOUT
 SHELL_ENABLED
 SIGNAL_CLI_ENABLED
 SITE_LOGO_URL
@@ -58,7 +65,9 @@ TRELLO_APP_KEY
 TWILIO_ACCOUNT
 TWILIO_AUTH
 TWILIO_FROM
+TWILIO_MESSAGING_SERVICE_SID
 TWILIO_USE_WHATSAPP
+USE_PAYMENTS
 VICTOROPS_ENABLED
 WEBHOOKS_ENABLED
 ZULIP_ENABLED
@@ -83,7 +92,12 @@ if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS,,}" == "t
             fi
         fi
     done
-    insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
+    if [[ -n ${CSRF_TRUSTED_ORIGINS} ]]; then
+        insert_config "CSRF_TRUSTED_ORIGINS" "[\"${CSRF_TRUSTED_ORIGINS}\"]"
+    else
+        insert_config "CSRF_TRUSTED_ORIGINS" "[]"
+        echo "WARNING: CSRF_TRUSTED_ORIGINS is set to allow connections from all origins, this is insecure."
+    fi
     if [[ -n ${PING_BODY_LIMIT} ]]; then
         insert_config "PING_BODY_LIMIT" "$(printf '%d\n' "${PING_BODY_LIMIT}")"
     fi
@@ -110,8 +124,8 @@ lsiown -R abc:abc \
 
 cd /app/healthchecks || exit
 
-s6-setuidgid abc /usr/bin/python3 ./manage.py makemigrations
-s6-setuidgid abc /usr/bin/python3 ./manage.py migrate
+s6-setuidgid abc python3 ./manage.py makemigrations
+s6-setuidgid abc python3 ./manage.py migrate
 
 if [[ -n "$SUPERUSER_EMAIL" ]] && [[ -n "$SUPERUSER_PASSWORD" ]]; then
 cat << EOF | s6-setuidgid abc python3 /app/healthchecks/manage.py shell
