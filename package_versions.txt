@@ -22,10 +22,10 @@ ca-certificates-bundle  20230506-r0             apk
 certifi                 2023.5.7                python  
 cffi                    1.15.1                  python  
 charset-normalizer      3.2.0                   python  
-click                   8.1.4                   python  
+click                   8.1.5                   python  
 coreutils               9.3-r1                  apk     
 cronsim                 2.5                     python  
-cryptography            41.0.1                  python  
+cryptography            41.0.2                  python  
 curl                    8.1.2-r0                apk     
 django-appconf          1.0.5                   python  
 django-compressor       4.4                     python  
@@ -40,7 +40,7 @@ libbsd                  0.11.7-r1               apk
 libbz2                  1.0.8-r5                apk     
 libc-utils              0.7.2-r5                apk     
 libcap2                 2.69-r0                 apk     
-libcrypto3              3.1.1-r1                apk     
+libcrypto3              3.1.1-r2                apk     
 libcurl                 8.1.2-r0                apk     
 libexpat                2.5.0-r1                apk     
 libffi                  3.4.4-r2                apk     
@@ -52,7 +52,7 @@ libncursesw             6.4_p20230506-r0        apk
 libpanelw               6.4_p20230506-r0        apk     
 libpq                   15.3-r0                 apk     
 libproc2                4.0.3-r1                apk     
-libssl3                 3.1.1-r1                apk     
+libssl3                 3.1.1-r2                apk     
 libstdc++               12.2.1_git20220924-r10  apk     
 libunistring            1.1-r1                  apk     
 libxml2                 2.11.4-r0               apk     
@@ -73,7 +73,7 @@ oauthlib                3.2.2                   python
 oniguruma               6.9.8-r1                apk     
 pcre                    8.45-r3                 apk     
 perl                    5.36.1-r2               apk     
-pip                     23.1.2                  python  
+pip                     23.2                    python  
 postgresql-common       1.2-r0                  apk     
 postgresql15-client     15.3-r0                 apk     
 procps-ng               4.0.3-r1                apk     
