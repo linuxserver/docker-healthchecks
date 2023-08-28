@@ -9,7 +9,7 @@ alpine-baselayout-data      3.4.3-r1                apk
 alpine-keys                 2.4-r1                  apk     
 alpine-release              3.18.3-r0               apk     
 apk-tools                   2.14.0-r2               apk     
-apprise                     1.4.5                   python  
+apprise                     1.5.0                   python  
 asgiref                     3.7.2                   python  
 atpublic                    4.0                     python  
 attrs                       23.1.0                  python  
@@ -82,9 +82,9 @@ pyc                         0.1-r0                  apk
 pycparser                   2.21                    python  
 pycurl                      7.45.2                  python  
 pyotp                       2.8.0                   python  
-python3                     3.11.4-r0               apk     
-python3-pyc                 3.11.4-r0               apk     
-python3-pycache-pyc0        3.11.4-r0               apk     
+python3                     3.11.5-r0               apk     
+python3-pyc                 3.11.5-r0               apk     
+python3-pycache-pyc0        3.11.5-r0               apk     
 rcssmin                     1.1.1                   python  
 readline                    8.2.1-r1                apk     
 requests                    2.31.0                  python  
@@ -104,7 +104,7 @@ urllib3                     2.0.4                   python
 utmps-libs                  0.1.2.1-r1              apk     
 uwsgi                       2.0.21-r3               apk     
 uwsgi-python3               2.0.21-r3               apk     
-wheel                       0.41.1                  python  
+wheel                       0.41.2                  python  
 whitenoise                  6.5.0                   python  
 xz-libs                     5.4.3-r0                apk     
 zlib                        1.2.13-r1               apk     
