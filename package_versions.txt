@@ -51,7 +51,7 @@ libmd                       1.0.4-r2                apk
 libncursesw                 6.4_p20230506-r0        apk     
 libpanelw                   6.4_p20230506-r0        apk     
 libpq                       15.4-r0                 apk     
-libproc2                    4.0.3-r1                apk     
+libproc2                    4.0.4-r0                apk     
 libssl3                     3.1.2-r0                apk     
 libstdc++                   12.2.1_git20220924-r10  apk     
 libunistring                1.1-r1                  apk     
@@ -76,7 +76,7 @@ perl                        5.36.1-r2               apk
 pip                         23.2.1                  python  
 postgresql-common           1.2-r0                  apk     
 postgresql15-client         15.4-r0                 apk     
-procps-ng                   4.0.3-r1                apk     
+procps-ng                   4.0.4-r0                apk     
 psycopg2                    2.9.6                   python  
 pyc                         0.1-r0                  apk     
 pycparser                   2.21                    python  
