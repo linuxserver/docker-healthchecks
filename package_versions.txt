@@ -7,7 +7,7 @@ aiosmtpd                    1.4.4.post2             python
 alpine-baselayout           3.4.3-r1                apk     
 alpine-baselayout-data      3.4.3-r1                apk     
 alpine-keys                 2.4-r1                  apk     
-alpine-release              3.18.3-r0               apk     
+alpine-release              3.18.4-r0               apk     
 apk-tools                   2.14.0-r2               apk     
 apprise                     1.5.0                   python  
 asgiref                     3.7.2                   python  
@@ -20,8 +20,8 @@ busybox-binsh               1.36.1-r2               apk
 ca-certificates             20230506-r0             apk     
 ca-certificates-bundle      20230506-r0             apk     
 certifi                     2023.7.22               python  
-cffi                        1.15.1                  python  
-charset-normalizer          3.2.0                   python  
+cffi                        1.16.0                  python  
+charset-normalizer          3.3.0                   python  
 click                       8.1.7                   python  
 coreutils                   9.3-r1                  apk     
 cronsim                     2.5                     python  
