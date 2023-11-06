@@ -1,6 +1,6 @@
 NAME                        VERSION                 TYPE   
 Django                      4.2.6                   python  
-Markdown                    3.5                     python  
+Markdown                    3.5.1                   python  
 PyYAML                      6.0.1                   python  
 Simple Launcher Executable  1.1.0.14                dotnet  
 aiosmtpd                    1.4.4.post2             python  
@@ -22,7 +22,7 @@ ca-certificates             20230506-r0             apk
 ca-certificates-bundle      20230506-r0             apk     
 certifi                     2023.7.22               python  
 cffi                        1.16.0                  python  
-charset-normalizer          3.3.1                   python  
+charset-normalizer          3.3.2                   python  
 click                       8.1.7                   python  
 coreutils                   9.3-r1                  apk     
 cronsim                     2.5                     python  
