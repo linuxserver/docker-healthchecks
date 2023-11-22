@@ -28,7 +28,7 @@ coreutils                 9.3-r1                  apk
 cronsim                   2.5                     python  
 cryptography              41.0.5                  python  
 curl                      8.4.0-r0                apk     
-django-appconf            1.0.5                   python  
+django-appconf            1.0.6                   python  
 django-compressor         4.4                     python  
 django-stubs-ext          4.2.2                   python  
 fido2                     1.1.2                   python  
