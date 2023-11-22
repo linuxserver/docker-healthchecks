@@ -106,7 +106,7 @@ fi
 if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
     insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo '')\""
 fi
-    
+
 
 if [[ ! -f "/app/healthchecks/hc/local_settings.py" ]]; then
     ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
@@ -116,28 +116,29 @@ if [[ ! -f "/app/healthchecks/hc.sqlite" ]]; then
     ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
-mv /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini > /dev/null 2>&1
+cp /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini
+
+cd /app/healthchecks || exit
+
+python3 ./manage.py makemigrations
 
 # permissions
 lsiown -R abc:abc \
     /config
 
-cd /app/healthchecks || exit
-
-s6-setuidgid abc python3 ./manage.py makemigrations
 s6-setuidgid abc python3 ./manage.py migrate
 
 if [[ -n "$SUPERUSER_EMAIL" ]] && [[ -n "$SUPERUSER_PASSWORD" ]]; then
 cat << EOF | s6-setuidgid abc python3 /app/healthchecks/manage.py shell
 from django.contrib.auth.models import User;
-from hc.accounts.views import _make_user; 
+from hc.accounts.views import _make_user;
 
 password = '$SUPERUSER_PASSWORD';
 email = '$SUPERUSER_EMAIL';
 
 if User.objects.filter(email=email).count()==0:
     user = _make_user(email);
-    user.set_password(password); 
+    user.set_password(password);
     user.is_staff = True;
     user.is_superuser = True;
     user.save();
