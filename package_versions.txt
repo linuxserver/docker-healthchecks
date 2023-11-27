@@ -33,7 +33,7 @@ django-compressor         4.4                     python
 django-stubs-ext          4.2.2                   python  
 fido2                     1.1.2                   python  
 gdbm                      1.23-r1                 apk     
-idna                      3.4                     python  
+idna                      3.6                     python  
 jansson                   2.14-r3                 apk     
 jq                        1.6-r3                  apk     
 libacl                    2.3.1-r3                apk     
@@ -74,7 +74,7 @@ nghttp2-libs              1.57.0-r0               apk
 oauthlib                  3.2.2                   python  
 oniguruma                 6.9.8-r1                apk     
 pcre                      8.45-r3                 apk     
-perl                      5.36.1-r2               apk     
+perl                      5.36.2-r0               apk     
 pip                       23.3.1                  python  
 postgresql-common         1.2-r0                  apk     
 postgresql15-client       15.5-r0                 apk     
@@ -109,7 +109,7 @@ urllib3                   2.1.0                   python
 utmps-libs                0.1.2.1-r1              apk     
 uwsgi                     2.0.21-r3               apk     
 uwsgi-python3             2.0.21-r3               apk     
-wheel                     0.41.3                  python  
+wheel                     0.42.0                  python  
 whitenoise                6.5.0                   python  
 xz-libs                   5.4.3-r0                apk     
 zlib                      1.2.13-r1               apk     
