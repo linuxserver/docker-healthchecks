@@ -7,7 +7,7 @@ aiosmtpd                  1.4.4.post2             python
 alpine-baselayout         3.4.3-r1                apk     
 alpine-baselayout-data    3.4.3-r1                apk     
 alpine-keys               2.4-r1                  apk     
-alpine-release            3.18.4-r0               apk     
+alpine-release            3.18.5-r0               apk     
 annotated-types           0.6.0                   python  
 apk-tools                 2.14.0-r2               apk     
 apprise                   1.6.0                   python  
@@ -26,7 +26,7 @@ charset-normalizer        3.3.2                   python
 click                     8.1.7                   python  
 coreutils                 9.3-r1                  apk     
 cronsim                   2.5                     python  
-cryptography              41.0.5                  python  
+cryptography              41.0.7                  python  
 curl                      8.4.0-r0                apk     
 django-appconf            1.0.6                   python  
 django-compressor         4.4                     python  
