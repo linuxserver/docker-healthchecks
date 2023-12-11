@@ -27,7 +27,7 @@ click                     8.1.7                   python
 coreutils                 9.3-r1                  apk     
 cronsim                   2.5                     python  
 cryptography              41.0.7                  python  
-curl                      8.4.0-r0                apk     
+curl                      8.5.0-r0                apk     
 django-appconf            1.0.6                   python  
 django-compressor         4.4                     python  
 django-stubs-ext          4.2.2                   python  
@@ -35,7 +35,7 @@ fido2                     1.1.2                   python
 gdbm                      1.23-r1                 apk     
 idna                      3.6                     python  
 jansson                   2.14-r3                 apk     
-jq                        1.6-r3                  apk     
+jq                        1.6-r4                  apk     
 libacl                    2.3.1-r3                apk     
 libattr                   2.5.1-r4                apk     
 libbsd                    0.11.7-r1               apk     
@@ -43,7 +43,7 @@ libbz2                    1.0.8-r5                apk
 libc-utils                0.7.2-r5                apk     
 libcap2                   2.69-r0                 apk     
 libcrypto3                3.1.4-r1                apk     
-libcurl                   8.4.0-r0                apk     
+libcurl                   8.5.0-r0                apk     
 libexpat                  2.5.0-r1                apk     
 libffi                    3.4.4-r2                apk     
 libgcc                    12.2.1_git20220924-r10  apk     
@@ -103,7 +103,7 @@ sqlite-libs               3.41.2-r2               apk
 sqlparse                  0.4.4                   python  
 ssl_client                1.36.1-r5               apk     
 statsd                    4.0.1                   python  
-typing_extensions         4.8.0                   python  
+typing_extensions         4.9.0                   python  
 tzdata                    2023c-r1                apk     
 urllib3                   2.1.0                   python  
 utmps-libs                0.1.2.1-r1              apk     
