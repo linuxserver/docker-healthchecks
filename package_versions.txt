@@ -1,5 +1,5 @@
 NAME                      VERSION                 TYPE   
-Django                    4.2.6                   python  
+Django                    5.0                     python  
 Markdown                  3.5.1                   python  
 PyYAML                    6.0.1                   python  
 SimpleLauncherExecutable  1.1.0.14                dotnet  
@@ -30,7 +30,7 @@ cryptography              41.0.7                  python
 curl                      8.5.0-r0                apk     
 django-appconf            1.0.6                   python  
 django-compressor         4.4                     python  
-django-stubs-ext          4.2.2                   python  
+django-stubs-ext          4.2.7                   python  
 fido2                     1.1.2                   python  
 gdbm                      1.23-r1                 apk     
 idna                      3.6                     python  
@@ -72,6 +72,7 @@ ncurses-terminfo-base     6.4_p20230506-r0        apk
 netcat-openbsd            1.219-r1                apk     
 nghttp2-libs              1.57.0-r0               apk     
 oauthlib                  3.2.2                   python  
+oncalendar                1.0                     python  
 oniguruma                 6.9.8-r1                apk     
 pcre                      8.45-r3                 apk     
 perl                      5.36.2-r0               apk     
@@ -83,8 +84,8 @@ psycopg2                  2.9.9                   python
 pyc                       0.1-r0                  apk     
 pycparser                 2.21                    python  
 pycurl                    7.45.2                  python  
-pydantic                  2.4.2                   python  
-pydantic_core             2.10.1                  python  
+pydantic                  2.5.2                   python  
+pydantic_core             2.14.5                  python  
 pyotp                     2.9.0                   python  
 python3                   3.11.6-r0               apk     
 python3-pyc               3.11.6-r0               apk     
@@ -95,7 +96,7 @@ requests                  2.31.0                  python
 requests-oauthlib         1.3.1                   python  
 rjsmin                    1.2.1                   python  
 scanelf                   1.3.7-r1                apk     
-segno                     1.5.2                   python  
+segno                     1.6.0                   python  
 setuptools                65.5.0                  python  
 shadow                    4.13-r4                 apk     
 skalibs                   2.13.1.1-r1             apk     
@@ -110,7 +111,7 @@ utmps-libs                0.1.2.1-r1              apk
 uwsgi                     2.0.21-r3               apk     
 uwsgi-python3             2.0.21-r3               apk     
 wheel                     0.42.0                  python  
-whitenoise                6.5.0                   python  
+whitenoise                6.6.0                   python  
 xz-libs                   5.4.3-r0                apk     
 zlib                      1.2.13-r1               apk     
 zstd-libs                 1.5.5-r4                apk     
