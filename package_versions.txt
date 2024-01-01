@@ -10,10 +10,10 @@ alpine-keys             2.4-r1                 apk
 alpine-release          3.19.0-r0              apk     
 annotated-types         0.6.0                  python  
 apk-tools               2.14.0-r5              apk     
-apprise                 1.7.0                  python  
+apprise                 1.7.1                  python  
 asgiref                 3.7.2                  python  
 atpublic                4.0                    python  
-attrs                   23.1.0                 python  
+attrs                   23.2.0                 python  
 bash                    5.2.21-r0              apk     
 brotli-libs             1.1.0-r1               apk     
 busybox                 1.36.1-r15             apk     
@@ -109,7 +109,7 @@ sqlparse                0.4.4                  python
 ssl_client              1.36.1-r15             apk     
 statsd                  4.0.1                  python  
 typing_extensions       4.9.0                  python  
-tzdata                  2023c-r1               apk     
+tzdata                  2023d-r0               apk     
 urllib3                 2.1.0                  python  
 utmps-libs              0.1.2.2-r0             apk     
 uwsgi                   2.0.23-r1              apk     
