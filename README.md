@@ -62,8 +62,15 @@ The architectures supported by this image are:
 Access the WebUI at <your-ip>:8000. For more information, check out [Healthchecks](https://github.com/healthchecks/healthchecks).
 
 ## Note on `CSRF_TRUSTED_ORIGINS`
+`CSRF_TRUSTED_ORIGINS` has to be manually set, and that it takes in only a str and not a list (different behaviour from django's `CSRF_TRUSTED_ORIGINS`).
 
-On first run (or any startup where `REGENERATE_SETTINGS=true`) we will set `CSRF_TRUSTED_ORIGINS` to match the value of `SITE_ROOT`. If you need different/additional origins, you will need to edit `/config/local_settings.py` and add them yourself. Note that setting `REGENERATE_SETTINGS=true` will overwrite any changes on startup.
+If you need different/additional origins, you will need to edit `/config/local_settings.py` and add them yourself. Note that setting `REGENERATE_SETTINGS=true` will overwrite any changes on startup.
+
+### Example
+```
+SITE_ROOT=https://my-healthchecks-app.abc.com
+CSRF_TRUSTED_ORIGINS=https://my-healthchecks-app.abc.com
+```
 
 ## Usage
 
