@@ -33,11 +33,12 @@ param_env_vars:
 opt_param_usage_include_env: true
 opt_param_env_vars:
   - { env_var: "REGENERATE_SETTINGS", env_value: "", desc: "Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
-  - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "Array of valid hostnames for the server `[\"test.com\",\"test2.com\"]` (default: `[\"*\"]`)"}
+  - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of valid hostnames for the server. Default is: `[\"*\"]`"}
+  - { env_var: "CSRF_TRUSTED_ORIGINS", env_value: "", desc: "A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`."}
   - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
   - { env_var: "DEBUG", env_value: "", desc: "Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
   - { env_var: "INTEGRATIONS_ALLOW_PRIVATE_IPS", env_value: "", desc: "Defaults to False. Set to True to allow integrations to connect to private IP addresses."}
-  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses."}  
+  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses."}
   - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
   - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo"}
 
@@ -53,12 +54,9 @@ app_setup_block_enabled: true
 app_setup_block: |
   Access the WebUI at <your-ip>:8000. For more information, check out [Healthchecks](https://github.com/healthchecks/healthchecks).
 
-  ## Note on `CSRF_TRUSTED_ORIGINS`
-
-  On first run (or any startup where `REGENERATE_SETTINGS=true`) we will set `CSRF_TRUSTED_ORIGINS` to match the value of `SITE_ROOT`. If you need different/additional origins, you will need to edit `/config/local_settings.py` and add them yourself. Note that setting `REGENERATE_SETTINGS=true` will overwrite any changes on startup.
-
 # changelog
 changelogs:
+  - { date: "22.01.24:", desc: "Fix CSRF handling."}
   - { date: "23.12.23:", desc: "Rebase to Alpine 3.19."}
   - { date: "31.05.23:", desc: "Rebase to Alpine 3.18. Deprecate armhf."}
   - { date: "22.12.22:", desc: "Rebase to Alpine 3.17. Add extra deps for pycurl. Add INTEGRATIONS_ALLOW_PRIVATE_IPS."}
