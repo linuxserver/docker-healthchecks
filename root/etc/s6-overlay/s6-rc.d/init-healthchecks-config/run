@@ -81,7 +81,7 @@ function insert_config() {
     fi
 }
 
-if [[ -z ${SITE_ROOT} ]]; then
+if [[ -z ${SITE_ROOT} ]] && ! grep -q "SITE_ROOT" /config/local_settings.py; then
     echo "No SITE_ROOT provided, halting init"
     sleep infinity
 fi
