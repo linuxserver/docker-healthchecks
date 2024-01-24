@@ -13,7 +13,7 @@ ENV PYTHONUNBUFFERED=1
 
 RUN \
   echo "**** install build packages ****" && \
-  apk add --no-cache --upgrade --virtual=build-dependencies \
+  apk add --no-cache --virtual=build-dependencies \
     build-base \
     cargo \
     curl-dev \
@@ -25,7 +25,7 @@ RUN \
     python3-dev \
     zlib-dev && \
   echo "**** install runtime packages ****" && \
-  apk add --no-cache --upgrade \
+  apk add --no-cache \
     grep \
     mariadb-client \
     postgresql-client \
@@ -53,6 +53,7 @@ RUN \
     wheel && \
   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.19/ \
     apprise \
+    minio \
     mysqlclient && \
   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.19/ -r requirements.txt && \
   cd /app/healthchecks && \
