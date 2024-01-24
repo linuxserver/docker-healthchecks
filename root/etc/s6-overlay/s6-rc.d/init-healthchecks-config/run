@@ -81,9 +81,11 @@ function insert_config() {
     fi
 }
 
-if [[ -z ${SITE_ROOT} ]]; then
+if [[ -z ${SITE_ROOT} ]] && ! grep -q "^SITE_ROOT" /config/local_settings.py; then
     echo "No SITE_ROOT provided, halting init"
     sleep infinity
+elif [[ -z ${SITE_ROOT} ]] && grep -q "^SITE_ROOT" /config/local_settings.py; then
+    SITE_ROOT=$(grep -Po "^SITE_ROOT = \K(.*)" /config/local_settings.py | tr -d '"')
 fi
 
 if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS,,}" == "true" ]]; then
