@@ -26,6 +26,7 @@ RUN \
     zlib-dev && \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
+    grep \
     mariadb-client \
     postgresql-client \
     python3 \
