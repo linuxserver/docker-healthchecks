@@ -18,7 +18,7 @@ bash                    5.2.21-r0              apk
 brotli-libs             1.1.0-r1               apk     
 busybox                 1.36.1-r15             apk     
 busybox-binsh           1.36.1-r15             apk     
-c-ares                  1.24.0-r0              apk     
+c-ares                  1.24.0-r1              apk     
 ca-certificates         20230506-r0            apk     
 ca-certificates-bundle  20230506-r0            apk     
 certifi                 2023.11.17             python  
@@ -37,6 +37,7 @@ django-compressor       4.4                    python
 django-stubs-ext        4.2.7                  python  
 fido2                   1.1.2                  python  
 gdbm                    1.23-r1                apk     
+grep                    3.11-r0                apk     
 idna                    3.6                    python  
 jansson                 2.14-r4                apk     
 jq                      1.7.1-r0               apk     
@@ -79,6 +80,7 @@ oauthlib                3.2.2                  python
 oncalendar              1.0                    python  
 oniguruma               6.9.9-r0               apk     
 pcre                    8.45-r3                apk     
+pcre2                   10.42-r2               apk     
 perl                    5.38.2-r0              apk     
 pip                     23.3.2                 python  
 postgresql-common       1.2-r0                 apk     
