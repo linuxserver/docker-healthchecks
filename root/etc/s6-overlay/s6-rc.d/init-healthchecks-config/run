@@ -4,82 +4,9 @@
 lsiown -R abc:abc  \
     /app/healthchecks/hc/api/migrations
 
-#From https://healthchecks.io/docs/self_hosted_configuration/
-HC_CONF=(
-ADMINS
-ALLOWED_HOSTS
-APPRISE_ENABLED
-DEBUG
-DEFAULT_FROM_EMAIL
-DISCORD_CLIENT_ID
-DISCORD_CLIENT_SECRET
-EMAIL_HOST
-EMAIL_HOST_PASSWORD
-EMAIL_HOST_USER
-EMAIL_PORT
-EMAIL_USE_TLS
-EMAIL_USE_VERIFICATION
-INTEGRATIONS_ALLOW_PRIVATE_IPS
-LINENOTIFY_CLIENT_ID
-LINENOTIFY_CLIENT_SECRET
-MASTER_BADGE_LABEL
-MATRIX_ACCESS_TOKEN
-MATRIX_HOMESERVER
-MATRIX_USER_ID
-MATTERMOST_ENABLED
-MSTEAMS_ENABLED
-OPSGENIE_ENABLED
-PAGERTREE_ENABLED
-PD_APP_ID
-PD_ENABLED
-PING_EMAIL_DOMAIN
-PING_ENDPOINT
-PROMETHEUS_ENABLED
-PUSHBULLET_CLIENT_ID
-PUSHBULLET_CLIENT_SECRET
-PUSHOVER_API_TOKEN
-PUSHOVER_EMERGENCY_EXPIRATION
-PUSHOVER_EMERGENCY_RETRY_DELAY
-PUSHOVER_SUBSCRIPTION_URL
-REGISTRATION_OPEN
-REMOTE_USER_HEADER
-RP_ID
-S3_ACCESS_KEY
-S3_BUCKET
-S3_ENDPOINT
-S3_REGION
-S3_SECRET_KEY
-S3_TIMEOUT
-SHELL_ENABLED
-SIGNAL_CLI_ENABLED
-SITE_LOGO_URL
-SITE_NAME
-SITE_ROOT
-SLACK_CLIENT_ID
-SLACK_CLIENT_SECRET
-SLACK_ENABLED
-SPIKE_ENABLED
-TELEGRAM_BOT_NAME
-TELEGRAM_TOKEN
-TRELLO_APP_KEY
-TWILIO_ACCOUNT
-TWILIO_AUTH
-TWILIO_FROM
-TWILIO_MESSAGING_SERVICE_SID
-TWILIO_USE_WHATSAPP
-USE_PAYMENTS
-VICTOROPS_ENABLED
-WEBHOOKS_ENABLED
-ZULIP_ENABLED
-)
-
-function insert_config() {
-    if grep -E "^$1 = " /config/local_settings.py &> /dev/null; then
-        sed -i -E "s|^$1 = .*\$|$1 = $2|" /config/local_settings.py
-    else
-        echo "$1 = $2" >> /config/local_settings.py
-    fi
-}
+if [[ ! -f "/config/local_settings.py" ]]; then
+    touch /config/local_settings.py
+fi
 
 if [[ -z ${SITE_ROOT} ]] && ! grep -q "^SITE_ROOT" /config/local_settings.py; then
     echo "No SITE_ROOT provided, halting init"
@@ -88,37 +15,23 @@ elif [[ -z ${SITE_ROOT} ]] && grep -q "^SITE_ROOT" /config/local_settings.py; th
     SITE_ROOT=$(grep -Po "^SITE_ROOT\s*=\s*\K(.*)" /config/local_settings.py | tr -d '"')
 fi
 
-if [[ ! -f "/config/local_settings.py" ]] || [[ "${REGENERATE_SETTINGS,,}" == "true" ]]; then
-    touch /config/local_settings.py
-    for CONF in "${HC_CONF[@]}"; do
-        if [[ -n "${!CONF}" ]]; then
-            if [[ "${!CONF}" == "True" ]] || [[ "${!CONF}" == "False" ]] || [[ "${!CONF:0:1}" == "[" ]]; then #booleans or arrays
-                insert_config "$CONF" "${!CONF}"
-            else
-                insert_config "$CONF" "\"${!CONF}\""
-            fi
-        fi
-    done
-    if [[ -n ${CSRF_TRUSTED_ORIGINS} ]]; then
-        insert_config "CSRF_TRUSTED_ORIGINS" "${CSRF_TRUSTED_ORIGINS}"
-    else
-        insert_config "CSRF_TRUSTED_ORIGINS" "[\"${SITE_ROOT}\"]"
-    fi
-    if [[ -n ${PING_BODY_LIMIT} ]]; then
-        insert_config "PING_BODY_LIMIT" "$(printf '%d\n' "${PING_BODY_LIMIT}")"
-    fi
+# Need to inject SITE_ROOT into CSRF_TRUSTED_ORIGINS if not specified by the user because it defaults to an empty list
+if [[ -z ${CSRF_TRUSTED_ORIGINS} ]] && ! grep -q "^CSRF_TRUSTED_ORIGINS" /config/local_settings.py; then
+    CSRF_TRUSTED_ORIGINS=[\"${SITE_ROOT}\"]
+    echo "${CSRF_TRUSTED_ORIGINS}" > /run/s6/container_environment/CSRF_TRUSTED_ORIGINS
 fi
 
-if [[ -z "$SECRET_KEY" ]] && ! grep "SECRET_KEY" /config/local_settings.py &> /dev/null; then
-    insert_config "SECRET_KEY" "\"$(tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo '')\""
+if [[ -z ${SECRET_KEY} ]] && ! grep -q "^SECRET_KEY" /config/local_settings.py; then
+    SECRET_KEY=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 32; echo '')
+    echo "SECRET_KEY = \"${SECRET_KEY}\"" >> /config/local_settings.py
+    echo "*** No SECRET_KEY specified so a random one has been generated an written to /config/local_settings.py **"
 fi
 
-
-if [[ ! -f "/app/healthchecks/hc/local_settings.py" ]]; then
+if [[ ! -L "/app/healthchecks/hc/local_settings.py" ]]; then
     ln -s /config/local_settings.py /app/healthchecks/hc/local_settings.py
 fi
 
-if [[ ! -f "/app/healthchecks/hc.sqlite" ]]; then
+if [[ ! -L "/app/healthchecks/hc.sqlite" ]]; then
     ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
