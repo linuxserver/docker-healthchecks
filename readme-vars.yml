@@ -3,7 +3,7 @@
 # project information
 project_name: healthchecks
 project_url: "https://github.com/healthchecks/healthchecks"
-project_logo: "https://raw.githubusercontent.com/healthchecks/healthchecks/master/static/img/welcome.png"
+project_logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/healthchecks-logo.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
@@ -17,30 +17,30 @@ available_architectures:
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files" }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files." }
 param_usage_include_env: true
 param_env_vars:
-  - { env_var: "SITE_ROOT", env_value: "", desc: "The site's top-level URL and the port it listens to if differrent than 80 or 443 (e.g., https://healthchecks.example.com:8000)" }
-  - { env_var: "SITE_NAME", env_value: "", desc: "The site's name (e.g., \"Example Corp HealthChecks\")"}
-  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "", desc: "From email for alerts" }
-  - { env_var: "EMAIL_HOST", env_value: "", desc: "SMTP host" }
-  - { env_var: "EMAIL_PORT", env_value: "", desc: "SMTP port"}
-  - { env_var: "EMAIL_HOST_USER", env_value: "", desc: "SMTP user"}
-  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "", desc: "SMTP password"}
-  - { env_var: "EMAIL_USE_TLS", env_value: "", desc: "Use TLS for SMTP (`True` or `False`)"}
-  - { env_var: "SUPERUSER_EMAIL", env_value: "", desc: "Superuser email"}
-  - { env_var: "SUPERUSER_PASSWORD", env_value: "", desc: "Superuser password"}
+  - { env_var: "SITE_ROOT", env_value: "", desc: "The site's top-level URL and the port it listens to if different than 80 or 443 (e.g., https://healthchecks.example.com:8000)." }
+  - { env_var: "SITE_NAME", env_value: "", desc: "The site's name (e.g., \"Example Corp HealthChecks\")."}
+  - { env_var: "SUPERUSER_EMAIL", env_value: "", desc: "Superuser email."}
+  - { env_var: "SUPERUSER_PASSWORD", env_value: "", desc: "Superuser password."}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "REGENERATE_SETTINGS", env_value: "", desc: "Defaults to False. Set to True to always override the `local_settings.py` file with values from environment variables. Do not set to True if you have made manual modifications to this file."}
-  - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of valid hostnames for the server. Default is: `[\"*\"]`"}
+  - { env_var: "ALLOWED_HOSTS", env_value: "", desc: "A comma-separated list of valid hostnames for the server. Default is: `*`."}
+  - { env_var: "APPRISE_ENABLED", env_value: "False", desc: "Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise)." }
   - { env_var: "CSRF_TRUSTED_ORIGINS", env_value: "", desc: "A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`."}
-  - { env_var: "APPRISE_ENABLED", env_value: "", desc: "Defaults to False. A boolean that turns on/off the Apprise integration (https://github.com/caronc/apprise)" }
-  - { env_var: "DEBUG", env_value: "", desc: "Defaults to True. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
+  - { env_var: "DEBUG", env_value: "True", desc: "Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
+  - { env_var: "DEFAULT_FROM_EMAIL", env_value: "", desc: "From email for alerts." }
+  - { env_var: "EMAIL_HOST", env_value: "", desc: "SMTP host." }
+  - { env_var: "EMAIL_PORT", env_value: "", desc: "SMTP port."}
+  - { env_var: "EMAIL_HOST_USER", env_value: "", desc: "SMTP user."}
+  - { env_var: "EMAIL_HOST_PASSWORD", env_value: "", desc: "SMTP password."}
+  - { env_var: "EMAIL_USE_TLS", env_value: "", desc: "Use TLS for SMTP (`True` or `False`)."}
   - { env_var: "INTEGRATIONS_ALLOW_PRIVATE_IPS", env_value: "", desc: "Defaults to False. Set to True to allow integrations to connect to private IP addresses."}
-  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses."}
-  - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a secure value if one is not supplied" }
-  - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo"}
+  - { env_var: "PING_EMAIL_DOMAIN", env_value: "", desc: "The domain to use for generating ping email addresses. Defaults to `localhost`."}
+  - { env_var: "RP_ID", env_value: "", desc: "If using webauthn for 2FA set this to match your Healthchecks domain. Webauthn will only work over https."}
+  - { env_var: "SECRET_KEY", env_value: "", desc: "A secret key used for cryptographic signing. Will generate a random value if one is not supplied and save it to `/config/local_settings.py`." }
+  - { env_var: "SITE_LOGO_URL", env_value: "", desc: "Full URL to custom site logo."}
 
 param_usage_include_ports: true
 param_ports:
@@ -54,8 +54,11 @@ app_setup_block_enabled: true
 app_setup_block: |
   Access the WebUI at <your-ip>:8000. For more information, check out [Healthchecks](https://github.com/healthchecks/healthchecks).
 
+  See [here](https://healthchecks.io/docs/self_hosted_configuration/) for a complete list of available environment variables.
+
 # changelog
 changelogs:
+  - { date: "24.01.24:", desc: "No longer write envs to local_settings.py. Envs will take precedence over any existing values in config file. Removed `REGENERATE_SETTINGS` as it is now obsolete."}
   - { date: "22.01.24:", desc: "Fix CSRF handling."}
   - { date: "23.12.23:", desc: "Rebase to Alpine 3.19."}
   - { date: "31.05.23:", desc: "Rebase to Alpine 3.18. Deprecate armhf."}
