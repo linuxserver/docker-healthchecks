@@ -11,6 +11,8 @@ alpine-release          3.19.0-r0              apk
 annotated-types         0.6.0                  python  
 apk-tools               2.14.0-r5              apk     
 apprise                 1.7.1                  python  
+argon2-cffi             23.1.0                 python  
+argon2-cffi-bindings    21.2.0                 python  
 asgiref                 3.7.2                  python  
 atpublic                4.0                    python  
 attrs                   23.2.0                 python  
@@ -30,7 +32,7 @@ coreutils-env           9.4-r1                 apk
 coreutils-fmt           9.4-r1                 apk     
 coreutils-sha512sum     9.4-r1                 apk     
 cronsim                 2.5                    python  
-cryptography            42.0.0                 python  
+cryptography            42.0.1                 python  
 curl                    8.5.0-r0               apk     
 django-appconf          1.0.6                  python  
 django-compressor       4.4                    python  
@@ -69,6 +71,7 @@ mailcap                 2.1.54-r0              apk
 mariadb-client          10.11.5-r3             apk     
 mariadb-common          10.11.5-r3             apk     
 mariadb-connector-c     3.3.8-r0               apk     
+minio                   7.2.3                  python  
 mpdecimal               2.5.1-r2               apk     
 musl                    1.2.4_git20230717-r4   apk     
 musl-utils              1.2.4_git20230717-r4   apk     
@@ -89,6 +92,7 @@ procps-ng               4.0.4-r0               apk
 psycopg2                2.9.9                  python  
 pyc                     3.11.6-r1              apk     
 pycparser               2.21                   python  
+pycryptodome            3.20.0                 python  
 pycurl                  7.45.2                 python  
 pydantic                2.5.2                  python  
 pydantic_core           2.14.5                 python  
