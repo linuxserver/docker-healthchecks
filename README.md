@@ -41,7 +41,7 @@ Find us at:
 
 [Healthchecks](https://github.com/healthchecks/healthchecks) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
 
-[![healthchecks](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/healthchecks-logo.png")](https://github.com/healthchecks/healthchecks)
+[![healthchecks](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/healthchecks-logo.png)](https://github.com/healthchecks/healthchecks)
 
 ## Supported Architectures
 
