@@ -3,7 +3,7 @@
 # project information
 project_name: healthchecks
 project_url: "https://github.com/healthchecks/healthchecks"
-project_logo: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/healthchecks-logo.png"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/healthchecks-logo.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a watchdog for your cron jobs. It's a web server that listens for pings from your cron jobs, plus a web interface.
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
