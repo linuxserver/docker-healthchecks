@@ -23,7 +23,7 @@ busybox-binsh           1.36.1-r15             apk
 c-ares                  1.24.0-r1              apk     
 ca-certificates         20230506-r0            apk     
 ca-certificates-bundle  20230506-r0            apk     
-certifi                 2023.11.17             python  
+certifi                 2024.2.2               python  
 cffi                    1.16.0                 python  
 charset-normalizer      3.3.2                  python  
 click                   8.1.7                  python  
@@ -32,7 +32,7 @@ coreutils-env           9.4-r2                 apk
 coreutils-fmt           9.4-r2                 apk     
 coreutils-sha512sum     9.4-r2                 apk     
 cronsim                 2.5                    python  
-cryptography            42.0.1                 python  
+cryptography            42.0.2                 python  
 curl                    8.5.0-r0               apk     
 django-appconf          1.0.6                  python  
 django-compressor       4.4                    python  
@@ -75,7 +75,7 @@ minio                   7.2.3                  python
 mpdecimal               2.5.1-r2               apk     
 musl                    1.2.4_git20230717-r4   apk     
 musl-utils              1.2.4_git20230717-r4   apk     
-mysqlclient             2.2.1                  python  
+mysqlclient             2.2.3                  python  
 ncurses-terminfo-base   6.4_p20231125-r0       apk     
 netcat-openbsd          1.226-r0               apk     
 nghttp2-libs            1.58.0-r0              apk     
@@ -85,7 +85,7 @@ oniguruma               6.9.9-r0               apk
 pcre                    8.45-r3                apk     
 pcre2                   10.42-r2               apk     
 perl                    5.38.2-r0              apk     
-pip                     23.3.2                 python  
+pip                     24.0                   python  
 postgresql-common       1.2-r0                 apk     
 postgresql16-client     16.1-r0                apk     
 procps-ng               4.0.4-r0               apk     
@@ -115,8 +115,8 @@ sqlparse                0.4.4                  python
 ssl_client              1.36.1-r15             apk     
 statsd                  4.0.1                  python  
 typing_extensions       4.9.0                  python  
-tzdata                  2023d-r0               apk     
-urllib3                 2.1.0                  python  
+tzdata                  2024a-r0               apk     
+urllib3                 2.2.0                  python  
 utmps-libs              0.1.2.2-r0             apk     
 uwsgi                   2.0.23-r1              apk     
 uwsgi-python3           2.0.23-r1              apk     
