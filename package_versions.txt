@@ -1,5 +1,5 @@
 NAME                    VERSION                TYPE   
-Django                  5.0                    python  
+Django                  5.0.2                  python  
 Markdown                3.5.2                  python  
 PyYAML                  6.0.1                  python  
 Simple Launcher         1.1.0.14               dotnet  
@@ -75,7 +75,7 @@ minio                   7.2.3                  python
 mpdecimal               2.5.1-r2               apk     
 musl                    1.2.4_git20230717-r4   apk     
 musl-utils              1.2.4_git20230717-r4   apk     
-mysqlclient             2.2.3                  python  
+mysqlclient             2.2.4                  python  
 ncurses-terminfo-base   6.4_p20231125-r0       apk     
 netcat-openbsd          1.226-r0               apk     
 nghttp2-libs            1.58.0-r0              apk     
@@ -94,8 +94,8 @@ pyc                     3.11.6-r1              apk
 pycparser               2.21                   python  
 pycryptodome            3.20.0                 python  
 pycurl                  7.45.2                 python  
-pydantic                2.5.2                  python  
-pydantic_core           2.14.5                 python  
+pydantic                2.5.3                  python  
+pydantic_core           2.14.6                 python  
 pyotp                   2.9.0                  python  
 python3                 3.11.6-r1              apk     
 python3-pyc             3.11.6-r1              apk     
