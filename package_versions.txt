@@ -32,7 +32,7 @@ coreutils-env           9.4-r2                 apk
 coreutils-fmt           9.4-r2                 apk     
 coreutils-sha512sum     9.4-r2                 apk     
 cronsim                 2.5                    python  
-cryptography            42.0.2                 python  
+cryptography            42.0.3                 python  
 curl                    8.5.0-r0               apk     
 django-appconf          1.0.6                  python  
 django-compressor       4.4                    python  
@@ -64,7 +64,7 @@ libproc2                4.0.4-r0               apk
 libssl3                 3.1.4-r5               apk     
 libstdc++               13.2.1_git20231014-r0  apk     
 libunistring            1.1-r2                 apk     
-libxml2                 2.11.6-r0              apk     
+libxml2                 2.11.7-r0              apk     
 linux-pam               1.5.3-r7               apk     
 lz4-libs                1.9.4-r5               apk     
 mailcap                 2.1.54-r0              apk     
@@ -116,7 +116,7 @@ ssl_client              1.36.1-r15             apk
 statsd                  4.0.1                  python  
 typing_extensions       4.9.0                  python  
 tzdata                  2024a-r0               apk     
-urllib3                 2.2.0                  python  
+urllib3                 2.2.1                  python  
 utmps-libs              0.1.2.2-r0             apk     
 uwsgi                   2.0.23-r1              apk     
 uwsgi-python3           2.0.23-r1              apk     
