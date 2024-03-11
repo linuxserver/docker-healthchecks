@@ -10,7 +10,7 @@ alpine-keys             2.4-r1                 apk
 alpine-release          3.19.1-r0              apk                      
 annotated-types         0.6.0                  python                   
 apk-tools               2.14.0-r5              apk                      
-apprise                 1.7.3                  python                   
+apprise                 1.7.4                  python                   
 argon2-cffi             23.1.0                 python                   
 argon2-cffi-bindings    21.2.0                 python                   
 asgiref                 3.7.2                  python                   
@@ -103,7 +103,7 @@ python3-pycache-pyc0    3.11.8-r0              apk
 rcssmin                 1.1.1                  python                   
 readline                8.2.1-r2               apk                      
 requests                2.31.0                 python                   
-requests-oauthlib       1.3.1                  python                   
+requests-oauthlib       1.4.0                  python                   
 rjsmin                  1.2.1                  python                   
 scanelf                 1.3.7-r2               apk                      
 segno                   1.6.0                  python                   
