@@ -1,9 +1,9 @@
 NAME                    VERSION                TYPE                    
-Django                  5.0.2                  python                   
+Django                  5.0.4                  python                   
 Markdown                3.6                    python                   
 PyYAML                  6.0.1                  python                   
 Simple Launcher         1.1.0.14               dotnet  (+5 duplicates)  
-aiosmtpd                1.4.4.post2            python                   
+aiosmtpd                1.4.5                  python                   
 alpine-baselayout       3.4.3-r2               apk                      
 alpine-baselayout-data  3.4.3-r2               apk                      
 alpine-keys             2.4-r1                 apk                      
@@ -37,7 +37,7 @@ curl                    8.5.0-r0               apk
 django-appconf          1.0.6                  python                   
 django-compressor       4.4                    python                   
 django-stubs-ext        4.2.7                  python                   
-fido2                   1.1.2                  python                   
+fido2                   1.1.3                  python                   
 gdbm                    1.23-r1                apk                      
 grep                    3.11-r0                apk                      
 idna                    3.6                    python                   
@@ -80,13 +80,13 @@ ncurses-terminfo-base   6.4_p20231125-r0       apk
 netcat-openbsd          1.226-r0               apk                      
 nghttp2-libs            1.58.0-r0              apk                      
 oauthlib                3.2.2                  python                   
-oncalendar              1.0                    python                   
+oncalendar              1.1                    python                   
 oniguruma               6.9.9-r0               apk                      
 pcre                    8.45-r3                apk                      
 pcre2                   10.42-r2               apk                      
 perl                    5.38.2-r0              apk                      
 pip                     24.0                   python                   
-postgresql-common       1.2-r0                 apk                      
+postgresql-common       1.2-r1                 apk                      
 postgresql16-client     16.2-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
 psycopg2                2.9.9                  python                   
@@ -94,8 +94,8 @@ pyc                     3.11.8-r0              apk
 pycparser               2.22                   python                   
 pycryptodome            3.20.0                 python                   
 pycurl                  7.45.2                 python                   
-pydantic                2.5.3                  python                   
-pydantic_core           2.14.6                 python                   
+pydantic                2.6.4                  python                   
+pydantic_core           2.16.3                 python                   
 pyotp                   2.9.0                  python                   
 python3                 3.11.8-r0              apk                      
 python3-pyc             3.11.8-r0              apk                      
@@ -106,7 +106,7 @@ requests                2.31.0                 python
 requests-oauthlib       2.0.0                  python                   
 rjsmin                  1.2.1                  python                   
 scanelf                 1.3.7-r2               apk                      
-segno                   1.6.0                  python                   
+segno                   1.6.1                  python                   
 setuptools              65.5.0                 python                   
 shadow                  4.14.2-r0              apk                      
 skalibs                 2.14.0.1-r0            apk                      
