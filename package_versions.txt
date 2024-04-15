@@ -10,7 +10,7 @@ alpine-keys             2.4-r1                 apk
 alpine-release          3.19.1-r0              apk                      
 annotated-types         0.6.0                  python                   
 apk-tools               2.14.3-r1              apk                      
-apprise                 1.7.5                  python                   
+apprise                 1.7.6                  python                   
 argon2-cffi             23.1.0                 python                   
 argon2-cffi-bindings    21.2.0                 python                   
 asgiref                 3.8.1                  python                   
@@ -40,7 +40,7 @@ django-stubs-ext        4.2.7                  python
 fido2                   1.1.3                  python                   
 gdbm                    1.23-r1                apk                      
 grep                    3.11-r0                apk                      
-idna                    3.6                    python                   
+idna                    3.7                    python                   
 jansson                 2.14-r4                apk                      
 jq                      1.7.1-r0               apk                      
 libacl                  2.3.1-r4               apk                      
@@ -49,7 +49,7 @@ libbsd                  0.11.7-r3              apk
 libbz2                  1.0.8-r6               apk                      
 libc-utils              0.7.2-r5               apk                      
 libcap2                 2.69-r1                apk                      
-libcrypto3              3.1.4-r5               apk                      
+libcrypto3              3.1.4-r6               apk                      
 libcurl                 8.5.0-r0               apk                      
 libexpat                2.6.2-r0               apk                      
 libffi                  3.4.4-r3               apk                      
@@ -61,7 +61,7 @@ libncursesw             6.4_p20231125-r0       apk
 libpanelw               6.4_p20231125-r0       apk                      
 libpq                   16.2-r0                apk                      
 libproc2                4.0.4-r0               apk                      
-libssl3                 3.1.4-r5               apk                      
+libssl3                 3.1.4-r6               apk                      
 libstdc++               13.2.1_git20231014-r0  apk                      
 libunistring            1.1-r2                 apk                      
 libxml2                 2.11.7-r0              apk                      
@@ -90,16 +90,16 @@ postgresql-common       1.2-r1                 apk
 postgresql16-client     16.2-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
 psycopg2                2.9.9                  python                   
-pyc                     3.11.8-r0              apk                      
+pyc                     3.11.9-r0              apk                      
 pycparser               2.22                   python                   
 pycryptodome            3.20.0                 python                   
 pycurl                  7.45.2                 python                   
 pydantic                2.6.4                  python                   
 pydantic_core           2.16.3                 python                   
 pyotp                   2.9.0                  python                   
-python3                 3.11.8-r0              apk                      
-python3-pyc             3.11.8-r0              apk                      
-python3-pycache-pyc0    3.11.8-r0              apk                      
+python3                 3.11.9-r0              apk                      
+python3-pyc             3.11.9-r0              apk                      
+python3-pycache-pyc0    3.11.9-r0              apk                      
 rcssmin                 1.1.1                  python                   
 readline                8.2.1-r2               apk                      
 requests                2.31.0                 python                   
@@ -111,7 +111,7 @@ setuptools              65.5.0                 python
 shadow                  4.14.2-r0              apk                      
 skalibs                 2.14.0.1-r0            apk                      
 sqlite-libs             3.44.2-r0              apk                      
-sqlparse                0.4.4                  python                   
+sqlparse                0.5.0                  python                   
 ssl_client              1.36.1-r15             apk                      
 statsd                  4.0.1                  python                   
 typing_extensions       4.11.0                 python                   
