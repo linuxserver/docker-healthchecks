@@ -60,7 +60,7 @@ libintl                 0.22.3-r0              apk
 libmd                   1.1.0-r0               apk                      
 libncursesw             6.4_p20231125-r0       apk                      
 libpanelw               6.4_p20231125-r0       apk                      
-libpq                   16.2-r0                apk                      
+libpq                   16.2-r1                apk                      
 libproc2                4.0.4-r0               apk                      
 libssl3                 3.1.4-r6               apk                      
 libstdc++               13.2.1_git20231014-r0  apk                      
@@ -72,7 +72,7 @@ mailcap                 2.1.54-r0              apk
 mariadb-client          10.11.6-r0             apk                      
 mariadb-common          10.11.6-r0             apk                      
 mariadb-connector-c     3.3.8-r0               apk                      
-minio                   7.2.5                  python                   
+minio                   7.2.6                  python                   
 mpdecimal               2.5.1-r2               apk                      
 musl                    1.2.4_git20230717-r4   apk                      
 musl-utils              1.2.4_git20230717-r4   apk                      
@@ -88,7 +88,7 @@ pcre2                   10.42-r2               apk
 perl                    5.38.2-r0              apk                      
 pip                     24.0                   python                   
 postgresql-common       1.2-r1                 apk                      
-postgresql16-client     16.2-r0                apk                      
+postgresql16-client     16.2-r1                apk                      
 procps-ng               4.0.4-r0               apk                      
 psycopg2                2.9.9                  python                   
 pyc                     3.11.9-r0              apk                      
