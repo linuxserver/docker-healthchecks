@@ -1,9 +1,9 @@
 NAME                    VERSION                TYPE                    
-Django                  5.0.4                  python                   
+Django                  5.0.6                  python                   
 Markdown                3.6                    python                   
 PyYAML                  6.0.1                  python                   
 Simple Launcher         1.1.0.14               dotnet  (+5 duplicates)  
-aiosmtpd                1.4.5                  python                   
+aiosmtpd                1.4.6                  python                   
 alpine-baselayout       3.6.5-r0               apk                      
 alpine-baselayout-data  3.6.5-r0               apk                      
 alpine-keys             2.4-r1                 apk                      
@@ -36,8 +36,8 @@ cronsim                 2.5                    python
 cryptography            42.0.8                 python                   
 curl                    8.7.1-r0               apk                      
 django-appconf          1.0.6                  python                   
-django-compressor       4.4                    python                   
-django-stubs-ext        4.2.7                  python                   
+django-stubs-ext        5.0.2                  python                   
+django_compressor       4.5                    python                   
 fido2                   1.1.3                  python                   
 findutils               4.9.0-r5               apk                      
 gdbm                    1.23-r1                apk                      
@@ -95,17 +95,17 @@ pyc                     3.12.3-r1              apk
 pycparser               2.22                   python                   
 pycryptodome            3.20.0                 python                   
 pycurl                  7.45.2                 python                   
-pydantic                2.6.4                  python                   
-pydantic_core           2.16.3                 python                   
+pydantic                2.7.4                  python                   
+pydantic_core           2.18.4                 python                   
 pyotp                   2.9.0                  python                   
 python3                 3.12.3-r1              apk                      
 python3-pyc             3.12.3-r1              apk                      
 python3-pycache-pyc0    3.12.3-r1              apk                      
-rcssmin                 1.1.1                  python                   
+rcssmin                 1.1.2                  python                   
 readline                8.2.10-r0              apk                      
 requests                2.32.3                 python                   
 requests-oauthlib       2.0.0                  python                   
-rjsmin                  1.2.1                  python                   
+rjsmin                  1.2.2                  python                   
 scanelf                 1.3.7-r2               apk                      
 segno                   1.6.1                  python                   
 shadow                  4.15.1-r0              apk                      
@@ -116,7 +116,7 @@ ssl_client              1.36.1-r29             apk
 statsd                  4.0.1                  python                   
 typing_extensions       4.12.2                 python                   
 tzdata                  2024a-r1               apk                      
-urllib3                 2.2.1                  python                   
+urllib3                 2.2.2                  python                   
 utmps-libs              0.1.2.2-r1             apk                      
 uwsgi                   2.0.25.1-r1            apk                      
 uwsgi-python3           2.0.25.1-r1            apk                      
