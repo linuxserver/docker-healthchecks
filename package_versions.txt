@@ -7,7 +7,7 @@ aiosmtpd                1.4.6                  python
 alpine-baselayout       3.6.5-r0               apk                      
 alpine-baselayout-data  3.6.5-r0               apk                      
 alpine-keys             2.4-r1                 apk                      
-alpine-release          3.20.0-r0              apk                      
+alpine-release          3.20.1-r0              apk                      
 annotated-types         0.7.0                  python                   
 apk-tools               2.14.4-r0              apk                      
 apprise                 1.8.0                  python                   
@@ -86,7 +86,7 @@ oncalendar              1.1                    python
 oniguruma               6.9.9-r0               apk                      
 pcre2                   10.43-r0               apk                      
 perl                    5.38.2-r0              apk                      
-pip                     24.0                   python                   
+pip                     24.1                   python                   
 postgresql-common       1.2-r1                 apk                      
 postgresql16-client     16.3-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
