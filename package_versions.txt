@@ -33,7 +33,7 @@ coreutils-env           9.5-r1                 apk
 coreutils-fmt           9.5-r1                 apk                      
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
-cryptography            42.0.8                 python                   
+cryptography            43.0.0                 python                   
 curl                    8.8.0-r0               apk                      
 django-appconf          1.0.6                  python                   
 django-stubs-ext        5.0.2                  python                   
@@ -111,7 +111,7 @@ segno                   1.6.1                  python
 shadow                  4.15.1-r0              apk                      
 skalibs                 2.14.1.1-r0            apk                      
 sqlite-libs             3.45.3-r1              apk                      
-sqlparse                0.5.0                  python                   
+sqlparse                0.5.1                  python                   
 ssl_client              1.36.1-r29             apk                      
 statsd                  4.0.1                  python                   
 typing_extensions       4.12.2                 python                   
