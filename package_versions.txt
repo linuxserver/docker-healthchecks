@@ -7,14 +7,14 @@ aiosmtpd                1.4.6                  python
 alpine-baselayout       3.6.5-r0               apk                      
 alpine-baselayout-data  3.6.5-r0               apk                      
 alpine-keys             2.4-r1                 apk                      
-alpine-release          3.20.1-r0              apk                      
+alpine-release          3.20.2-r0              apk                      
 annotated-types         0.7.0                  python                   
 apk-tools               2.14.4-r0              apk                      
-apprise                 1.8.0                  python                   
+apprise                 1.8.1                  python                   
 argon2-cffi             23.1.0                 python                   
 argon2-cffi-bindings    21.2.0                 python                   
 asgiref                 3.8.1                  python                   
-atpublic                4.1.0                  python                   
+atpublic                5.0                    python                   
 attrs                   23.2.0                 python                   
 bash                    5.2.26-r0              apk                      
 brotli-libs             1.1.0-r2               apk                      
@@ -34,7 +34,7 @@ coreutils-fmt           9.5-r1                 apk
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
 cryptography            43.0.0                 python                   
-curl                    8.8.0-r0               apk                      
+curl                    8.9.0-r0               apk                      
 django-appconf          1.0.6                  python                   
 django-stubs-ext        5.0.2                  python                   
 django_compressor       4.5                    python                   
@@ -51,7 +51,7 @@ libbsd                  0.12.2-r0              apk
 libbz2                  1.0.8-r6               apk                      
 libcap2                 2.70-r0                apk                      
 libcrypto3              3.3.1-r3               apk                      
-libcurl                 8.8.0-r0               apk                      
+libcurl                 8.9.0-r0               apk                      
 libexpat                2.6.2-r0               apk                      
 libffi                  3.4.6-r0               apk                      
 libgcc                  13.2.1_git20240309-r0  apk                      
@@ -86,7 +86,7 @@ oncalendar              1.1                    python
 oniguruma               6.9.9-r0               apk                      
 pcre2                   10.43-r0               apk                      
 perl                    5.38.2-r0              apk                      
-pip                     24.1.2                 python                   
+pip                     24.2                   python                   
 postgresql-common       1.2-r1                 apk                      
 postgresql16-client     16.3-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
