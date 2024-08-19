@@ -71,8 +71,8 @@ mailcap                 2.1.54-r0              apk
 mariadb-client          10.11.8-r0             apk                      
 mariadb-common          10.11.8-r0             apk                      
 mariadb-connector-c     3.3.10-r0              apk                      
-markdown                3.6                    python                   
-minio                   7.2.7                  python                   
+markdown                3.7                    python                   
+minio                   7.2.8                  python                   
 mpdecimal               4.0.0-r0               apk                      
 musl                    1.2.5-r0               apk                      
 musl-utils              1.2.5-r0               apk                      
