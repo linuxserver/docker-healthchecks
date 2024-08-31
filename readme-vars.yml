@@ -58,6 +58,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "31.08.24:", desc: "Enable IPv6 on uwsgi. This will break healthchecks on docker hosts which explicitly disable IPv6."}
   - { date: "31.05.24:", desc: "Rebase to Alpine 3.20."}
   - { date: "24.01.24:", desc: "No longer write envs to local_settings.py. Envs will take precedence over any existing values in config file. Removed `REGENERATE_SETTINGS` as it is now obsolete."}
   - { date: "22.01.24:", desc: "Fix CSRF handling."}
