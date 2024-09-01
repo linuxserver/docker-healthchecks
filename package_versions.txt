@@ -21,7 +21,7 @@ c-ares                  1.28.1-r0              apk
 ca-certificates         20240705-r0            apk                      
 ca-certificates-bundle  20240705-r0            apk                      
 catatonit               0.2.0-r0               apk                      
-certifi                 2024.7.4               python                   
+certifi                 2024.8.30              python                   
 cffi                    1.17.0                 python                   
 charset-normalizer      3.3.2                  python                   
 click                   8.1.7                  python                   
@@ -31,7 +31,7 @@ coreutils-fmt           9.5-r1                 apk
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
 cryptography            43.0.0                 python                   
-curl                    8.9.0-r0               apk                      
+curl                    8.9.1-r1               apk                      
 django                  5.1                    python                   
 django-appconf          1.0.6                  python                   
 django-compressor       4.5.1                  python                   
@@ -49,7 +49,7 @@ libbsd                  0.12.2-r0              apk
 libbz2                  1.0.8-r6               apk                      
 libcap2                 2.70-r0                apk                      
 libcrypto3              3.3.1-r3               apk                      
-libcurl                 8.9.0-r0               apk                      
+libcurl                 8.9.1-r1               apk                      
 libexpat                2.6.2-r0               apk                      
 libffi                  3.4.6-r0               apk                      
 libgcc                  13.2.1_git20240309-r0  apk                      
