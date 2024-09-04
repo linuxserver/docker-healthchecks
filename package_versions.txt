@@ -7,7 +7,7 @@ alpine-keys             2.4-r1                 apk
 alpine-release          3.20.2-r0              apk                      
 annotated-types         0.7.0                  python                   
 apk-tools               2.14.4-r0              apk                      
-apprise                 1.8.1                  python                   
+apprise                 1.9.0                  python                   
 argon2-cffi             23.1.0                 python                   
 argon2-cffi-bindings    21.2.0                 python                   
 asgiref                 3.8.1                  python                   
@@ -30,9 +30,9 @@ coreutils-env           9.5-r1                 apk
 coreutils-fmt           9.5-r1                 apk                      
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
-cryptography            43.0.0                 python                   
+cryptography            43.0.1                 python                   
 curl                    8.9.1-r1               apk                      
-django                  5.1                    python                   
+django                  5.1.1                  python                   
 django-appconf          1.0.6                  python                   
 django-compressor       4.5.1                  python                   
 django-stubs-ext        5.0.4                  python                   
@@ -48,7 +48,7 @@ libattr                 2.5.2-r0               apk
 libbsd                  0.12.2-r0              apk                      
 libbz2                  1.0.8-r6               apk                      
 libcap2                 2.70-r0                apk                      
-libcrypto3              3.3.1-r3               apk                      
+libcrypto3              3.3.2-r0               apk                      
 libcurl                 8.9.1-r1               apk                      
 libexpat                2.6.2-r0               apk                      
 libffi                  3.4.6-r0               apk                      
@@ -61,7 +61,7 @@ libpanelw               6.4_p20240420-r0       apk
 libpq                   16.3-r0                apk                      
 libproc2                4.0.4-r0               apk                      
 libpsl                  0.21.5-r1              apk                      
-libssl3                 3.3.1-r3               apk                      
+libssl3                 3.3.2-r0               apk                      
 libstdc++               13.2.1_git20240309-r0  apk                      
 libunistring            1.2-r0                 apk                      
 libxml2                 2.12.7-r0              apk                      
@@ -89,7 +89,7 @@ pip                     24.2                   python
 postgresql-common       1.2-r1                 apk                      
 postgresql16-client     16.3-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
-psycopg2                2.9.9                  python                   
+psycopg                 3.2.1                  python                   
 pyc                     3.12.3-r2              apk                      
 pycparser               2.22                   python                   
 pycryptodome            3.20.0                 python                   
