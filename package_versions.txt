@@ -30,7 +30,7 @@ coreutils-env           9.5-r1                 apk
 coreutils-fmt           9.5-r1                 apk                      
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
-cryptography            43.0.1                 python                   
+cryptography            43.0.3                 python                   
 curl                    8.10.1-r0              apk                      
 django                  5.1.1                  python                   
 django-appconf          1.0.6                  python                   
@@ -48,7 +48,7 @@ libattr                 2.5.2-r0               apk
 libbsd                  0.12.2-r0              apk                      
 libbz2                  1.0.8-r6               apk                      
 libcap2                 2.70-r0                apk                      
-libcrypto3              3.3.2-r0               apk                      
+libcrypto3              3.3.2-r1               apk                      
 libcurl                 8.10.1-r0              apk                      
 libexpat                2.6.3-r0               apk                      
 libffi                  3.4.6-r0               apk                      
@@ -61,7 +61,7 @@ libpanelw               6.4_p20240420-r1       apk
 libpq                   16.3-r0                apk                      
 libproc2                4.0.4-r0               apk                      
 libpsl                  0.21.5-r1              apk                      
-libssl3                 3.3.2-r0               apk                      
+libssl3                 3.3.2-r1               apk                      
 libstdc++               13.2.1_git20240309-r0  apk                      
 libunistring            1.2-r0                 apk                      
 libxml2                 2.12.7-r0              apk                      
@@ -76,7 +76,7 @@ minio                   7.2.9                  python
 mpdecimal               4.0.0-r0               apk                      
 musl                    1.2.5-r0               apk                      
 musl-utils              1.2.5-r0               apk                      
-mysqlclient             2.2.4                  python                   
+mysqlclient             2.2.5                  python                   
 ncurses-terminfo-base   6.4_p20240420-r1       apk                      
 netcat-openbsd          1.226-r0               apk                      
 nghttp2-libs            1.62.1-r0              apk                      
