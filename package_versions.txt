@@ -58,7 +58,7 @@ libintl                 0.22.5-r0              apk
 libmd                   1.1.0-r0               apk                      
 libncursesw             6.4_p20240420-r1       apk                      
 libpanelw               6.4_p20240420-r1       apk                      
-libpq                   16.3-r0                apk                      
+libpq                   16.4-r0                apk                      
 libproc2                4.0.4-r0               apk                      
 libpsl                  0.21.5-r1              apk                      
 libssl3                 3.3.2-r1               apk                      
@@ -68,8 +68,8 @@ libxml2                 2.12.7-r0              apk
 linux-pam               1.6.0-r0               apk                      
 lz4-libs                1.9.4-r5               apk                      
 mailcap                 2.1.54-r0              apk                      
-mariadb-client          10.11.8-r0             apk                      
-mariadb-common          10.11.8-r0             apk                      
+mariadb-client          10.11.10-r0            apk                      
+mariadb-common          10.11.10-r0            apk                      
 mariadb-connector-c     3.3.10-r0              apk                      
 markdown                3.7                    python                   
 minio                   7.2.10                 python                   
@@ -87,7 +87,7 @@ pcre2                   10.43-r0               apk
 perl                    5.38.2-r0              apk                      
 pip                     24.3.1                 python                   
 postgresql-common       1.2-r1                 apk                      
-postgresql16-client     16.3-r0                apk                      
+postgresql16-client     16.4-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
 psycopg                 3.2.1                  python                   
 pyc                     3.12.7-r0              apk                      
