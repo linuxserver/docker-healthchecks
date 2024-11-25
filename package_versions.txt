@@ -58,7 +58,7 @@ libintl                 0.22.5-r0              apk
 libmd                   1.1.0-r0               apk                      
 libncursesw             6.4_p20240420-r2       apk                      
 libpanelw               6.4_p20240420-r2       apk                      
-libpq                   16.5-r0                apk                      
+libpq                   16.6-r0                apk                      
 libproc2                4.0.4-r0               apk                      
 libpsl                  0.21.5-r1              apk                      
 libssl3                 3.3.2-r1               apk                      
@@ -72,7 +72,7 @@ mariadb-client          10.11.10-r0            apk
 mariadb-common          10.11.10-r0            apk                      
 mariadb-connector-c     3.3.10-r0              apk                      
 markdown                3.7                    python                   
-minio                   7.2.10                 python                   
+minio                   7.2.11                 python                   
 mpdecimal               4.0.0-r0               apk                      
 musl                    1.2.5-r0               apk                      
 musl-utils              1.2.5-r0               apk                      
@@ -87,7 +87,7 @@ pcre2                   10.43-r0               apk
 perl                    5.38.2-r0              apk                      
 pip                     24.3.1                 python                   
 postgresql-common       1.2-r1                 apk                      
-postgresql16-client     16.5-r0                apk                      
+postgresql16-client     16.6-r0                apk                      
 procps-ng               4.0.4-r0               apk                      
 psycopg                 3.2.1                  python                   
 pyc                     3.12.7-r0              apk                      
@@ -120,7 +120,7 @@ urllib3                 2.2.3                  python
 utmps-libs              0.1.2.2-r1             apk                      
 uwsgi                   2.0.25.1-r1            apk                      
 uwsgi-python3           2.0.25.1-r1            apk                      
-wheel                   0.45.0                 python                   
+wheel                   0.45.1                 python                   
 whitenoise              6.7.0                  python                   
 xz-libs                 5.6.2-r0               apk                      
 zlib                    1.3.1-r1               apk                      
