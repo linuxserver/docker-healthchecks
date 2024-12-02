@@ -30,7 +30,7 @@ coreutils-env           9.5-r1                 apk
 coreutils-fmt           9.5-r1                 apk                      
 coreutils-sha512sum     9.5-r1                 apk                      
 cronsim                 2.5                    python                   
-cryptography            43.0.3                 python                   
+cryptography            44.0.0                 python                   
 curl                    8.11.0-r2              apk                      
 django                  5.1.1                  python                   
 django-appconf          1.0.6                  python                   
@@ -72,7 +72,7 @@ mariadb-client          10.11.10-r0            apk
 mariadb-common          10.11.10-r0            apk                      
 mariadb-connector-c     3.3.10-r0              apk                      
 markdown                3.7                    python                   
-minio                   7.2.11                 python                   
+minio                   7.2.12                 python                   
 mpdecimal               4.0.0-r0               apk                      
 musl                    1.2.5-r0               apk                      
 musl-utils              1.2.5-r0               apk                      
