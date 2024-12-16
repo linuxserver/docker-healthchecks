@@ -12,7 +12,7 @@ argon2-cffi             23.1.0                 python
 argon2-cffi-bindings    21.2.0                 python                   
 asgiref                 3.8.1                  python                   
 atpublic                5.0                    python                   
-attrs                   24.2.0                 python                   
+attrs                   24.3.0                 python                   
 bash                    5.2.26-r0              apk                      
 brotli-libs             1.1.0-r2               apk                      
 busybox                 1.36.1-r29             apk                      
@@ -21,7 +21,7 @@ c-ares                  1.33.1-r0              apk
 ca-certificates         20240705-r0            apk                      
 ca-certificates-bundle  20240705-r0            apk                      
 catatonit               0.2.0-r0               apk                      
-certifi                 2024.8.30              python                   
+certifi                 2024.12.14             python                   
 cffi                    1.17.1                 python                   
 charset-normalizer      3.4.0                  python                   
 click                   8.1.7                  python                   
