@@ -36,7 +36,7 @@ pipeline {
     CI_PORT='8000'
     CI_SSL='false'
     CI_DELAY='120'
-    CI_DOCKERENV='SITE_ROOT=http://*|ALLOWED_HOSTS=""'
+    CI_DOCKERENV='SITE_ROOT=http://*|ALLOWED_HOSTS=\'*\''
     CI_AUTH=''
     CI_WEBPATH=''
   }
