@@ -337,6 +337,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.12.24:** - Rebase to Alpine 3.21.
 * **31.08.24:** - Enable IPv6 on uwsgi.
 * **31.05.24:** - Rebase to Alpine 3.20.
 * **24.01.24:** - No longer write envs to local_settings.py. Envs will take precedence over any existing values in config file. Removed `REGENERATE_SETTINGS` as it is now obsolete.
