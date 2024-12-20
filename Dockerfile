@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.20
+FROM ghcr.io/linuxserver/baseimage-alpine:3.21
 
 # set version label
 ARG BUILD_DATE
@@ -51,11 +51,11 @@ RUN \
   pip install -U --no-cache-dir \
     pip \
     wheel && \
-  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.20/ \
+  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.21/ \
     apprise \
     minio \
     mysqlclient && \
-  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.20/ -r requirements.txt && \
+  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.21/ -r requirements.txt && \
   cd /app/healthchecks && \
   DEBUG=False python3 ./manage.py collectstatic --noinput && \
   DEBUG=False python3 ./manage.py compress && \
