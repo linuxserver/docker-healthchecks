@@ -25,7 +25,7 @@ catatonit               0.2.0-r0          apk
 certifi                 2024.12.14        python                   
 cffi                    1.17.1            python                   
 charset-normalizer      3.4.0             python                   
-click                   8.1.7             python                   
+click                   8.1.8             python                   
 coreutils               9.5-r1            apk                      
 coreutils-env           9.5-r1            apk                      
 coreutils-fmt           9.5-r1            apk                      
@@ -115,7 +115,7 @@ ssl_client              1.37.0-r9         apk
 statsd                  4.0.1             python                   
 typing-extensions       4.12.2            python                   
 tzdata                  2024b-r1          apk                      
-urllib3                 2.2.3             python                   
+urllib3                 2.3.0             python                   
 utmps-libs              0.1.2.3-r2        apk                      
 uwsgi                   2.0.27-r0         apk                      
 uwsgi-python3           2.0.27-r0         apk                      
