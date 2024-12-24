@@ -24,7 +24,7 @@ param_env_vars:
   - {env_var: "SUPERUSER_PASSWORD", env_value: "", desc: "Superuser password."}
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - {env_var: "ALLOWED_HOSTS", env_value: "", desc: "A comma-separated list of valid hostnames for the server. Default is: `*`."}
+  - {env_var: "ALLOWED_HOSTS", env_value: "", desc: "A comma-separated list of valid hostnames for the server. Default is the domain portion of `SITE_ROOT`."}
   - {env_var: "APPRISE_ENABLED", env_value: "False", desc: "Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise)."}
   - {env_var: "CSRF_TRUSTED_ORIGINS", env_value: "", desc: "A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`."}
   - {env_var: "DEBUG", env_value: "True", desc: "Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security."}
