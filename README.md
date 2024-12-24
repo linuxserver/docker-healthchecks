@@ -158,7 +158,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e SITE_NAME=` | The site's name (e.g., "Example Corp HealthChecks"). |
 | `-e SUPERUSER_EMAIL=` | Superuser email. |
 | `-e SUPERUSER_PASSWORD=` | Superuser password. |
-| `-e ALLOWED_HOSTS=` | A comma-separated list of valid hostnames for the server. Default is: `*`. |
+| `-e ALLOWED_HOSTS=` | A comma-separated list of valid hostnames for the server. Default is the domain portion of `SITE_ROOT`. |
 | `-e APPRISE_ENABLED=False` | Set to `True` to enable the Apprise integration (https://github.com/caronc/apprise). |
 | `-e CSRF_TRUSTED_ORIGINS=` | A [list](https://docs.python.org/3/tutorial/introduction.html#lists) of trusted origins for unsafe requests (e.g. POST). Defaults to the value of `SITE_ROOT`. |
 | `-e DEBUG=True` | Set to `False` to disable. Debug mode relaxes CSRF protections and increases logging verbosity but should be disabled for production instances as it will impact performance and security. |
