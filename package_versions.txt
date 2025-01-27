@@ -12,8 +12,8 @@ apprise                 1.9.2             python
 argon2-cffi             23.1.0            python                   
 argon2-cffi-bindings    21.2.0            python                   
 asgiref                 3.8.1             python                   
-atpublic                5.0               python                   
-attrs                   24.3.0            python                   
+atpublic                5.1               python                   
+attrs                   25.1.0            python                   
 bash                    5.2.37-r0         apk                      
 brotli-libs             1.1.0-r2          apk                      
 busybox                 1.37.0-r12        apk                      
@@ -84,7 +84,7 @@ oauthlib                3.2.2             python
 oncalendar              1.1               python                   
 oniguruma               6.9.9-r0          apk                      
 pcre2                   10.43-r0          apk                      
-pip                     24.3.1            python                   
+pip                     25.0              python                   
 postgresql-common       1.2-r1            apk                      
 postgresql17-client     17.2-r0           apk                      
 procps-ng               4.0.4-r2          apk                      
