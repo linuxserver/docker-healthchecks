@@ -5,9 +5,9 @@ aiosmtpd                1.4.6             python
 alpine-baselayout       3.6.8-r1          apk                      
 alpine-baselayout-data  3.6.8-r1          apk                      
 alpine-keys             2.5-r0            apk                      
-alpine-release          3.21.2-r0         apk                      
+alpine-release          3.21.3-r0         apk                      
 annotated-types         0.7.0             python                   
-apk-tools               2.14.6-r2         apk                      
+apk-tools               2.14.6-r3         apk                      
 apprise                 1.9.2             python                   
 argon2-cffi             23.1.0            python                   
 argon2-cffi-bindings    21.2.0            python                   
@@ -31,10 +31,10 @@ coreutils-env           9.5-r2            apk
 coreutils-fmt           9.5-r2            apk                      
 coreutils-sha512sum     9.5-r2            apk                      
 cronsim                 2.6               python                   
-cryptography            44.0.0            python                   
-curl                    8.12.0-r0         apk                      
+cryptography            44.0.1            python                   
+curl                    8.12.1-r0         apk                      
 django                  5.1.4             python                   
-django-appconf          1.0.6             python                   
+django-appconf          1.1.0             python                   
 django-compressor       4.5.1             python                   
 django-stubs-ext        5.1.1             python                   
 fido2                   1.2.0             python                   
@@ -48,8 +48,8 @@ libattr                 2.5.2-r2          apk
 libbsd                  0.12.2-r0         apk                      
 libbz2                  1.0.8-r6          apk                      
 libcap2                 2.71-r0           apk                      
-libcrypto3              3.3.2-r6          apk                      
-libcurl                 8.12.0-r0         apk                      
+libcrypto3              3.3.3-r0          apk                      
+libcurl                 8.12.1-r0         apk                      
 libexpat                2.6.4-r0          apk                      
 libffi                  3.4.6-r0          apk                      
 libgcc                  14.2.0-r4         apk                      
@@ -61,7 +61,7 @@ libpanelw               6.5_p20241006-r3  apk
 libpq                   17.2-r0           apk                      
 libproc2                4.0.4-r2          apk                      
 libpsl                  0.21.5-r3         apk                      
-libssl3                 3.3.2-r6          apk                      
+libssl3                 3.3.3-r0          apk                      
 libstdc++               14.2.0-r4         apk                      
 libunistring            1.2-r0            apk                      
 libxml2                 2.13.4-r3         apk                      
@@ -74,8 +74,8 @@ mariadb-connector-c     3.3.10-r0         apk
 markdown                3.7               python                   
 minio                   7.2.15            python                   
 mpdecimal               4.0.0-r0          apk                      
-musl                    1.2.5-r8          apk                      
-musl-utils              1.2.5-r8          apk                      
+musl                    1.2.5-r9          apk                      
+musl-utils              1.2.5-r9          apk                      
 mysqlclient             2.2.7             python                   
 ncurses-terminfo-base   6.5_p20241006-r3  apk                      
 netcat-openbsd          1.226.1.1-r0      apk                      
@@ -114,7 +114,7 @@ sqlparse                0.5.3             python
 ssl_client              1.37.0-r12        apk                      
 statsd                  4.0.1             python                   
 typing-extensions       4.12.2            python                   
-tzdata                  2024b-r1          apk                      
+tzdata                  2025a-r0          apk                      
 urllib3                 2.3.0             python                   
 utmps-libs              0.1.2.3-r2        apk                      
 uwsgi                   2.0.27-r0         apk                      
