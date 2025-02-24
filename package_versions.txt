@@ -58,7 +58,7 @@ libintl                 0.22.5-r0         apk
 libmd                   1.1.0-r0          apk                      
 libncursesw             6.5_p20241006-r3  apk                      
 libpanelw               6.5_p20241006-r3  apk                      
-libpq                   17.2-r0           apk                      
+libpq                   17.4-r0           apk                      
 libproc2                4.0.4-r2          apk                      
 libpsl                  0.21.5-r3         apk                      
 libssl3                 3.3.3-r0          apk                      
@@ -86,7 +86,7 @@ oniguruma               6.9.9-r0          apk
 pcre2                   10.43-r0          apk                      
 pip                     25.0.1            python                   
 postgresql-common       1.2-r1            apk                      
-postgresql17-client     17.2-r0           apk                      
+postgresql17-client     17.4-r0           apk                      
 procps-ng               4.0.4-r2          apk                      
 psycopg                 3.2.3             python                   
 pyc                     3.12.9-r0         apk                      
