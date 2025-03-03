@@ -31,7 +31,7 @@ coreutils-env           9.5-r2            apk
 coreutils-fmt           9.5-r2            apk                      
 coreutils-sha512sum     9.5-r2            apk                      
 cronsim                 2.6               python                   
-cryptography            44.0.1            python                   
+cryptography            44.0.2            python                   
 curl                    8.12.1-r0         apk                      
 django                  5.1.4             python                   
 django-appconf          1.1.0             python                   
@@ -51,7 +51,7 @@ libcap2                 2.71-r0           apk
 libcrypto3              3.3.3-r0          apk                      
 libcurl                 8.12.1-r0         apk                      
 libexpat                2.6.4-r0          apk                      
-libffi                  3.4.6-r0          apk                      
+libffi                  3.4.7-r0          apk                      
 libgcc                  14.2.0-r4         apk                      
 libidn2                 2.3.7-r0          apk                      
 libintl                 0.22.5-r0         apk                      
@@ -68,8 +68,8 @@ libxml2                 2.13.4-r3         apk
 linux-pam               1.6.1-r1          apk                      
 lz4-libs                1.10.0-r0         apk                      
 mailcap                 2.1.54-r0         apk                      
-mariadb-client          11.4.4-r1         apk                      
-mariadb-common          11.4.4-r1         apk                      
+mariadb-client          11.4.5-r0         apk                      
+mariadb-common          11.4.5-r0         apk                      
 mariadb-connector-c     3.3.10-r0         apk                      
 markdown                3.7               python                   
 minio                   7.2.15            python                   
