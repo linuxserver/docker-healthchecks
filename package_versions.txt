@@ -64,7 +64,7 @@ libpsl                  0.21.5-r3         apk
 libssl3                 3.3.3-r0          apk                      
 libstdc++               14.2.0-r4         apk                      
 libunistring            1.2-r0            apk                      
-libxml2                 2.13.4-r3         apk                      
+libxml2                 2.13.4-r4         apk                      
 linux-pam               1.6.1-r1          apk                      
 lz4-libs                1.10.0-r0         apk                      
 mailcap                 2.1.54-r0         apk                      
