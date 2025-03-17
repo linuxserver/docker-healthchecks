@@ -13,7 +13,7 @@ argon2-cffi             23.1.0            python
 argon2-cffi-bindings    21.2.0            python                   
 asgiref                 3.8.1             python                   
 atpublic                5.1               python                   
-attrs                   25.1.0            python                   
+attrs                   25.3.0            python                   
 bash                    5.2.37-r0         apk                      
 brotli-libs             1.1.0-r2          apk                      
 busybox                 1.37.0-r12        apk                      
@@ -50,7 +50,7 @@ libbz2                  1.0.8-r6          apk
 libcap2                 2.71-r0           apk                      
 libcrypto3              3.3.3-r0          apk                      
 libcurl                 8.12.1-r0         apk                      
-libexpat                2.6.4-r0          apk                      
+libexpat                2.7.0-r0          apk                      
 libffi                  3.4.7-r0          apk                      
 libgcc                  14.2.0-r4         apk                      
 libidn2                 2.3.7-r0          apk                      
@@ -64,7 +64,7 @@ libpsl                  0.21.5-r3         apk
 libssl3                 3.3.3-r0          apk                      
 libstdc++               14.2.0-r4         apk                      
 libunistring            1.2-r0            apk                      
-libxml2                 2.13.4-r4         apk                      
+libxml2                 2.13.4-r5         apk                      
 linux-pam               1.6.1-r1          apk                      
 lz4-libs                1.10.0-r0         apk                      
 mailcap                 2.1.54-r0         apk                      
@@ -91,7 +91,7 @@ procps-ng               4.0.4-r2          apk
 psycopg                 3.2.3             python                   
 pyc                     3.12.9-r0         apk                      
 pycparser               2.22              python                   
-pycryptodome            3.21.0            python                   
+pycryptodome            3.22.0            python                   
 pycurl                  7.45.4            python                   
 pydantic                2.10.3            python                   
 pydantic-core           2.27.1            python                   
