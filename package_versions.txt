@@ -8,7 +8,7 @@ alpine-keys             2.5-r0            apk
 alpine-release          3.21.3-r0         apk                      
 annotated-types         0.7.0             python                   
 apk-tools               2.14.6-r3         apk                      
-apprise                 1.9.2             python                   
+apprise                 1.9.3             python                   
 argon2-cffi             23.1.0            python                   
 argon2-cffi-bindings    21.2.0            python                   
 asgiref                 3.8.1             python                   
@@ -113,8 +113,8 @@ sqlite-libs             3.48.0-r0         apk
 sqlparse                0.5.3             python                   
 ssl_client              1.37.0-r12        apk                      
 statsd                  4.0.1             python                   
-typing-extensions       4.12.2            python                   
-tzdata                  2025a-r0          apk                      
+typing-extensions       4.13.0            python                   
+tzdata                  2025b-r0          apk                      
 urllib3                 2.3.0             python                   
 utmps-libs              0.1.2.3-r2        apk                      
 uwsgi                   2.0.27-r0         apk                      
