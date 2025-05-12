@@ -24,7 +24,7 @@ catatonit               0.2.0-r0          apk
 certifi                 2025.4.26         python    
 cffi                    1.17.1            python    
 charset-normalizer      3.4.2             python    
-click                   8.1.8             python    
+click                   8.2.0             python    
 coreutils               9.5-r2            apk       
 coreutils-env           9.5-r2            apk       
 coreutils-fmt           9.5-r2            apk       
