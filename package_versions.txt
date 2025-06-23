@@ -71,7 +71,7 @@ mailcap                 2.1.54-r0         apk
 mariadb-client          11.4.5-r0         apk                      
 mariadb-common          11.4.5-r0         apk                      
 mariadb-connector-c     3.3.10-r0         apk                      
-markdown                3.8               python                   
+markdown                3.8.2             python                   
 minio                   7.2.15            python                   
 mpdecimal               4.0.0-r0          apk                      
 musl                    1.2.5-r9          apk                      
@@ -80,7 +80,7 @@ mysqlclient             2.2.7             python
 ncurses-terminfo-base   6.5_p20241006-r3  apk                      
 netcat-openbsd          1.226.1.1-r0      apk                      
 nghttp2-libs            1.64.0-r0         apk                      
-oauthlib                3.2.2             python                   
+oauthlib                3.3.1             python                   
 oncalendar              1.1               python                   
 oniguruma               6.9.9-r0          apk                      
 pcre2                   10.43-r0          apk                      
@@ -117,7 +117,7 @@ statsd                  4.0.1             python
 typing-extensions       4.14.0            python                   
 typing-inspection       0.4.1             python                   
 tzdata                  2025b-r0          apk                      
-urllib3                 2.4.0             python                   
+urllib3                 2.5.0             python                   
 utmps-libs              0.1.2.3-r2        apk                      
 uwsgi                   2.0.28-r0         apk                      
 uwsgi-python3           2.0.28-r0         apk                      
