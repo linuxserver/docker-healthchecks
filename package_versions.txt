@@ -11,7 +11,7 @@ apk-tools               2.14.9-r2         apk
 apprise                 1.9.3             python                   
 argon2-cffi             25.1.0            python                   
 argon2-cffi-bindings    21.2.0            python                   
-asgiref                 3.9.0             python                   
+asgiref                 3.9.1             python                   
 atpublic                6.0.1             python                   
 attrs                   25.3.0            python                   
 bash                    5.2.37-r0         apk                      
@@ -22,7 +22,7 @@ c-ares                  1.34.5-r0         apk
 ca-certificates         20241121-r2       apk                      
 ca-certificates-bundle  20241121-r2       apk                      
 catatonit               0.2.1-r0          apk                      
-certifi                 2025.6.15         python                   
+certifi                 2025.7.14         python                   
 cffi                    1.17.1            python                   
 charset-normalizer      3.4.2             python                   
 click                   8.2.1             python                   
