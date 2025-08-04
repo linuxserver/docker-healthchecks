@@ -8,9 +8,9 @@ alpine-keys             2.5-r0            apk
 alpine-release          3.22.1-r0         apk                      
 annotated-types         0.7.0             python                   
 apk-tools               2.14.9-r2         apk                      
-apprise                 1.9.3             python                   
+apprise                 1.9.4             python                   
 argon2-cffi             25.1.0            python                   
-argon2-cffi-bindings    21.2.0            python                   
+argon2-cffi-bindings    25.1.0            python                   
 asgiref                 3.9.1             python                   
 atpublic                6.0.1             python                   
 attrs                   25.3.0            python                   
@@ -22,7 +22,7 @@ c-ares                  1.34.5-r0         apk
 ca-certificates         20250619-r0       apk                      
 ca-certificates-bundle  20250619-r0       apk                      
 catatonit               0.2.1-r0          apk                      
-certifi                 2025.7.14         python                   
+certifi                 2025.8.3          python                   
 cffi                    1.17.1            python                   
 charset-normalizer      3.4.2             python                   
 click                   8.2.1             python                   
@@ -85,7 +85,7 @@ oauthlib                3.3.1             python
 oncalendar              1.1               python                   
 oniguruma               6.9.10-r0         apk                      
 pcre2                   10.43-r1          apk                      
-pip                     25.1.1            python                   
+pip                     25.2              python                   
 postgresql-common       1.2-r1            apk                      
 postgresql17-client     17.5-r0           apk                      
 procps-ng               4.0.4-r3          apk                      
