@@ -16,15 +16,15 @@ atpublic                6.0.1             python
 attrs                   25.3.0            python                   
 bash                    5.2.37-r0         apk                      
 brotli-libs             1.1.0-r2          apk                      
-busybox                 1.37.0-r18        apk                      
-busybox-binsh           1.37.0-r18        apk                      
+busybox                 1.37.0-r19        apk                      
+busybox-binsh           1.37.0-r19        apk                      
 c-ares                  1.34.5-r0         apk                      
 ca-certificates         20250619-r0       apk                      
 ca-certificates-bundle  20250619-r0       apk                      
 catatonit               0.2.1-r0          apk                      
 certifi                 2025.8.3          python                   
 cffi                    1.17.1            python                   
-charset-normalizer      3.4.2             python                   
+charset-normalizer      3.4.3             python                   
 click                   8.2.1             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
@@ -113,7 +113,7 @@ shadow                  4.17.3-r0         apk
 skalibs-libs            2.14.4.0-r0       apk                      
 sqlite-libs             3.49.2-r1         apk                      
 sqlparse                0.5.3             python                   
-ssl_client              1.37.0-r18        apk                      
+ssl_client              1.37.0-r19        apk                      
 statsd                  4.0.1             python                   
 typing-extensions       4.14.1            python                   
 typing-inspection       0.4.1             python                   
