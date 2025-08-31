@@ -33,7 +33,7 @@ coreutils-sha512sum     9.7-r1            apk
 cronsim                 2.6               python                   
 cryptography            45.0.6            python                   
 curl                    8.14.1-r1         apk                      
-django                  5.2.4             python                   
+django                  5.2.5             python                   
 django-appconf          1.1.0             python                   
 django-compressor       4.5.1             python                   
 django-stubs-ext        5.2.2             python                   
