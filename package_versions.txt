@@ -7,7 +7,7 @@ alpine-baselayout-data  3.7.0-r0          apk
 alpine-keys             2.5-r0            apk                      
 alpine-release          3.22.1-r0         apk                      
 annotated-types         0.7.0             python                   
-apk-tools               2.14.9-r2         apk                      
+apk-tools               2.14.9-r3         apk                      
 apprise                 1.9.4             python                   
 argon2-cffi             25.1.0            python                   
 argon2-cffi-bindings    25.1.0            python                   
@@ -23,7 +23,7 @@ ca-certificates         20250619-r0       apk
 ca-certificates-bundle  20250619-r0       apk                      
 catatonit               0.2.1-r0          apk                      
 certifi                 2025.8.3          python                   
-cffi                    1.17.1            python                   
+cffi                    2.0.0             python                   
 charset-normalizer      3.4.3             python                   
 click                   8.2.1             python                   
 coreutils               9.7-r1            apk                      
@@ -44,7 +44,7 @@ grep                    3.12-r0           apk
 idna                    3.10              python                   
 jansson                 2.14.1-r0         apk                      
 jq                      1.8.0-r0          apk                      
-libapk2                 2.14.9-r2         apk                      
+libapk2                 2.14.9-r3         apk                      
 libattr                 2.5.2-r2          apk                      
 libbsd                  0.12.2-r0         apk                      
 libbz2                  1.0.8-r6          apk                      
@@ -91,7 +91,7 @@ postgresql17-client     17.6-r0           apk
 procps-ng               4.0.4-r3          apk                      
 psycopg                 3.2.9             python                   
 pyc                     3.12.11-r0        apk                      
-pycparser               2.22              python                   
+pycparser               2.23              python                   
 pycryptodome            3.23.0            python                   
 pycurl                  7.45.6            python                   
 pydantic                2.11.7            python                   
