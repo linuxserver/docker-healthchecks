@@ -25,13 +25,13 @@ catatonit               0.2.1-r0          apk
 certifi                 2025.8.3          python                   
 cffi                    2.0.0             python                   
 charset-normalizer      3.4.3             python                   
-click                   8.2.1             python                   
+click                   8.3.0             python                   
 coreutils               9.7-r1            apk                      
 coreutils-env           9.7-r1            apk                      
 coreutils-fmt           9.7-r1            apk                      
 coreutils-sha512sum     9.7-r1            apk                      
 cronsim                 2.6               python                   
-cryptography            45.0.7            python                   
+cryptography            46.0.1            python                   
 curl                    8.14.1-r1         apk                      
 django                  5.2.5             python                   
 django-appconf          1.1.0             python                   
@@ -51,7 +51,7 @@ libbz2                  1.0.8-r6          apk
 libcap2                 2.76-r0           apk                      
 libcrypto3              3.5.2-r0          apk                      
 libcurl                 8.14.1-r1         apk                      
-libexpat                2.7.1-r0          apk                      
+libexpat                2.7.2-r0          apk                      
 libffi                  3.4.8-r0          apk                      
 libgcc                  14.2.0-r6         apk                      
 libidn2                 2.3.7-r0          apk                      
