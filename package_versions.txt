@@ -5,7 +5,7 @@ aiosmtpd                1.4.6             python
 alpine-baselayout       3.7.0-r0          apk                      
 alpine-baselayout-data  3.7.0-r0          apk                      
 alpine-keys             2.5-r0            apk                      
-alpine-release          3.22.1-r0         apk                      
+alpine-release          3.22.2-r0         apk                      
 annotated-types         0.7.0             python                   
 apk-tools               2.14.9-r3         apk                      
 apprise                 1.9.5             python                   
@@ -13,7 +13,7 @@ argon2-cffi             25.1.0            python
 argon2-cffi-bindings    25.1.0            python                   
 asgiref                 3.10.0            python                   
 atpublic                6.0.2             python                   
-attrs                   25.3.0            python                   
+attrs                   25.4.0            python                   
 bash                    5.2.37-r0         apk                      
 brotli-libs             1.1.0-r2          apk                      
 busybox                 1.37.0-r19        apk                      
@@ -41,7 +41,7 @@ fido2                   2.0.0             python
 findutils               4.10.0-r0         apk                      
 gdbm                    1.24-r0           apk                      
 grep                    3.12-r0           apk                      
-idna                    3.10              python                   
+idna                    3.11              python                   
 jansson                 2.14.1-r0         apk                      
 jq                      1.8.0-r0          apk                      
 libapk2                 2.14.9-r3         apk                      
@@ -65,7 +65,7 @@ libpsl                  0.21.5-r3         apk
 libssl3                 3.5.4-r0          apk                      
 libstdc++               14.2.0-r6         apk                      
 libunistring            1.3-r0            apk                      
-libxml2                 2.13.8-r0         apk                      
+libxml2                 2.13.9-r0         apk                      
 linux-pam               1.7.0-r4          apk                      
 lz4-libs                1.10.0-r0         apk                      
 mailcap                 2.1.54-r0         apk                      
@@ -90,7 +90,7 @@ postgresql-common       1.2-r1            apk
 postgresql17-client     17.6-r0           apk                      
 procps-ng               4.0.4-r3          apk                      
 psycopg                 3.2.9             python                   
-pyc                     3.12.11-r0        apk                      
+pyc                     3.12.12-r0        apk                      
 pycparser               2.23              python                   
 pycryptodome            3.23.0            python                   
 pycurl                  7.45.6            python                   
@@ -98,9 +98,9 @@ pydantic                2.11.7            python
 pydantic-core           2.33.2            python                   
 pyjwt                   2.10.1            python                   
 pyotp                   2.9.0             python                   
-python3                 3.12.11-r0        apk                      
-python3-pyc             3.12.11-r0        apk                      
-python3-pycache-pyc0    3.12.11-r0        apk                      
+python3                 3.12.12-r0        apk                      
+python3-pyc             3.12.12-r0        apk                      
+python3-pycache-pyc0    3.12.12-r0        apk                      
 pyyaml                  6.0.3             python                   
 rcssmin                 1.1.2             python                   
 readline                8.2.13-r1         apk                      
