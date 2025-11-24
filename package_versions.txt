@@ -11,13 +11,13 @@ apk-tools               2.14.9-r3         apk
 apprise                 1.9.5             python                   
 argon2-cffi             25.1.0            python                   
 argon2-cffi-bindings    25.1.0            python                   
-asgiref                 3.10.0            python                   
+asgiref                 3.11.0            python                   
 atpublic                6.0.2             python                   
 attrs                   25.4.0            python                   
 bash                    5.2.37-r0         apk                      
 brotli-libs             1.1.0-r2          apk                      
-busybox                 1.37.0-r19        apk                      
-busybox-binsh           1.37.0-r19        apk                      
+busybox                 1.37.0-r20        apk                      
+busybox-binsh           1.37.0-r20        apk                      
 c-ares                  1.34.5-r0         apk                      
 ca-certificates         20250911-r0       apk                      
 ca-certificates-bundle  20250911-r0       apk                      
@@ -43,7 +43,7 @@ gdbm                    1.24-r0           apk
 grep                    3.12-r0           apk                      
 idna                    3.11              python                   
 jansson                 2.14.1-r0         apk                      
-jq                      1.8.0-r0          apk                      
+jq                      1.8.1-r0          apk                      
 libapk2                 2.14.9-r3         apk                      
 libattr                 2.5.2-r2          apk                      
 libbsd                  0.12.2-r0         apk                      
@@ -73,7 +73,7 @@ mariadb-client          11.4.8-r0         apk
 mariadb-common          11.4.8-r0         apk                      
 mariadb-connector-c     3.3.10-r0         apk                      
 markdown                3.10              python                   
-minio                   7.2.18            python                   
+minio                   7.2.19            python                   
 mpdecimal               4.0.1-r0          apk                      
 musl                    1.2.5-r10         apk                      
 musl-utils              1.2.5-r10         apk                      
@@ -113,7 +113,7 @@ shadow                  4.17.3-r0         apk
 skalibs-libs            2.14.4.0-r0       apk                      
 sqlite-libs             3.49.2-r1         apk                      
 sqlparse                0.5.3             python                   
-ssl_client              1.37.0-r19        apk                      
+ssl_client              1.37.0-r20        apk                      
 statsd                  4.0.1             python                   
 typing-extensions       4.15.0            python                   
 typing-inspection       0.4.2             python                   
