@@ -112,7 +112,7 @@ segno                   1.6.6             python
 shadow                  4.17.3-r0         apk                      
 skalibs-libs            2.14.4.0-r0       apk                      
 sqlite-libs             3.49.2-r1         apk                      
-sqlparse                0.5.4             python                   
+sqlparse                0.5.5             python                   
 ssl_client              1.37.0-r20        apk                      
 statsd                  4.0.1             python                   
 typing-extensions       4.15.0            python                   
