@@ -90,7 +90,7 @@ init_diagram: |
     svc-healthchecks -> legacy-services
   }
   Base Images: {
-    "baseimage-alpine:3.22"
+    "baseimage-alpine:3.23"
   }
   "healthchecks:latest" <- Base Images
 # changelog
