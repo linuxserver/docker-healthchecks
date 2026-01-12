@@ -119,7 +119,7 @@ statsd                  4.0.1             python
 typing-extensions       4.15.0            python                   
 typing-inspection       0.4.2             python                   
 tzdata                  2025c-r0          apk                      
-urllib3                 2.6.2             python                   
+urllib3                 2.6.3             python                   
 utmps-libs              0.1.3.1-r0        apk                      
 uwsgi                   2.0.31-r0         apk                      
 uwsgi-python3           2.0.31-r0         apk                      
