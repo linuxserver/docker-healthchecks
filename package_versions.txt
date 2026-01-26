@@ -124,7 +124,7 @@ urllib3                 2.6.3             python
 utmps-libs              0.1.3.1-r0        apk                      
 uwsgi                   2.0.31-r0         apk                      
 uwsgi-python3           2.0.31-r0         apk                      
-wheel                   0.46.2            python                   
+wheel                   0.46.3            python                   
 whitenoise              6.11.0            python                   
 xz-libs                 5.8.2-r0          apk                      
 zlib                    1.3.1-r2          apk                      
