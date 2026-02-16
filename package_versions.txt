@@ -31,7 +31,7 @@ coreutils-env           9.8-r1            apk
 coreutils-fmt           9.8-r1            apk                      
 coreutils-sha512sum     9.8-r1            apk                      
 cronsim                 2.7               python                   
-cryptography            46.0.4            python                   
+cryptography            46.0.5            python                   
 curl                    8.17.0-r1         apk                      
 django                  6.0.1             python                   
 django-appconf          1.2.0             python                   
@@ -59,7 +59,7 @@ libintl                 0.24.1-r1         apk
 libmd                   1.1.0-r0          apk                      
 libncursesw             6.5_p20251123-r0  apk                      
 libpanelw               6.5_p20251123-r0  apk                      
-libpq                   18.1-r0           apk                      
+libpq                   18.2-r0           apk                      
 libproc2                4.0.5-r0          apk                      
 libpsl                  0.21.5-r3         apk                      
 libssl3                 3.5.5-r0          apk                      
@@ -72,12 +72,12 @@ mailcap                 2.1.54-r0         apk
 mariadb-client          11.4.9-r0         apk                      
 mariadb-common          11.4.9-r0         apk                      
 mariadb-connector-c     3.4.6-r0          apk                      
-markdown                3.10.1            python                   
+markdown                3.10.2            python                   
 minio                   7.2.20            python                   
 mpdecimal               4.0.1-r0          apk                      
 musl                    1.2.5-r21         apk                      
 musl-utils              1.2.5-r21         apk                      
-mysqlclient             2.2.7             python                   
+mysqlclient             2.2.8             python                   
 ncurses-terminfo-base   6.5_p20251123-r0  apk                      
 netcat-openbsd          1.234.1-r0        apk                      
 nghttp2-libs            1.68.0-r0         apk                      
@@ -89,7 +89,7 @@ packaging               26.0              python
 pcre2                   10.47-r0          apk                      
 pip                     26.0.1            python                   
 postgresql-common       1.2-r2            apk                      
-postgresql18-client     18.1-r0           apk                      
+postgresql18-client     18.2-r0           apk                      
 procps-ng               4.0.5-r0          apk                      
 psycopg                 3.3.2             python                   
 pyc                     3.12.12-r0        apk                      
