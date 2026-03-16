@@ -24,7 +24,7 @@ ca-certificates-bundle  20251003-r0       apk
 catatonit               0.2.1-r0          apk                      
 certifi                 2026.2.25         python                   
 cffi                    2.0.0             python                   
-charset-normalizer      3.4.5             python                   
+charset-normalizer      3.4.6             python                   
 click                   8.3.1             python                   
 coreutils               9.8-r1            apk                      
 coreutils-env           9.8-r1            apk                      
@@ -59,7 +59,7 @@ libintl                 0.24.1-r1         apk
 libmd                   1.1.0-r0          apk                      
 libncursesw             6.5_p20251123-r0  apk                      
 libpanelw               6.5_p20251123-r0  apk                      
-libpq                   18.2-r0           apk                      
+libpq                   18.3-r0           apk                      
 libproc2                4.0.5-r0          apk                      
 libpsl                  0.21.5-r3         apk                      
 libssl3                 3.5.5-r0          apk                      
@@ -89,7 +89,7 @@ packaging               26.0              python
 pcre2                   10.47-r0          apk                      
 pip                     26.0.1            python                   
 postgresql-common       1.2-r2            apk                      
-postgresql18-client     18.2-r0           apk                      
+postgresql18-client     18.3-r0           apk                      
 procps-ng               4.0.5-r0          apk                      
 psycopg                 3.3.2             python                   
 pyc                     3.12.12-r0        apk                      
