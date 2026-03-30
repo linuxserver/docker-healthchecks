@@ -2,8 +2,8 @@ NAME                    VERSION           TYPE
 Simple Launcher         1.1.0.14          binary  (+5 duplicates)  
 acl-libs                2.3.2-r1          apk                      
 aiosmtpd                1.4.6             python                   
-alpine-baselayout       3.7.1-r8          apk                      
-alpine-baselayout-data  3.7.1-r8          apk                      
+alpine-baselayout       3.7.2-r0          apk                      
+alpine-baselayout-data  3.7.2-r0          apk                      
 alpine-keys             2.6-r0            apk                      
 alpine-release          3.23.3-r0         apk                      
 annotated-types         0.7.0             python                   
@@ -31,7 +31,7 @@ coreutils-env           9.8-r1            apk
 coreutils-fmt           9.8-r1            apk                      
 coreutils-sha512sum     9.8-r1            apk                      
 cronsim                 2.7               python                   
-cryptography            46.0.5            python                   
+cryptography            46.0.6            python                   
 curl                    8.17.0-r1         apk                      
 django                  6.0.3             python                   
 django-appconf          1.2.0             python                   
