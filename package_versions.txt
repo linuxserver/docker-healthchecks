@@ -80,7 +80,7 @@ musl-utils              1.2.5-r23         apk
 mysqlclient             2.2.8             python                   
 ncurses-terminfo-base   6.5_p20251123-r0  apk                      
 netcat-openbsd          1.234.1-r0        apk                      
-nghttp2-libs            1.68.0-r0         apk                      
+nghttp2-libs            1.69.0-r0         apk                      
 nghttp3                 1.13.1-r0         apk                      
 oauthlib                3.3.1             python                   
 oncalendar              1.1               python                   
@@ -119,7 +119,7 @@ ssl_client              1.37.0-r30        apk
 statsd                  4.0.1             python                   
 typing-extensions       4.15.0            python                   
 typing-inspection       0.4.2             python                   
-tzdata                  2026a-r0          apk                      
+tzdata                  2026b-r0          apk                      
 urllib3                 2.6.3             python                   
 utmps-libs              0.1.3.1-r0        apk                      
 uwsgi                   2.0.31-r0         apk                      
