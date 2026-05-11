@@ -31,7 +31,7 @@ coreutils-env           9.8-r1            apk
 coreutils-fmt           9.8-r1            apk                      
 coreutils-sha512sum     9.8-r1            apk                      
 cronsim                 2.7               python                   
-cryptography            47.0.0            python                   
+cryptography            48.0.0            python                   
 curl                    8.17.0-r1         apk                      
 django                  6.0.4             python                   
 django-appconf          1.2.0             python                   
@@ -41,7 +41,7 @@ fido2                   2.2.0             python
 findutils               4.10.0-r0         apk                      
 gdbm                    1.26-r0           apk                      
 grep                    3.12-r0           apk                      
-idna                    3.13              python                   
+idna                    3.14              python                   
 jansson                 2.14.1-r0         apk                      
 jq                      1.8.1-r0          apk                      
 libapk                  3.0.6-r0          apk                      
@@ -87,7 +87,7 @@ oncalendar              1.1               python
 oniguruma               6.9.10-r0         apk                      
 packaging               26.2              python                   
 pcre2                   10.47-r0          apk                      
-pip                     26.1              python                   
+pip                     26.1.1            python                   
 postgresql-common       1.2-r2            apk                      
 postgresql18-client     18.3-r0           apk                      
 procps-ng               4.0.5-r0          apk                      
@@ -120,7 +120,7 @@ statsd                  4.0.1             python
 typing-extensions       4.15.0            python                   
 typing-inspection       0.4.2             python                   
 tzdata                  2026b-r0          apk                      
-urllib3                 2.6.3             python                   
+urllib3                 2.7.0             python                   
 utmps-libs              0.1.3.1-r0        apk                      
 uwsgi                   2.0.31-r0         apk                      
 uwsgi-python3           2.0.31-r0         apk                      
