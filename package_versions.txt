@@ -5,7 +5,7 @@ aiosmtpd                1.4.6             python
 alpine-baselayout       3.7.2-r0          apk                      
 alpine-baselayout-data  3.7.2-r0          apk                      
 alpine-keys             2.6-r0            apk                      
-alpine-release          3.23.4-r0         apk                      
+alpine-release          3.23.5-r0         apk                      
 annotated-types         0.7.0             python                   
 apk-tools               3.0.6-r0          apk                      
 apprise                 1.11.0            python                   
@@ -25,7 +25,7 @@ catatonit               0.2.1-r0          apk
 certifi                 2026.6.17         python                   
 cffi                    2.0.0             python                   
 charset-normalizer      3.4.7             python                   
-click                   8.4.1             python                   
+click                   8.4.2             python                   
 coreutils               9.8-r1            apk                      
 coreutils-env           9.8-r1            apk                      
 coreutils-fmt           9.8-r1            apk                      
