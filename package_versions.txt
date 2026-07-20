@@ -118,7 +118,7 @@ ssl_client              1.37.0-r31        apk
 statsd                  4.0.1             python                   
 typing-extensions       4.16.0            python                   
 typing-inspection       0.4.2             python                   
-tzdata                  2026b-r0          apk                      
+tzdata                  2026c-r0          apk                      
 urllib3                 2.7.0             python                   
 utmps-libs              0.1.3.3-r0        apk                      
 uwsgi                   2.0.31-r1         apk                      
