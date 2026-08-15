@@ -37,7 +37,7 @@ RUN \
   mkdir -p /app/healthchecks && \
   if [ -z ${HEALTHCHECKS_RELEASE+x} ]; then \
     HEALTHCHECKS_RELEASE=$(curl -sX GET "https://api.github.com/repos/healthchecks/healthchecks/releases/latest" \
-      | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+      | jq -r '.tag_name'); \
   fi && \
   curl -o \
     /tmp/healthchecks.tar.gz -L \
