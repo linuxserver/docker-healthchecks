@@ -92,8 +92,8 @@ postgresql18-client     18.6-r0           apk
 procps-ng               4.0.6-r0          apk                      
 psycopg                 3.3.4             python                   
 pyc                     3.14.8-r0         apk                      
-pycparser               3.0               python                   
-pycryptodome            3.24.0            python                   
+pycparser               3.11              python                   
+pycryptodome            3.24.1            python                   
 pycurl                  7.47.0            python                   
 pydantic                2.13.5            python                   
 pydantic-core           2.46.5            python                   
@@ -103,11 +103,11 @@ python3                 3.14.8-r0         apk
 python3-pyc             3.14.8-r0         apk                      
 python3-pycache-pyc0    3.14.8-r0         apk                      
 pyyaml                  6.0.3             python                   
-rcssmin                 1.2.2             python                   
+rcssmin                 1.3.0             python                   
 readline                8.3.3-r1          apk                      
 requests                2.34.2            python                   
 requests-oauthlib       2.0.0             python                   
-rjsmin                  1.2.5             python                   
+rjsmin                  1.3.0             python                   
 scanelf                 1.3.9-r1          apk                      
 segno                   1.6.6             python                   
 shadow                  4.18.0-r1         apk                      
@@ -118,7 +118,7 @@ ssl_client              1.37.0-r31        apk
 statsd                  4.0.1             python                   
 typing-extensions       4.16.0            python                   
 typing-inspection       0.4.4             python                   
-tzdata                  2026d-r0          apk                      
+tzdata                  2026e-r0          apk                      
 urllib3                 2.8.0             python                   
 utmps-libs              0.1.3.3-r0        apk                      
 uwsgi                   2.0.31-r2         apk                      
@@ -126,5 +126,5 @@ uwsgi-python3           2.0.31-r2         apk
 wheel                   0.48.0            python                   
 whitenoise              6.12.0            python                   
 xz-libs                 5.8.4-r0          apk                      
-zlib                    1.3.2-r0          apk                      
+zlib                    1.3.2-r1          apk                      
 zstd-libs               1.5.7-r2          apk                      
