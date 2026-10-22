@@ -12,12 +12,12 @@ argon2-cffi             25.1.0            python
 argon2-cffi-bindings    26.1.0            python                   
 asgiref                 3.12.1            python                   
 bash                    5.3.9-r1          apk                      
-brotli-libs             1.2.0-r1          apk                      
+brotli-libs             1.2.1-r0          apk                      
 busybox                 1.37.0-r31        apk                      
 busybox-binsh           1.37.0-r31        apk                      
-c-ares                  1.34.8-r0         apk                      
-ca-certificates         20260909-r0       apk                      
-ca-certificates-bundle  20260909-r0       apk                      
+c-ares                  1.34.9-r0         apk                      
+ca-certificates         20261020-r0       apk                      
+ca-certificates-bundle  20261020-r0       apk                      
 catatonit               0.2.1-r0          apk                      
 certifi                 2026.10.19        python                   
 cffi                    2.1.1             python                   
@@ -73,7 +73,7 @@ markdown                3.11.2            python
 minio                   7.2.20            python                   
 minismtpd               0.3               python                   
 mpdecimal               4.0.1-r0          apk                      
-musl                    1.2.6-r2          apk                      
+musl                    1.2.6-r3          apk                      
 musl-utils              1.2.6-r2          apk                      
 mysqlclient             2.3.0             python                   
 ncurses-terminfo-base   6.6_p20260516-r0  apk                      
@@ -84,7 +84,7 @@ oncalendar              1.1               python
 oniguruma               6.9.10-r0         apk                      
 packaging               26.3              python                   
 pcre2                   10.49-r0          apk                      
-pip                     26.2.1            python                   
+pip                     26.2.2            python                   
 postgresql-common       1.3-r0            apk                      
 postgresql18-client     18.6-r0           apk                      
 procps-ng               4.0.6-r0          apk                      
