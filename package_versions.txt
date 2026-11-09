@@ -4,10 +4,10 @@ acl-libs                2.3.2-r1          apk
 alpine-baselayout       3.7.2-r1          apk                      
 alpine-baselayout-data  3.7.2-r1          apk                      
 alpine-keys             2.6-r0            apk                      
-alpine-release          3.24.3-r0         apk                      
+alpine-release          3.24.4-r0         apk                      
 annotated-types         0.8.0             python                   
-apk-tools               3.0.8-r0          apk                      
-apprise                 2.1.0             python                   
+apk-tools               3.0.9-r0          apk                      
+apprise                 2.2.0             python                   
 argon2-cffi             25.1.0            python                   
 argon2-cffi-bindings    26.1.0            python                   
 asgiref                 3.13.0            python                   
@@ -22,7 +22,7 @@ catatonit               0.2.1-r0          apk
 certifi                 2026.10.23        python                   
 cffi                    2.1.1             python                   
 charset-normalizer      3.5.2             python                   
-click                   8.5.0             python                   
+click                   8.5.1             python                   
 coreutils               9.11-r0           apk                      
 coreutils-env           9.11-r0           apk                      
 coreutils-fmt           9.11-r0           apk                      
@@ -41,7 +41,7 @@ grep                    3.12-r0           apk
 idna                    3.20              python                   
 jansson                 2.15.0-r0         apk                      
 jq                      1.8.2-r0          apk                      
-libapk                  3.0.8-r0          apk                      
+libapk                  3.0.9-r0          apk                      
 libattr                 2.5.2-r2          apk                      
 libbsd                  0.12.2-r0         apk                      
 libbz2                  1.0.8-r6          apk                      
@@ -69,7 +69,7 @@ mailcap                 2.1.54-r0         apk
 mariadb-client          11.8.9-r0         apk                      
 mariadb-common          11.8.9-r0         apk                      
 mariadb-connector-c     3.4.6-r0          apk                      
-markdown                3.11.2            python                   
+markdown                3.11.3            python                   
 minio                   7.2.20            python                   
 minismtpd               0.5               python                   
 mpdecimal               4.0.1-r0          apk                      
@@ -84,14 +84,14 @@ oncalendar              1.1               python
 oniguruma               6.9.10-r0         apk                      
 packaging               26.3              python                   
 pcre2                   10.49-r0          apk                      
-pip                     26.2.2            python                   
+pip                     26.3              python                   
 postgresql-common       1.3-r0            apk                      
 postgresql18-client     18.6-r0           apk                      
 procps-ng               4.0.6-r0          apk                      
 psycopg                 3.3.6             python                   
 pyc                     3.14.10-r1        apk                      
 pycparser               3.12              python                   
-pycryptodome            4.2.0             python                   
+pycryptodome            4.4.0             python                   
 pycurl                  7.48.0            python                   
 pydantic                2.14.1            python                   
 pydantic-core           2.50.1            python                   
@@ -115,8 +115,8 @@ sqlparse                0.6.1             python
 ssl_client              1.37.0-r31        apk                      
 statsd                  4.0.1             python                   
 typing-extensions       4.16.0            python                   
-typing-inspection       0.4.4             python                   
-tzdata                  2026e-r0          apk                      
+typing-inspection       0.4.5             python                   
+tzdata                  2026f-r0          apk                      
 urllib3                 2.8.0             python                   
 utmps-libs              0.1.3.3-r0        apk                      
 uwsgi                   2.0.31-r2         apk                      
@@ -124,5 +124,5 @@ uwsgi-python3           2.0.31-r2         apk
 wheel                   0.48.0            python                   
 whitenoise              6.12.0            python                   
 xz-libs                 5.8.4-r0          apk                      
-zlib                    1.3.2-r1          apk                      
+zlib                    1.4-r0            apk                      
 zstd-libs               1.5.7-r2          apk                      
