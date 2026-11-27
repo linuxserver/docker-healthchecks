@@ -88,6 +88,12 @@ init_diagram: |
     svc-cron -> legacy-services
     init-services -> svc-healthchecks
     svc-healthchecks -> legacy-services
+    init-services -> svc-healthchecks-alerts
+    svc-healthchecks-alerts -> legacy-services
+    init-services -> svc-healthchecks-reports
+    svc-healthchecks-reports -> legacy-services
+    init-services -> svc-healthchecks-smtpd
+    svc-healthchecks-smtpd -> legacy-services
   }
   Base Images: {
     "baseimage-alpine:3.24"
