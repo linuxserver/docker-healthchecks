@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+cd /app/healthchecks || exit 1
+
+if [[ -n ${EMAIL_PORT} ]]; then
+    exec \
+        s6-setuidgid abc python3 ./manage.py smtpd --port "${EMAIL_PORT}"
+else
+    sleep infinity
+fi

@@ -9,7 +9,8 @@ ARG HEALTHCHECKS_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thespad"
 
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1 \
+    USE_GZIP_MIDDLEWARE=True
 
 RUN \
   echo "**** install build packages ****" && \
@@ -30,8 +31,6 @@ RUN \
     mariadb-client \
     postgresql-client \
     python3 \
-    uwsgi \
-    uwsgi-python \
     mariadb-connector-c && \
   echo "**** install healthchecks ****" && \
   mkdir -p /app/healthchecks && \
@@ -53,12 +52,14 @@ RUN \
     wheel && \
   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.24/ \
     apprise \
-    minio \
-    mysqlclient && \
+    gunicorn \
+    minio==7.2.20 \
+    mysqlclient \
+    "psycopg[c]" && \
   pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.24/ -r requirements.txt && \
   cd /app/healthchecks && \
-  DEBUG=False python3 ./manage.py collectstatic --noinput && \
-  DEBUG=False python3 ./manage.py compress && \
+  DEBUG=False SECRET_KEY=build-key python3 ./manage.py collectstatic --noinput && \
+  DEBUG=False SECRET_KEY=build-key python3 ./manage.py compress && \
   printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   apk del --purge \

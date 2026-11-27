@@ -2,5 +2,5 @@
 # shellcheck shell=bash
 
 exec \
-    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost 8000" \
-        cd /app/healthchecks s6-setuidgid abc /usr/sbin/uwsgi --ini uwsgi.ini
+    s6-notifyoncheck -d -s 1000 -n 300 -w 1000 -c "curl -fsSL http://127.0.0.1:8000/health" \
+        cd /app/healthchecks s6-setuidgid abc gunicorn --no-control-socket hc.wsgi:application
