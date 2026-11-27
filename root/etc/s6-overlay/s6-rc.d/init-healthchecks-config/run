@@ -8,6 +8,10 @@ if [[ ! -f "/config/local_settings.py" ]]; then
     touch /config/local_settings.py
 fi
 
+if [[ -z ${LISTEN_IPV6} ]]; then
+    printf 'true' > /run/s6/container_environment/LISTEN_IPV6
+fi
+
 if [[ -z ${SITE_ROOT} ]] && ! grep -q "^SITE_ROOT" /config/local_settings.py; then
     echo "No SITE_ROOT provided, halting init"
     sleep infinity
@@ -35,7 +39,7 @@ if [[ ! -L "/app/healthchecks/hc.sqlite" ]]; then
     ln -s /config/hc.sqlite /app/healthchecks/hc.sqlite
 fi
 
-cp /defaults/uwsgi.ini /app/healthchecks/uwsgi.ini
+cp /defaults/gunicorn.conf.py /app/healthchecks/gunicorn.conf.py
 
 cd /app/healthchecks || exit
 
